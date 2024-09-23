@@ -1,101 +1,96 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { Header } from './components/header'
+import { Footer } from './components/footer'
+import { About } from './components/about'
+import { Experiences } from './components/experiences'
+import { Projects } from './components/projects'
+
+export default function Portfolio() {
+  // const [darkMode, setDarkMode] = useState(false)
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.documentElement.classList.add('dark')
+  //   } else {
+  //     document.documentElement.classList.remove('dark')
+  //   }
+  // }, [darkMode])
+
+  const experiencesArray = [
+    {
+      companyLogo: "/images/cactuscreatives.png",
+      companyName: "Cactus Creatives",
+      position: "Software Developer Intern, Core",
+      period: "Summer 2024",
+      responsibilities: [
+        `Developed a pipeline to scrape, clean, and model hierarchical data with Flask, supporting interactive visualizations via React and D3.js.`,
+        `Built a self-hosted uptime monitoring tool using Node.js, Axios for web & database monitoring, Redis for data storage, and Socket.IO for real-time websocket communication, with VPS deployment via Docker.`,
+        `Designed multiple CI/CD pipelines using Github Actions to automate unit and integration testing with Jest and Cypress, deployment, and monitoring processes for the uptime monitoring tool.`,
+        `Engineered a domain-specific chatbot with 85% accuracy, leveraging a PDF-trained algorithm, custom model trainer, and OpenAI's NLP API for multilingual responses.`
+      ]
+    },
+    {
+      companyLogo: "/images/cactuscreatives.png",
+      companyName: "Cactus Creatives",
+      position: "Python Developer Intern",
+      period: "Summer 2023",
+      responsibilities: [
+        "Developed and maintained full-stack CMS in HTMX and Django, displaying real-time metrics.",
+        "Implemented a Python script to parse and migrate over 25k+ records from MySQL to PostgreSQL databases.",
+        "Optimized SQL queries in the client codebase to align with updated database schema and improve performance post-migration.",
+        "Analyzed large product usage datasets through linear/logistic regression and outlier detection, leading to over 25% client savings."
+      ]
+    }
+  ]
+
+  const projectsArray = [
+    {
+      title: "Trivivo",
+      description: "Developed a full-stack web app with a Django/MySQL backend, HTML5/CSS3/jQuery frontend, RESTful API and real-time admin dashboard, optimizing game management by 45%.",
+      repo: true,
+      repoUrl: "https://github.com/steadyfall/wwbm-webapp"
+    },
+    {
+      title: "SpectraSVD",
+      description: "Designed a low-rank approximation image compression algorithm with 25%+ size reduction, visualized using OpenCV/Pillow, and deployed an interactive Streamlit web app for real-time results.",
+      repo: true,
+      repoUrl: "https://github.com/steadyfall/svd-compression"
+    },
+    {
+      title: "RedWish",
+      description: "Developed a full-stack health app for blood donation accessibility with a Firebase backend, HTML5/CSS3/jQuery frontend, and integrated a chatbot using DialogFlow API to boost user engagement.",
+      repo: true,
+      repoUrl: "https://github.com/steadyfall/RedWish"
+    },
+    {
+      title: "Chess (CS246 Final Project)",
+      description: "Developed a C++ chess engine, innovating three-way and four-way variants, and creating test suites and GUI in a Linux environment with CMake and XWindows.",
+      repo: false,
+      repoUrl: ""
+    },
+    {
+      title: "EcoWiz",
+      description: "Developed a full-stack garbage classification app with a React frontend, Flask backend, and an 80%-accurate multimodal model using ResNet-50 CNN and YOLOv8.",
+      repo: true,
+      repoUrl: "https://github.com/karman103/DeltaHacksX"
+    }
+  ]
+
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    // ${darkMode ? 'dark' : ''}
+    <div className={`min-h-screen`}> 
+      <div className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+        <div className="mx-auto max-w-full px-4 sm:px-6 md:px-8 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+          <Header />
+          <main className="container mx-auto px-4 py-8">
+            <About />
+            <Experiences arr={experiencesArray}/>
+            <Projects arr={projectsArray}/>
+          </main>
+          <Footer />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
-  );
+  )
 }
