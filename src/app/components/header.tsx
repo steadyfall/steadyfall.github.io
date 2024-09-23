@@ -8,7 +8,7 @@ export function Header() {
         <header className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
-            <Image
+            <img
                 src="/images/topImage.jpg"
                 alt="Profile"
                 width={200}

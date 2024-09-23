@@ -13,7 +13,7 @@ export function ExperienceTile({ companyLogo, companyName, position, period, res
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
         <div className="mb-4 sm:mb-0 sm:mr-4 flex-shrink-0">
-          <Image
+          <img
             src={companyLogo}
             alt={`${companyName} logo`}
             width={150}
