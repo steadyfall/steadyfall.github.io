@@ -10,7 +10,7 @@ export function Header() {
         <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
             <img
-                src="/images/topImage.jpg"
+                src="/images/headshot.jpg"
                 alt="Profile"
                 width={200}
                 height={200}
