@@ -5,6 +5,7 @@ import { Footer } from './components/footer'
 import { About } from './components/about'
 import { Experiences } from './components/experiences'
 import { Projects } from './components/projects'
+import Navbar from './components/navbar';
 
 export default function Portfolio() {
   // const [darkMode, setDarkMode] = useState(false)
@@ -80,7 +81,8 @@ export default function Portfolio() {
   return (
     // ${darkMode ? 'dark' : ''}
     <div className={`min-h-screen`}> 
-      <div className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      <div className="bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+        <Navbar />
         <div className="mx-auto max-w-full px-4 sm:px-6 md:px-8 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
           <Header />
           <main className="container mx-auto px-4 py-8">

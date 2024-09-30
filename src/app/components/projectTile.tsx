@@ -9,7 +9,7 @@ export type ProjectTileProps = {
 
 export function ProjectTile({ title, description, repo, repoUrl }: ProjectTileProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md">
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-xl font-semibold">{title}</h3>
         {repo && (
