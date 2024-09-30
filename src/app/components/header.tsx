@@ -1,4 +1,5 @@
-import { Moon, Sun, Github, Linkedin, Mail, StickyNote } from 'lucide-react'
+import { Github, Linkedin, Mail, StickyNote } from 'lucide-react'
+import ThemeSwitch from './ThemeSwitch'
 import Image from 'next/image'
 
 export function Header() {
@@ -19,13 +20,7 @@ export function Header() {
             <div className="flex-grow text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mr-4">Himank Dave</h1>
-                {/* <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-full bg-gray-300 dark:bg-gray-700"
-                aria-label="Toggle dark mode"
-                >
-                {darkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
-                </button> */}
+                <ThemeSwitch />
             </div>
             <div className="flex justify-center md:justify-start mt-4 space-x-4">
                 <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
