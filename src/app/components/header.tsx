@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, StickyNote } from 'lucide-react'
 import ThemeSwitch from './ThemeSwitch'
 import Image from 'next/image'
 
-export function Header() {
+const Header = () => {
     const githubLink: string = "https://github.com/steadyfall"
     const linkedinLink: string = "https://www.linkedin.com/in/himank-dave/"
     return (
@@ -54,3 +54,5 @@ export function Header() {
         </header>
   )
 }
+
+export default Header

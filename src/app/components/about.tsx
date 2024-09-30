@@ -1,4 +1,4 @@
-export function About() {
+const About = () => {
   return (
     <section id="about" className="mb-12">
         <h2 className="text-2xl font-bold mb-4">About</h2>
@@ -13,3 +13,5 @@ export function About() {
     </section>
   )
 }
+
+export default About

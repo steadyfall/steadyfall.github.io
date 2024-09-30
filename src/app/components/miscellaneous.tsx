@@ -1,4 +1,4 @@
-export function misc() {
+const misc = () => {
     return (
         <section id="misc" className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Misc.</h2>
@@ -10,3 +10,5 @@ export function misc() {
         </section>
     )
 }
+
+export default misc
