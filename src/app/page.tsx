@@ -1,22 +1,13 @@
 "use client";
 
-import { Header } from './components/header'
-import { Footer } from './components/footer'
-import { About } from './components/about'
-import { Experiences } from './components/experiences'
-import { Projects } from './components/projects'
-import Navbar from './components/navbar';
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
+import { About } from './components/About'
+import { Experiences } from './components/Experiences'
+import { Projects } from './components/Projects'
+import Navbar from './components/Navbar';
 
 export default function Portfolio() {
-  // const [darkMode, setDarkMode] = useState(false)
-  // useEffect(() => {
-  //   if (darkMode) {
-  //     document.documentElement.classList.add('dark')
-  //   } else {
-  //     document.documentElement.classList.remove('dark')
-  //   }
-  // }, [darkMode])
-
   const experiencesArray = [
     {
       companyLogo: "/images/cactuscreatives.png",
@@ -79,7 +70,6 @@ export default function Portfolio() {
 
 
   return (
-    // ${darkMode ? 'dark' : ''}
     <div className={`min-h-screen`}> 
       <div className="bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
         <Navbar />

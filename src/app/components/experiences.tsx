@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ExperienceTileProps, ExperienceTile } from './experienceTile'
-// import { ProjectTile } from './components/projectTile'
+import { ExperienceTileProps, ExperienceTile } from './Tiles/ExperienceTile'
 
 interface ExperiencesProps {
     arr: ExperienceTileProps[];

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ProjectTile, ProjectTileProps } from './projectTile'
+import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile'
 
 interface ProjectProps {
     arr: ProjectTileProps[];
