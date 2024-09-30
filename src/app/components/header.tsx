@@ -42,7 +42,7 @@ export function Header() {
                 </a>
             </div>
             <div className="mt-4 text-sm md:text-base lg:text-lg">
-                <p>he/him/they/them</p>
+                <p>he/him/his</p>
                 <p>3A Computational Mathematics @ UWaterloo</p>
                 <p>hddave [at] uwaterloo.ca</p>
             </div>
