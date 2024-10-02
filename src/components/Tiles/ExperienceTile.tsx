@@ -10,7 +10,7 @@ export type ExperienceTileProps = {
 
 export function ExperienceTile({ companyLogo, companyName, position, period, responsibilities }: ExperienceTileProps) {
   return (
-    <div className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md">
+    <div className="bg-sushi-200 dark:bg-sushi-900 p-6 rounded-lg shadow-md">
       <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
         <div className="mb-4 sm:mb-0 sm:mr-4 flex-shrink-0">
           <img

@@ -1,11 +1,11 @@
 "use client";
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import About from './components/About'
-import { Experiences } from './components/Experiences'
-import { Projects } from './components/Projects'
-import Navbar from './components/Navbar';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import About from '@/components/About'
+import { Experiences } from '@/components/Experiences'
+import { Projects } from '@/components/Projects'
+import Navbar from '@/components/Navbar';
 
 export default function Portfolio() {
   const experiencesArray = [

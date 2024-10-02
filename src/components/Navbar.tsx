@@ -1,4 +1,4 @@
-import useReadingProgress from '../hooks/useReadingProgress'
+import useReadingProgress from '@/hooks/useReadingProgress'
 
 const Navbar = () => {
     const completion = useReadingProgress();
