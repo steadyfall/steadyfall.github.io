@@ -4,7 +4,7 @@ const Navbar = () => {
     const completion = useReadingProgress();
 
     return (
-        <nav className="py-0.5 sticky top-0">
+        <nav className="z-50 py-0.5 sticky top-0">
             {/* <div className="flex items-center justify-between container mx-auto text-xl"></div> */}
             <div className="h-0.5 overflow-hidden">
                 <span
