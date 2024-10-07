@@ -13,9 +13,9 @@ export default function Portfolio() {
       companyLogo: "/images/cactuscreatives.png",
       companyName: "Cactus Creatives",
       position: "Software Developer Intern, Core",
-      period: "Summer 2024",
+      period: "May 2024 - August 2024",
       responsibilities: [
-        `Developed a pipeline to scrape, clean, and model hierarchical data with Flask, supporting interactive visualizations via React and D3.js.`,
+        `Developed an ETL pipeline for unstructured hierarchical data with Flask, supporting interactive visualizations via React and D3.js.`,
         `Built a self-hosted uptime monitoring tool using Node.js, Axios for web & database monitoring, Redis for data storage, and Socket.IO for real-time websocket communication, with VPS deployment via Docker.`,
         `Designed multiple CI/CD pipelines using Github Actions to automate unit and integration testing with Jest and Cypress, deployment, and monitoring processes for the uptime monitoring tool.`,
         `Engineered a domain-specific chatbot with 85% accuracy, leveraging a PDF-trained algorithm, custom model trainer, and OpenAI's NLP API for multilingual responses.`
@@ -25,12 +25,13 @@ export default function Portfolio() {
       companyLogo: "/images/cactuscreatives.png",
       companyName: "Cactus Creatives",
       position: "Python Developer Intern",
-      period: "Summer 2023",
+      period: "May 2023 - August 2023",
       responsibilities: [
-        "Developed and maintained full-stack CMS in HTMX and Django, displaying real-time metrics.",
-        "Implemented a Python script to parse and migrate over 25k+ records from MySQL to PostgreSQL databases.",
+        "Developed and maintained full-stack content management system in HTMX and Django, handling real-time metrics.",
+        "Designed REST APIs with Flask and REST Framework in production with 1000+ requests/day.",
+        "Implemented a Python script to parse and migrate over 25,000+ records from MySQL to PostgreSQL databases.",
         "Optimized SQL queries in the client codebase to align with updated database schema and improve performance post-migration.",
-        "Analyzed large product usage datasets through linear/logistic regression and outlier detection, leading to over 25% client savings."
+        "Analyzed large product usage datasets through linear/logistic regression and outlier detection, leading to over 25% client savings.",
       ]
     }
   ]
@@ -49,10 +50,10 @@ export default function Portfolio() {
       repoUrl: "https://github.com/steadyfall/svd-compression"
     },
     {
-      title: "RedWish",
-      description: "Developed a full-stack health app for blood donation accessibility with a Firebase backend, HTML5/CSS3/jQuery frontend, and integrated a chatbot using DialogFlow API to boost user engagement.",
+      title: "Personal Website",
+      description: "Built a modern, responsive personal website built in TypeScript with React, TailwindCSS and Next.js.",
       repo: true,
-      repoUrl: "https://github.com/steadyfall/RedWish"
+      repoUrl: "https://github.com/steadyfall/steadyfall.github.io.git"
     },
     {
       title: "Chess (CS246 Final Project)",
@@ -65,7 +66,13 @@ export default function Portfolio() {
       description: "Developed a full-stack garbage classification app with a React frontend, Flask backend, and an 80%-accurate multimodal model using ResNet-50 CNN and YOLOv8.",
       repo: true,
       repoUrl: "https://github.com/karman103/DeltaHacksX"
-    }
+    },
+    {
+      title: "RedWish",
+      description: "Developed a full-stack health app for blood donation accessibility with a Firebase backend, HTML5/CSS3/jQuery frontend, and integrated a chatbot using DialogFlow API to boost user engagement.",
+      repo: true,
+      repoUrl: "https://github.com/steadyfall/RedWish"
+    },
   ]
 
 
