@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { ExperienceTileProps, ExperienceTile } from './Tiles/ExperienceTile'
 
@@ -11,9 +13,12 @@ export function Experiences({ arr }: ExperiencesProps) {
         <section id="experience" className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Experience</h2>
             {experiences && experiences.length > 0 ? (
-            <div className="space-y-6">
+            <div className="relative space-y-6">
+                <div 
+                    className="z-1 absolute md:left-20 top-0 bottom-0 w-1 md:bg-emerald-500 md:dark:bg-emerald-200 bg-pink-500 dark:bg-red-300 rounded-full"
+                ></div>
                 {experiences.map((experience, index) => (
-                <ExperienceTile key={index} {...experience} />
+                    <ExperienceTile key={index} {...experience} />
                 ))}
             </div>
             ) : (
