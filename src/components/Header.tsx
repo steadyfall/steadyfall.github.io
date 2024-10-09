@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, StickyNote } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import ThemeSwitch from './ThemeSwitch'
 import Image from 'next/image'
 
@@ -22,18 +22,26 @@ const Header = () => {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mr-4">Himank Dave</h1>
                 <ThemeSwitch />
             </div>
-            <div className="flex justify-center md:justify-start mt-4 space-x-4 font-typewriter">
-                <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                [github]{/* <Github className="w-6 h-6 md:w-7 md:h-7" /> */}
+            <div className="flex justify-center md:justify-start mt-4 space-x-4">
+                <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                className="inline-flex items-center hover:underline text-pink-500"
+                >
+                github <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
-                <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                [linkedin]{/* <Linkedin className="w-6 h-6 md:w-7 md:h-7" /> */}
+                <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                className="inline-flex items-center hover:underline text-blue-violet-500"
+                >
+                linkedin <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
-                <a href="mailto:hddave@uwaterloo.ca" aria-label="Email">
-                [email]{/* <Mail className="w-6 h-6 md:w-7 md:h-7" /> */}
+                <a href="mailto:hddave@uwaterloo.ca" aria-label="Email"
+                className="inline-flex items-center hover:underline text-orange-500"
+                >
+                email <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
-                <a href="/resume.pdf" target="_blank" aria-label="Resume">
-                [resume]{/* <StickyNote className="w-6 h-6 md:w-7 md:h-7" /> */}
+                <a href="/resume.pdf" target="_blank" aria-label="Resume"
+                className="inline-flex items-center hover:underline text-midnight-blue-500"
+                >
+                resume <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
             </div>
             <div className="mt-4 text-sm md:text-base lg:text-lg">
