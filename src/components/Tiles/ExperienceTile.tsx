@@ -34,12 +34,20 @@ export function ExperienceTile({ companyLogo, companyName, position, period, res
               </div>
             )}
             <div className="pl-8 md:pl-16 py-3"> 
-                <div className="flex flex-col md:items-center sm:flex-row mb-4">
-                    <div>
-                      <h2 className="text-xl font-bold">{position}</h2>
-                      <h3 className="text-lg font-semibold">{companyName}</h3>
-                      <h3 className="text-gray-600 italic dark:text-gray-400">{period}</h3>
-                    </div>
+                <div className="flex flex-col md:items-start justify-between sm:flex-row mb-4">
+                    {!isDesktop ? (
+                      <div>
+                        <h2 className="text-xl font-bold">{position}</h2>
+                        <h3 className="text-lg font-semibold">{companyName}</h3>
+                        <h3 className="text-gray-600 font-typewriter dark:text-gray-400">{period}</h3>
+                      </div>
+                    ) : (
+                      <div>
+                        <h2 className="text-xl font-bold">{position}</h2>
+                        <h3 className="text-lg font-semibold">{companyName}</h3>
+                      </div>
+                    )}
+                    {isDesktop && (<h3 className="text-gray-600 font-typewriter dark:text-gray-400">{period}</h3>)}
                 </div>
                 <div className="mt-4">
                     <ul className="list-inside text-gray-700 dark:text-gray-300 space-y-1">
