@@ -22,24 +22,24 @@ const Header = () => {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mr-4">Himank Dave</h1>
                 <ThemeSwitch />
             </div>
-            <div className="flex justify-center md:justify-start mt-4 space-x-4">
+            <div className="flex justify-center md:justify-start mt-4 space-x-4 font-typewriter">
                 <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="w-6 h-6 md:w-7 md:h-7" />
+                [github]{/* <Github className="w-6 h-6 md:w-7 md:h-7" /> */}
                 </a>
                 <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-6 h-6 md:w-7 md:h-7" />
+                [linkedin]{/* <Linkedin className="w-6 h-6 md:w-7 md:h-7" /> */}
                 </a>
                 <a href="mailto:hddave@uwaterloo.ca" aria-label="Email">
-                <Mail className="w-6 h-6 md:w-7 md:h-7" />
+                [email]{/* <Mail className="w-6 h-6 md:w-7 md:h-7" /> */}
                 </a>
-                <a href="/resume.pdf" aria-label="Resume">
-                <StickyNote className="w-6 h-6 md:w-7 md:h-7" />
+                <a href="/resume.pdf" target="_blank" aria-label="Resume">
+                [resume]{/* <StickyNote className="w-6 h-6 md:w-7 md:h-7" /> */}
                 </a>
             </div>
             <div className="mt-4 text-sm md:text-base lg:text-lg">
                 <p>he/him/his</p>
                 <p>3A Computational Mathematics @ UWaterloo</p>
-                <p>hddave [at] uwaterloo.ca</p>
+                <p className="font-typewriter">hddave[at]uwaterloo.ca</p>
             </div>
             </div>
         </div>
