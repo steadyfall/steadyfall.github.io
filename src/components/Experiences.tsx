@@ -15,7 +15,7 @@ export function Experiences({ arr }: ExperiencesProps) {
             {experiences && experiences.length > 0 ? (
             <div className="relative space-y-6">
                 <div 
-                    className="z-1 absolute md:left-20 top-0 bottom-0 w-1 md:bg-emerald-500 md:dark:bg-emerald-200 bg-pink-500 dark:bg-red-300 rounded-full"
+                    className="z-1 absolute md:left-20 top-0 bottom-0 w-1 bg-pink-500 rounded-full"
                 ></div>
                 {experiences.map((experience, index) => (
                     <ExperienceTile key={index} {...experience} />
