@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react"
 const About = () => {
   return (
     <section id="about" className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">About</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-section mb-4">About</h2>
         <p className="text-gray-700 dark:text-gray-300">
             I am a junior at the University of Waterloo, pursuing a major in Computational Mathematics.
             With a passion for technology and innovation, I am constantly exploring new

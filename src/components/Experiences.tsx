@@ -11,7 +11,7 @@ export function Experiences({ arr }: ExperiencesProps) {
     const [experiences, setExperiences] = useState(arr)
     return (
         <section id="experience" className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Experience</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-section mb-4">Experience</h2>
             {experiences && experiences.length > 0 ? (
             <div className="relative space-y-6">
                 <div 

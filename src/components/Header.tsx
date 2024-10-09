@@ -19,7 +19,7 @@ const Header = () => {
             </div>
             <div className="flex-grow text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mr-4">Himank Dave</h1>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mr-4">Himank Dave</h1>
                 <ThemeSwitch />
             </div>
             <div className="flex justify-center md:justify-start mt-4 space-x-4">
