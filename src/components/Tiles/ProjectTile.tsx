@@ -21,7 +21,7 @@ export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl }
             <a
             href={repoUrl} target="_blank"
             rel="noopener noreferrer" aria-label={`GitHub repository for ${title}`}
-            className="text-pink-500 inline-flex items-center hover:underline"
+            className="text-pink-500 inline-flex items-center hover:underline hover:underline-offset-2"
             >
               github <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
             </a>
@@ -30,7 +30,7 @@ export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl }
             <a
             href={liveUrl} target="_blank"
             rel="noopener noreferrer" aria-label={`Live link for ${title}`}
-            className="text-midnight-blue-500 inline-flex items-center hover:underline"
+            className="text-midnight-blue-500 inline-flex items-center hover:underline hover:underline-offset-2"
             >
               link <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
             </a>

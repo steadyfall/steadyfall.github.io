@@ -21,9 +21,9 @@ const About = () => {
               South Park,
               Impractical Jokers.
             <br></br>
-            For those of you curious, the favicon is a 4-hypercube graph. Check the <a href="/icon.ico" target="_blank" className="inline-flex items-center hover:underline text-orange-500">
+            For those of you curious, the favicon is a 4-hypercube graph. Check the <a href="/icon.ico" target="_blank" className="inline-flex items-center hover:underline hover:underline-offset-2 text-orange-500">
               image <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-            </a> out and learn <a href="https://en.wikipedia.org/wiki/Hypercube_graph" target="_blank" className="inline-flex items-center hover:underline text-blue-violet-500">
+            </a> out and learn <a href="https://en.wikipedia.org/wiki/Hypercube_graph" target="_blank" className="inline-flex items-center hover:underline hover:underline-offset-2 text-blue-violet-500">
               more <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
             </a>.
         </p>

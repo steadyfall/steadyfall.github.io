@@ -24,22 +24,22 @@ const Header = () => {
             </div>
             <div className="flex justify-center md:justify-start mt-4 space-x-4">
                 <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                className="inline-flex items-center hover:underline text-pink-500"
+                className="inline-flex items-center hover:underline hover:underline-offset-2 text-pink-500"
                 >
                 github <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
                 <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                className="inline-flex items-center hover:underline text-blue-violet-500"
+                className="inline-flex items-center hover:underline hover:underline-offset-2 text-thunderbird-600"
                 >
                 linkedin <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
                 <a href="mailto:hddave@uwaterloo.ca" aria-label="Email"
-                className="inline-flex items-center hover:underline text-orange-500"
+                className="inline-flex items-center hover:underline hover:underline-offset-2 text-azure-radiance-600" // text-orange-500"
                 >
                 email <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
                 <a href="/resume.pdf" target="_blank" aria-label="Resume"
-                className="inline-flex items-center hover:underline text-midnight-blue-500"
+                className="inline-flex items-center hover:underline hover:underline-offset-2 text-neon-green-500 dark:text-neon-green-400"
                 >
                 resume <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
                 </a>
@@ -53,9 +53,9 @@ const Header = () => {
         </div>
         <nav className="mt-8">
             <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
-            <li><a href="#about" className="hover:underline">About</a></li>
-            <li><a href="#experience" className="hover:underline">Experience</a></li>
-            <li><a href="#projects" className="hover:underline">Projects</a></li>
+            <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
+            <li><a href="#experience" className="hover:underline hover:underline-offset-4">Experience</a></li>
+            <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
             {/* <li><a href="#misc" className="hover:underline">Misc.</a></li> */}
             </ul>
         </nav>
