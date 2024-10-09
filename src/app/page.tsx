@@ -41,37 +41,45 @@ export default function Portfolio() {
       title: "Trivivo",
       description: "Developed a full-stack web app with a Django/MySQL backend, HTML5/CSS3/jQuery frontend, RESTful API and real-time admin dashboard, optimizing game management by 45%.",
       repo: true,
-      repoUrl: "https://github.com/steadyfall/wwbm-webapp"
+      repoUrl: "https://github.com/steadyfall/wwbm-webapp",
+      live: false
     },
     {
       title: "SpectraSVD",
       description: "Designed a low-rank approximation image compression algorithm with 25%+ size reduction, visualized using OpenCV/Pillow, and deployed an interactive Streamlit web app for real-time results.",
       repo: true,
-      repoUrl: "https://github.com/steadyfall/svd-compression"
+      repoUrl: "https://github.com/steadyfall/svd-compression",
+      live: true,
+      liveUrl: "https://spectrasvd.streamlit.app/"
     },
     {
       title: "Personal Website",
-      description: "Built a modern, responsive personal website built in TypeScript with React, TailwindCSS and Next.js.",
+      description: "Built a modern, responsive personal website written in TypeScript with React, TailwindCSS and Next.js.",
       repo: true,
-      repoUrl: "https://github.com/steadyfall/steadyfall.github.io.git"
+      repoUrl: "https://github.com/steadyfall/steadyfall.github.io.git",
+      live: true,
+      liveUrl: "https://steadyfall.github.io"
     },
     {
       title: "Chess (CS246 Final Project)",
       description: "Developed a C++ chess engine, innovating three-way and four-way variants, and creating test suites and GUI in a Linux environment with CMake and XWindows.",
       repo: false,
-      repoUrl: ""
+      live: false
     },
     {
       title: "EcoWiz",
       description: "Developed a full-stack garbage classification app with a React frontend, Flask backend, and an 80%-accurate multimodal model using ResNet-50 CNN and YOLOv8.",
       repo: true,
-      repoUrl: "https://github.com/karman103/DeltaHacksX"
+      repoUrl: "https://github.com/karman103/DeltaHacksX",
+      live: false
     },
     {
       title: "RedWish",
       description: "Developed a full-stack health app for blood donation accessibility with a Firebase backend, HTML5/CSS3/jQuery frontend, and integrated a chatbot using DialogFlow API to boost user engagement.",
       repo: true,
-      repoUrl: "https://github.com/steadyfall/RedWish"
+      repoUrl: "https://github.com/steadyfall/RedWish",
+      live: true,
+      liveUrl: "https://steadyfall.github.io/RedWish/"
     },
   ]
 
