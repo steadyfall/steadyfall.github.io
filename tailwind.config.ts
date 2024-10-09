@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-spaceMono)'],
+        sans: ['var(--font-inter)'],
         typewriter: ['var(--font-spaceMono)'],
+        'section': ['Starlight', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
