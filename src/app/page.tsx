@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import About from '@/components/About'
 import { Experiences } from '@/components/Experiences'
 import { Projects } from '@/components/Projects'
+import { Education } from '@/components/Education'
 import Navbar from '@/components/Navbar';
 
 export default function Portfolio() {
@@ -12,6 +13,7 @@ export default function Portfolio() {
     {
       companyLogo: "/images/cactuscreatives.png",
       companyName: "Cactus Creatives",
+      companyLink: "https://cactuscreatives.com/",
       position: "Software Developer Intern, Core",
       period: "May 2024 - August 2024",
       responsibilities: [
@@ -24,6 +26,7 @@ export default function Portfolio() {
     {
       companyLogo: "/images/cactuscreatives.png",
       companyName: "Cactus Creatives",
+      companyLink: "https://cactuscreatives.com/",
       position: "Python Developer Intern",
       period: "May 2023 - August 2023",
       responsibilities: [
@@ -62,13 +65,13 @@ export default function Portfolio() {
     },
     {
       title: "Chess (CS246 Final Project)",
-      description: "Developed a C++ chess engine, innovating three-way and four-way variants, and creating test suites and GUI in a Linux environment with CMake and XWindows.",
+      description: "Developed a C++ chess engine, innovating 3-way and 4-way variants, and creating test suites and GUI in a Linux environment with CMake and XWindows.",
       repo: false,
       live: false
     },
     {
       title: "EcoWiz",
-      description: "Developed a full-stack garbage classification app with a React frontend, Flask backend, and an 80%-accurate multimodal model using ResNet-50 CNN and YOLOv8.",
+      description: "Developed a full-stack garbage classification app with React/Flask, and an 80% accurate multimodal model using ResNet-50 CNN and YOLOv8.",
       repo: true,
       repoUrl: "https://github.com/karman103/DeltaHacksX",
       live: false
@@ -92,6 +95,7 @@ export default function Portfolio() {
         <main className="container mx-auto px-4 py-8 z-1">
           <About />
           <Experiences arr={experiencesArray}/>
+          <Education />
           <Projects arr={projectsArray}/>
         </main>
         <Footer />
