@@ -13,10 +13,7 @@ export function Experiences({ arr }: ExperiencesProps) {
         <section id="experience" className="mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-section mb-4">Experience</h2>
             {experiences && experiences.length > 0 ? (
-            <div className="relative space-y-6">
-                <div 
-                    className="z-1 absolute md:left-20 top-0 bottom-0 w-1 bg-pink-500 rounded-full"
-                ></div>
+            <div className="space-y-6">
                 {experiences.map((experience, index) => (
                     <ExperienceTile key={index} {...experience} />
                 ))}

@@ -16,25 +16,19 @@ export type ExperienceTileProps = {
 export function ExperienceTile({ companyLogo, companyName, companyLink, position, period, responsibilities }: ExperienceTileProps) {
   const isDesktop = useMediaQuery('(min-width: 768px)')
   return (
-    <div className="mb-8 flex items-center">
-        <div className="relative flex-grow md:pl-28">
-            {isDesktop ? (
-              <div className="bg-white absolute left-[5px] top-3 p-1 rounded-full">
+    <div className="mb-6 flex items-center">
+        <div className="relative flex-grow md:pl-12">
+              <div className="bg-white aspect-square absolute left-[5px] top-3 rounded-lg">
                   {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
                   <img
                       src={companyLogo}
                       alt={`${companyName} logo`}
-                      width={150}
-                      height={75}
+                      width={isDesktop ? 80 : 45}
+                      height={isDesktop ? 80 : 45}
                       className="rounded-md"
                   />
               </div>
-            ) : (
-              <div className="absolute left-[-10px] top-5">
-                <Briefcase className="bg-neutral-100 dark:bg-neutral-950 rounded-md w-6 h-6"/>
-              </div>
-            )}
-            <div className="pl-8 md:pl-16 py-3"> 
+            <div className="pl-16 py-3"> 
                 <div className="flex flex-col md:items-start justify-between sm:flex-row mb-4">
                     <div>
                         <h2 className="text-xl font-bold">{position}</h2>
