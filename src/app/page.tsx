@@ -6,6 +6,7 @@ import About from '@/components/About'
 import { Experiences } from '@/components/Experiences'
 import { Projects } from '@/components/Projects'
 import { Education } from '@/components/Education'
+import { Skills } from '@/components/Skills';
 import Navbar from '@/components/Navbar';
 
 export default function Portfolio() {
@@ -94,6 +95,7 @@ export default function Portfolio() {
         <Header />
         <main className="container mx-auto px-4 py-8 z-1">
           <About />
+          <Skills />
           <Experiences arr={experiencesArray}/>
           <Education />
           <Projects arr={projectsArray}/>

@@ -54,7 +54,7 @@ const Header = () => {
         <nav className="mt-8">
             <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
             <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
-            {/* <li><a href="#skills" className="hover:underline hover:underline-offset-4">Skills</a></li> */}
+            <li><a href="#skills" className="hover:underline hover:underline-offset-4">Skills</a></li>
             <li><a href="#experience" className="hover:underline hover:underline-offset-4">Experience</a></li>
             <li><a href="#education" className="hover:underline hover:underline-offset-4">Education</a></li>
             <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
