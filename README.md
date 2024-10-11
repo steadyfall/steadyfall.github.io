@@ -14,7 +14,8 @@ across_colors:
 - `text-blue-violet-500`
 
 ## to-do:
-- [ ] check out about highlighting words
+- [x] check out about highlighting words
+- [ ] add highlighting feature in experience, projects section
 - [ ] YAML file parser for experience, projects
 - [x] skills, education section
 - [x] projects in one column, instead of cards
