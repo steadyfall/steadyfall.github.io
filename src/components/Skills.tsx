@@ -93,7 +93,7 @@ export function Skills() {
             <div className="flex flex-col justify-around">
                 {/* TODO: Check if this fits in small screens & if this is good at all or not */}
                 <TechIconsDisplay 
-                    heading="Programming techNames:" 
+                    heading="Programming Languages:" 
                     techNames={["Python3", "HTML5", "CSS3", "JavaScript (ES6)", "TypeScript", "Go", "C", "C++20", "SQL"]}
                 />
                 <TechIconsDisplay
