@@ -1,7 +1,7 @@
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { BaselineIcon, GalleryVerticalEndIcon } from 'lucide-react';
 import { Fragment, FunctionComponent, useState } from 'react';
-import { techIcons } from '@/utils/techIcons';
+import { techIcons } from '@/lib/techIcons';
 
 interface Props extends React.SVGProps<SVGElement> {
     size?: number | string;
@@ -74,7 +74,7 @@ function TechIconsDisplay({ heading, techNames }: TechIconsDisplayProps) {
                     <span className="inline-flex items-center">
                         {lang}
                         {index < techNames.length - 1 && (
-                        <span className="mr-1">,</span>
+                        <span key={index} className="mr-1">,</span>
                         )}
                     </span>
                 ))}
