@@ -13,9 +13,15 @@ across_colors:
 - `text-orange-500`
 - `text-blue-violet-500`
 
+highlighter:
+- cyan: `bg-cyan-300 dark:bg-cyan-500/30`
+- pink/violet-web: `bg-[#ff77e4]`
+- slate-blue: `bg-[#7777ff]`
+- red: `bg-[#ff7777]`
+- yellow/lemon/laser-lemon: `bg-[#ffff77]`
+
 ## to-do:
 - [x] check out about highlighting words
-- [ ] add highlighting feature in experience, projects section
 - [ ] YAML file parser for experience, projects
 - [x] skills, education section
 - [x] projects in one column, instead of cards
