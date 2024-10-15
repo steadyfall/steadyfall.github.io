@@ -43,47 +43,53 @@ export default function Portfolio() {
   const projectsArray = [
     {
       title: "Trivivo",
-      description: "Developed a full-stack web app with a Django/MySQL backend, HTML5/CSS3/jQuery frontend, RESTful API and real-time admin dashboard, optimizing game management by 45%.",
+      description: "Crafted a feature-rich, dynamic quiz game platform with progressive difficulty levels, real-time analytics, and comprehensive admin tools, complemented by a secure API for question management and user engagement tracking.",
       repo: true,
       repoUrl: "https://github.com/steadyfall/wwbm-webapp",
-      live: false
+      live: false,
+      techStack: [`Django`, `MySQL`, `HTML5/CSS3`, `jQuery`, `Docker`, `AWS EC2`]
     },
     {
       title: "SpectraSVD",
-      description: "Designed a low-rank approximation image compression algorithm with 25%+ size reduction, visualized using OpenCV/Pillow, and deployed an interactive Streamlit web app for real-time results.",
+      description: "Designed and deployed an advanced image compression algorithm achieving 25%+ size reduction, complemented by a real-time interactive web application for demonstrating compression quality and efficiency.",
       repo: true,
       repoUrl: "https://github.com/steadyfall/svd-compression",
       live: true,
-      liveUrl: "https://spectrasvd.streamlit.app/"
+      liveUrl: "https://spectrasvd.streamlit.app/",
+      techStack: [`NumPy`, `OpenCV`, `Pillow`, `Streamlit`]
     },
     {
       title: "Personal Website",
-      description: "Built a modern, responsive personal website written in TypeScript with React, TailwindCSS and Next.js.",
+      description: "Built a modern, responsive portfolio website with fluid animations, architected as a customizable template.",
       repo: true,
       repoUrl: "https://github.com/steadyfall/steadyfall.github.io.git",
       live: true,
-      liveUrl: "https://steadyfall.github.io"
+      liveUrl: "https://steadyfall.github.io",
+      techStack: [`TypeScript`, `React`, `TailwindCSS`, `Next.js`, `Framer Motion`,`Node.js`]
     },
     {
       title: "Chess (CS246 Final Project)",
-      description: "Developed a C++ chess engine, innovating 3-way and 4-way variants, and creating test suites and GUI in a Linux environment with CMake and XWindows.",
+      description: "Developed a C++ chess engine with innovative multi-player variants and AI capabilities, employing advanced software design patterns and rigorous testing methodologies in a Linux environment.",
       repo: false,
-      live: false
+      live: false,
+      techStack: [`C++`, `CMake`, `XQuartz`]
     },
     {
       title: "EcoWiz",
-      description: "Developed a full-stack garbage classification app with React/Flask, and an 80% accurate multimodal model using ResNet-50 CNN and YOLOv8.",
+      description: "Engineered a full-stack application featuring a multimodal image classification system for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.",
       repo: true,
       repoUrl: "https://github.com/karman103/DeltaHacksX",
-      live: false
+      live: false,
+      techStack: [`React`, `Flask`, `ResNet-50 CNN`, `YOLOv8`]
     },
     {
       title: "RedWish",
-      description: "Developed a full-stack health app for blood donation accessibility with a Firebase backend, HTML5/CSS3/jQuery frontend, and integrated a chatbot using DialogFlow API to boost user engagement.",
+      description: "Developed a comprehensive full-stack health application to streamline blood donation and transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and accessibility.",
       repo: true,
       repoUrl: "https://github.com/steadyfall/RedWish",
       live: true,
-      liveUrl: "https://steadyfall.github.io/RedWish/"
+      liveUrl: "https://steadyfall.github.io/RedWish/",
+      techStack: [`HTML5/CSS3`, `JavaScript`, `Firebase`, `DialogFlow API`]
     },
   ]
 
