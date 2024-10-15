@@ -91,7 +91,7 @@ export default function Portfolio() {
   return (
     <div className="bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
       <Navbar />
-      <div className="mx-auto max-w-full px-4 sm:px-6 md:px-8 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+      <div className="mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
         <Header />
         <main className="container mx-auto px-4 py-8 z-1">
           <About />
