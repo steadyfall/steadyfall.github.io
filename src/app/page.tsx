@@ -95,9 +95,9 @@ export default function Portfolio() {
         <Header />
         <main className="container mx-auto px-4 py-8 z-1">
           <About />
-          <Skills />
           <Experiences arr={experiencesArray}/>
           <Education />
+          <Skills />
           <Projects arr={projectsArray}/>
         </main>
         <Footer />
