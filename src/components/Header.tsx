@@ -1,22 +1,26 @@
 import { ArrowUpRight } from 'lucide-react'
 import ThemeSwitch from './ThemeSwitch'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import Image from 'next/image'
 
 const Header = () => {
+    const isDesktop = useMediaQuery('(min-width: 768px)')
     const githubLink: string = "https://github.com/steadyfall"
     const linkedinLink: string = "https://www.linkedin.com/in/himank-dave/"
     return (
         <header className="container mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
-                    <img
-                        src="/images/headshot.jpg"
-                        alt="Profile"
-                        width={200}
-                        height={200}
-                        className="rounded-lg size-36 md:size-48 lg:size-56 object-cover"
-                    />
-                </div>
+                {(!isDesktop) && (
+                    <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
+                        <img
+                            src="/images/headshot.jpg"
+                            alt="Profile"
+                            width={200}
+                            height={200}
+                            className="rounded-lg size-36 md:size-48 lg:size-56 object-cover"
+                        />
+                    </div>
+                )}
                 <div className="flex-grow text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mr-4">Himank Dave</h1>
@@ -50,6 +54,17 @@ const Header = () => {
                         <p className="font-typewriter">hddave[at]uwaterloo.ca</p>
                     </div>
                 </div>
+                {(isDesktop) && (
+                    <div className="flex-shrink-0">
+                        <img
+                            src="/images/headshot.jpg"
+                            alt="Profile"
+                            width={200}
+                            height={200}
+                            className="rounded-lg size-36 md:size-48 lg:size-56 object-cover"
+                        />
+                    </div>
+                )}
             </div>
             <nav className="mt-8">
                 <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
