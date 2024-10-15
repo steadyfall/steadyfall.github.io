@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { Badge } from '@/components/ui/Badge'
 
 export type ProjectTileProps = {
   title: string
@@ -8,9 +9,10 @@ export type ProjectTileProps = {
   repoUrl?: string,
   live: boolean,
   liveUrl?: string,
+  techStack: string[]
 }
 
-export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl }: ProjectTileProps) {
+export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl, techStack }: ProjectTileProps) {
   const isDesktop = useMediaQuery('(min-width: 768px)')
   return (
     <div className="items-center">
@@ -38,6 +40,13 @@ export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl }
         </div>
       </div>
       <p className="text-gray-700 dark:text-gray-300">{description}</p>
+      {techStack && techStack.length > 0 && (
+          <div className="mt-1 space-x-2">
+              {techStack.map((skillText, index) => (
+                  <Badge key={index} variant={`secondary`}>{skillText}</Badge>
+              ))}
+          </div>
+      )}
     </div>
   )
 }

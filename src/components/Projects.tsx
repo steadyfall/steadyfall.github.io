@@ -11,7 +11,7 @@ export function Projects({ arr }: ProjectProps) {
         <section id="projects" className="mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-section font-bold mb-4">Projects</h2>
             {projects && projects.length > 0 ? (
-                <div className="space-y-4">
+                <div className="space-y-5">
                     {projects.map((project, index) => (
                         <ProjectTile key={index} {...project} />
                     ))}
