@@ -1,13 +1,17 @@
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { ArrowUpRight } from 'lucide-react'
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade'
+import { cn } from '@/lib/utils'
 
 export function Education() {
     const isDesktop = useMediaQuery('(min-width: 768px)')
     return (
         <section id="education" className="mb-12">
             <BlurFade delay={BLUR_FADE_DELAY * 7}>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-section font-bold mb-4">Education</h2>
+                <h2 className={cn(
+                    "text-2xl md:text-3xl lg:text-4xl font-section mb-4",
+                    "inline-block text-transparent bg-clip-text bg-gradient-to-r dark:from-gray-300 dark:to-gray-100 from-[#434343] to-[#000000]"
+                )}>Education</h2>
             </BlurFade>
             <BlurFade delay={BLUR_FADE_DELAY * 8}>
                 <div className="flex items-center">
