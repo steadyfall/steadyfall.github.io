@@ -6,7 +6,7 @@ const Footer = () => {
         <p>
           Designed & built with <span className="inline-flex items-center">
             <Heart className="w-3 h-3 md:w-4 md:h-4" color="#ff4444"/>
-          </span> by <span className="underline underline-offset-4">Himank Dave</span>. Take inspirations from this, as long as you credit me.
+          </span> by <span className="underline underline-offset-4">Himank Dave</span>. You can take inspirations from this or fork it, as long as you credit me.
         </p>
     </footer>
   )
