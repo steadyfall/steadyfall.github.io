@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Go to site directory
-        run: pwd ; cd site
+        run: cd site ; pwd 
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
