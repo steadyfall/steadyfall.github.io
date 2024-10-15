@@ -1,27 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 import BlurFade, { BLUR_FADE_DELAY } from "@/components/ui/BlurFade";
-
-function Highlight(text: string, color = "yellow") {
-  var colorClassName: string = "bg-opacity-50 px-1 rounded ";
-  if (color === "yellow") {
-    colorClassName = colorClassName + "bg-[#ffff77]"
-  }
-  if (color === "cyan") {
-    colorClassName = colorClassName + "bg-cyan-300 dark:bg-cyan-500/30"
-  }
-  if (color === "pink") {
-    colorClassName = colorClassName + "bg-[#ff77e4]"
-  }
-  if (color === "slate-blue") {
-    colorClassName = colorClassName + "bg-[#7777ff]"
-  }
-  if (color === "red") {
-    colorClassName = colorClassName + "bg-[#ff7777]"
-  }
-  return (
-    <span className={colorClassName}>{text}</span>
-  )
-}
+import Highlight from "@/lib/highlighter";
 
 const About = () => {
   return (
