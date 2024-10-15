@@ -87,6 +87,23 @@ export default function Portfolio() {
     },
   ]
 
+  const skillsArray = [
+    "Python", 
+    "JavaScript (ES6)", 
+    "TypeScript", 
+    "Django", 
+    "Flask", 
+    "React", 
+    "Next.js", 
+    "Node.js", 
+    "Postgres", 
+    "MySQL", 
+    "Docker", 
+    "Bash", 
+    "Powershell", 
+    "C", 
+    "C++"
+  ]
 
   return (
     <div className="bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
@@ -97,7 +114,7 @@ export default function Portfolio() {
           <About />
           <Experiences arr={experiencesArray}/>
           <Education />
-          <Skills />
+          <Skills arr={skillsArray}/>
           <Projects arr={projectsArray}/>
         </main>
         <Footer />
