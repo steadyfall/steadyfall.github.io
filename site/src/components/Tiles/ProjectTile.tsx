@@ -41,7 +41,7 @@ export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl, 
       </div>
       <p className="text-gray-700 dark:text-gray-300">{description}</p>
       {techStack && techStack.length > 0 && (
-          <div className="mt-1 space-x-2">
+          <div className="mt-1 flex flex-wrap gap-1">
               {techStack.map((skillText, index) => (
                   <Badge key={index} variant={`secondary`}>{skillText}</Badge>
               ))}
