@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Mono } from 'next/font/google'
 import { Providers } from './providers'
 import "./globals.css";
+import { detailsForMetadata } from "./config";
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceMono = Space_Mono({ 
@@ -9,15 +10,6 @@ const spaceMono = Space_Mono({
   subsets: ['latin'],
   variable: '--font-spaceMono'
 })
-
-export const detailsForMetadata = {
-  baseUrl: "https://steadyfall.github.io/",
-  title: "Himank Dave",
-  name: "Himank Dave",
-  ogImage: "/icon.ico",
-  description:
-    "A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion."
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(detailsForMetadata.baseUrl),
