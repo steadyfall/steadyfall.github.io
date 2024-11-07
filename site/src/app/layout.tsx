@@ -10,12 +10,49 @@ const spaceMono = Space_Mono({
   variable: '--font-spaceMono'
 })
 
+export const detailsForMetadata = {
+  baseUrl: "https://steadyfall.github.io/",
+  title: "Himank Dave",
+  name: "Himank Dave",
+  ogImage: "/icon.ico",
+  description:
+    "A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion."
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(detailsForMetadata.baseUrl),
   title: {
-    default: "Himank Dave",
-    template: "%s | Himank Dave"
+    default: detailsForMetadata.title,
+    template: `%s | ${detailsForMetadata.title}`,
   },
-  description: "Personal website of Himank Dave.",
+  description: detailsForMetadata.description,
+  openGraph: {
+    images: detailsForMetadata.ogImage,
+    title: detailsForMetadata.title,
+    description: detailsForMetadata.description,
+    url: detailsForMetadata.baseUrl,
+    siteName: detailsForMetadata.name,
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: detailsForMetadata.name,
+    card: "summary_large_image",
+  },
+  icons: {
+    icon: "/icon.ico",
+  },
 };
 
 export default function RootLayout({
