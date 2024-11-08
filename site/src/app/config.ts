@@ -43,7 +43,7 @@ export const projectsArray = [
         repo: true,
         repoUrl: "https://github.com/steadyfall/wwbm-webapp",
         live: false,
-        techStack: [`Django`, `MySQL`, `HTML5/CSS3`, `jQuery`, `Docker`, `AWS EC2`]
+        techStack: [`Django`, `MySQL`, `HTML5`, `TailwindCSS`, `jQuery`, `Docker`, `AWS EC2`]
     },
     {
         title: "SpectraSVD",
@@ -85,24 +85,14 @@ export const projectsArray = [
         repoUrl: "https://github.com/steadyfall/RedWish",
         live: true,
         liveUrl: "https://steadyfall.github.io/RedWish/",
-        techStack: [`HTML5/CSS3`, `JavaScript`, `Firebase`, `DialogFlow API`]
+        techStack: [`HTML5`, `CSS3`, `JavaScript`, `Firebase`, `DialogFlow API`]
     },
 ]
 
-export const skillsArray = [
-    "Python", 
-    "JavaScript (ES6)", 
-    "TypeScript", 
-    "Django", 
-    "Flask", 
-    "React", 
-    "Next.js", 
-    "Node.js", 
-    "Postgres", 
-    "MySQL", 
-    "Docker", 
-    "Bash", 
-    "Powershell", 
-    "C", 
-    "C++"
-]
+export const skillsArray = {
+    languages: ["Python", "JavaScript (ES6)", "TypeScript", "Go", "C", "C++20", "SQL"],
+    frameworksAndLibraries: ["Django", "Flask", "React", "TailwindCSS", "Next.js", "Node.js", "Postgres", "MySQL"],
+    tools: ["Bash", "Powershell", "Docker", "Postman"],
+}
+// "Axios", "Socket.IO"
+// databases: ["Postgres", "MySQL", "Redis"]

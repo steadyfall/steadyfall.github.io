@@ -6,11 +6,58 @@ import { Icon } from '@iconify/react';
 import { techIcons } from '@/lib/techIcons';
 
 interface SkillsProps {
-    arr: string[];
+    arr: {
+        languages: string[];
+        frameworksAndLibraries: string[];
+        databases?: string[];
+        tools: string[];
+    };
 }
 
 export function Skills({ arr }: SkillsProps) {
     const [skills, setSkills] = useState(arr)
+    const result = Object.entries(skills).map(([key, value]) => {
+        return (
+            <div className="mb-4" suppressHydrationWarning>
+                <div className="text-xl mb-2 font-bold">
+                    {
+                        <BlurFade
+                        delay={BLUR_FADE_DELAY * 10}
+                        >
+                        {(key === "frameworksAndLibraries") 
+                        ? (
+                            ('databases' in skills) 
+                            ? `Frameworks & Libraries` 
+                            : `Frameworks, Libraries & Databases`
+                        )
+                        : key.charAt(0).toUpperCase() + key.slice(1)}:
+                        </BlurFade>
+                    }
+                </div>
+                <div className="flex flex-wrap gap-1">
+                    {
+                        value.map((skillText, index) => (
+                            <BlurFade
+                            key={index}
+                            delay={BLUR_FADE_DELAY * 10 + index * 0.05}
+                            >
+                                <Badge key={index}>
+                                    {
+                                        techIcons?.[skillText] &&
+                                        <span className="mr-2">{
+                                            <Icon icon={techIcons[skillText]} 
+                                            inline={true} width={18} height={18}/>
+                                        }</span>
+                                    }
+                                    <span>{skillText}</span>
+                                </Badge>
+                            </BlurFade>
+                        ))
+                    }
+                </div>
+            </div>
+        );
+    });
     return (
         <section id="skills" className="mb-12">
             <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -19,26 +66,7 @@ export function Skills({ arr }: SkillsProps) {
                     "inline-block text-transparent bg-clip-text bg-gradient-to-r dark:from-gray-300 dark:to-gray-100 from-[#434343] to-[#000000]"
                 )}>Skills</h2>
             </BlurFade>
-            {skills && skills.length > 0 ? (
-                <div className="flex flex-wrap gap-1">
-                    {skills.map((skillText, index) => (
-                        <BlurFade
-                        key={index}
-                        delay={BLUR_FADE_DELAY * 10 + index * 0.05}
-                        >
-                            <Badge key={index}>
-                                {
-                                    techIcons?.[skillText] &&
-                                    <span className="mr-2">{
-                                        <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
-                                    }</span>
-                                }
-                                <span>{skillText}</span>
-                            </Badge>
-                        </BlurFade>
-                    ))}
-                </div>
-            ) : (
+            {skills ? result : (
                 <p>No skills to display.</p>
             )}
         </section>
