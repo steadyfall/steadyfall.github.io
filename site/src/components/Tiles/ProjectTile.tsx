@@ -1,8 +1,11 @@
 import { ArrowUpRight } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { Badge } from '@/components/ui/Badge'
+import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import { Icon } from '@iconify/react';
+import { techIcons } from '@/lib/techIcons';
 
-export type ProjectTileProps = {
+type ProjectTileDetailProps = {
   title: string
   description: string
   repo: boolean,
@@ -12,7 +15,11 @@ export type ProjectTileProps = {
   techStack: string[]
 }
 
-export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl, techStack }: ProjectTileProps) {
+export type ProjectTileProps = ProjectTileDetailProps & {
+  delayTime: number;
+};
+
+export function ProjectTile({ delayTime, title, description, repo, repoUrl, live, liveUrl, techStack }: ProjectTileProps) {
   const isDesktop = useMediaQuery('(min-width: 768px)')
   return (
     <div className="items-center">
@@ -41,9 +48,22 @@ export function ProjectTile({ title, description, repo, repoUrl, live, liveUrl, 
       </div>
       <p className="text-gray-700 dark:text-gray-300">{description}</p>
       {techStack && techStack.length > 0 && (
-          <div className="mt-1 flex flex-wrap gap-1">
+          <div className="mt-3 flex flex-wrap gap-1">
               {techStack.map((skillText, index) => (
-                  <Badge key={index} variant={`secondary`}>{skillText}</Badge>
+                  <BlurFade
+                  key={index}
+                  delay={delayTime + index * 0.05}
+                  >
+                    <Badge key={index} variant={`secondary`}>
+                      {
+                        techIcons?.[skillText] &&
+                        <span className="mr-2">{
+                            <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
+                        }</span>
+                      }
+                      <span>{skillText}</span>
+                    </Badge>
+                  </BlurFade>
               ))}
           </div>
       )}
