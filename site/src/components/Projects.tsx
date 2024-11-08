@@ -22,7 +22,7 @@ export function Projects({ arr }: ProjectProps) {
                     {projects.map((project, index) => (
                         <BlurFade
                         key={index}
-                        delay={BLUR_FADE_DELAY * 12 + index * 0.05}
+                        delay={BLUR_FADE_DELAY * 12 + index * 0.2}
                         >
                             <ProjectTile key={index} {...project} />
                         </BlurFade>
