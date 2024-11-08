@@ -16,7 +16,7 @@ type ProjectTileDetailProps = {
 }
 
 export type ProjectTileProps = ProjectTileDetailProps & {
-  delayTime: number;
+  delayTime?: number;
 };
 
 export function ProjectTile({ delayTime, title, description, repo, repoUrl, live, liveUrl, techStack }: ProjectTileProps) {
@@ -50,6 +50,7 @@ export function ProjectTile({ delayTime, title, description, repo, repoUrl, live
       {techStack && techStack.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1">
               {techStack.map((skillText, index) => (
+                  delayTime ? (
                   <BlurFade
                   key={index}
                   delay={delayTime + index * 0.05}
@@ -64,6 +65,17 @@ export function ProjectTile({ delayTime, title, description, repo, repoUrl, live
                       <span>{skillText}</span>
                     </Badge>
                   </BlurFade>
+                  ) : (
+                    <Badge key={index} variant={`secondary`}>
+                      {
+                        techIcons?.[skillText] &&
+                        <span className="mr-2">{
+                            <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
+                        }</span>
+                      }
+                      <span>{skillText}</span>
+                    </Badge>
+                  )
               ))}
           </div>
       )}
