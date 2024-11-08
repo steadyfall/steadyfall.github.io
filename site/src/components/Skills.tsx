@@ -2,6 +2,8 @@ import { Badge } from '@/components/ui/Badge';
 import { useState } from 'react';
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { cn } from '@/lib/utils';
+import { Icon } from '@iconify/react';
+import { techIcons } from '@/lib/techIcons';
 
 interface SkillsProps {
     arr: string[];
@@ -24,7 +26,15 @@ export function Skills({ arr }: SkillsProps) {
                         key={index}
                         delay={BLUR_FADE_DELAY * 10 + index * 0.05}
                         >
-                            <Badge key={index}>{skillText}</Badge>
+                            <Badge key={index}>
+                                {
+                                    techIcons?.[skillText] &&
+                                    <span className="mr-2">{
+                                        <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
+                                    }</span>
+                                }
+                                <span>{skillText}</span>
+                            </Badge>
                         </BlurFade>
                     ))}
                 </div>
