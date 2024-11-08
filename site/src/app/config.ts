@@ -6,6 +6,16 @@ export const detailsForMetadata = {
     description: "A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion."
 };
 
+export const personalDetails = {
+    name: "Himank Dave",
+    pronouns: "he/him/his",
+    currentEducation: "3A Computational Mathematics @ UWaterloo",
+    githubLink: "https://github.com/steadyfall",
+    linkedinLink: "https://www.linkedin.com/in/himank-dave/",
+    email: "hddave@uwaterloo.ca",
+    resumeFile: "resume.pdf",
+}
+
 export const experiencesArray = [
     {
         companyLogo: "/images/cactuscreatives.png",
