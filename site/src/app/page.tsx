@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 
 function SmoothScroll() {
   useEffect(() => {
-    const handleAnchorClick = (event) => {
+    const handleAnchorClick = (event: { target: any; preventDefault: () => void; }) => {
       const target = event.target;
 
       // Check if the clicked element is an anchor link with a hash href
