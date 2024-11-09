@@ -61,9 +61,11 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <div className={`min-h-screen bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200`}>
           <div className="transition-colors duration-300">
-            <Navbar />
-            <Providers> {children} </Providers>
-            <Footer />
+            <Providers> 
+              <Navbar />
+              {children} 
+              <Footer />
+            </Providers>
           </div>
         </div>
       </body>
