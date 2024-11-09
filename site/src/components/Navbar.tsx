@@ -10,7 +10,7 @@ const Navbar = () => {
                     <ul className="flex gap-4 sm:gap-8">
                         <li><a href="/" className="hover:underline hover:underline-offset-4">home</a></li>
                         <li><a href="#experience" className="hover:underline hover:underline-offset-4">experience</a></li>
-                        {/* <li><a href="#education" className="hover:underline hover:underline-offset-4">education</a></li> *\}
+                        {/* <li><a href="#education" className="hover:underline hover:underline-offset-4">education</a></li> */}
                         <li><a href="#projects" className="hover:underline hover:underline-offset-4">projects</a></li>
                     </ul>
                     <div className="flex gap-0 sm:gap-4">
