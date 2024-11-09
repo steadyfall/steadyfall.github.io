@@ -3,6 +3,8 @@ import { Inter, Space_Mono } from 'next/font/google'
 import { Providers } from './providers'
 import "./globals.css";
 import { detailsForMetadata } from "./config";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceMono = Space_Mono({ 
@@ -58,7 +60,11 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <div className={`min-h-screen bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200`}>
+          <div className="transition-colors duration-300">
+            <Navbar />
             <Providers> {children} </Providers>
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
