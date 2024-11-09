@@ -56,7 +56,7 @@ export default function RootLayout({
   // ${inter.className} 
   return (
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <div className={`min-h-screen bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200`}>
             <Providers> {children} </Providers>
         </div>

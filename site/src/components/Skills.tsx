@@ -16,9 +16,9 @@ interface SkillsProps {
 
 export function Skills({ arr }: SkillsProps) {
     const [skills, setSkills] = useState(arr)
-    const result = Object.entries(skills).map(([key, value]) => {
+    const result = Object.entries(skills).map(([key, value], idx) => {
         return (
-            <div className="mb-4" suppressHydrationWarning>
+            <div className="mb-4" key={idx} suppressHydrationWarning>
                 <div className="text-xl mb-2 font-bold">
                     {
                         <BlurFade
