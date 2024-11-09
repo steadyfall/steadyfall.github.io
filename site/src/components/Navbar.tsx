@@ -5,7 +5,7 @@ const Navbar = () => {
     const completion = useReadingProgress();
 
     return (
-        <div className="sticky top-0 z-50 py-6 backdrop-blur-xl mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+        <header className="sticky top-0 z-50 py-6 backdrop-blur-xl mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
                 <nav className="flex items-center justify-between">
                     <ul className="flex gap-4 sm:gap-8">
                         <li><a href="/" className="hover:underline hover:underline-offset-4">home</a></li>
@@ -17,7 +17,7 @@ const Navbar = () => {
                         <ThemeSwitch />
                     </div>
                 </nav>
-        </div>
+        </header>
     )
 }
 
