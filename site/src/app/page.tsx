@@ -16,7 +16,7 @@ export default function Portfolio() {
       <Navbar />
       <div className="mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
         <Header {...personalDetails} />
-        <main className="container mx-auto px-4 py-8 z-1">
+        <main className="container mx-auto py-8 z-1">
           <About />
           <Experiences arr={experiencesArray} />
           <Education />

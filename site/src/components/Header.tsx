@@ -24,7 +24,7 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
     useEffect(() => { setTimeout(() => { setCopiedId(undefined); }, 3000) }, [copied]);
 
     return (
-        <header className="container mx-auto px-4 py-8">
+        <header className="container mx-auto py-8">
             <div className="flex flex-col md:flex-row items-center justify-between">
                 <BlurFade delay={BLUR_FADE_DELAY}>
                     {(!isDesktop) && (
