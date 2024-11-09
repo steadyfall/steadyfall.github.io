@@ -128,7 +128,7 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
                     )}
                 </BlurFade>
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY * 2}>
+            {/* <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <nav className="mt-8">
                     <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
                     <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
@@ -138,7 +138,7 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
                     <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
                     </ul>
                 </nav>
-            </BlurFade>
+            </BlurFade> */}
         </header>
   )
 }
