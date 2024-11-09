@@ -49,7 +49,7 @@ function SmoothScroll() {
 
 export default function Portfolio() {
   return (
-    <div className="bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <div className="transition-colors duration-300">
       <SmoothScroll />
       <Navbar />
       <div className="mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
