@@ -1,5 +1,4 @@
 import { ArrowUpRight, Copy, CopyCheck } from 'lucide-react'
-import ThemeSwitch from './ThemeSwitch'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade'
 import Image from 'next/image'
@@ -43,7 +42,6 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
                     <BlurFade delay={BLUR_FADE_DELAY}>
                         <div className="flex items-center justify-center md:justify-start">
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mr-4">{name}</h1>
-                            <ThemeSwitch />
                         </div>
                     </BlurFade>
                     <div className="flex justify-center md:justify-start mt-4 space-x-4">

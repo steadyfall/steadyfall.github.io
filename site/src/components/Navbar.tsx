@@ -1,18 +1,23 @@
 import useReadingProgress from '@/hooks/useReadingProgress'
+import ThemeSwitch from './ThemeSwitch';
 
 const Navbar = () => {
     const completion = useReadingProgress();
 
     return (
-        <nav className="z-50 py-0.5 sticky top-0">
-            {/* <div className="flex items-center justify-between container mx-auto text-xl"></div> */}
-            <div className="h-0.5 overflow-hidden">
-                <span
-                    className="absolute bg-emerald-600 dark:bg-emerald-400 h-full w-full top-0 bottom-0"
-                    style={{ transform: `translateX(${completion - 100}%)` }}
-                />
-            </div>
-        </nav>
+        <div className="sticky top-0 z-50 py-6 backdrop-blur-sm">
+            <nav className="flex items-center justify-between">
+                <ul className="flex gap-4 sm:gap-8">
+                    <li><a href="#about" className="hover:underline hover:underline-offset-4">home</a></li>
+                    <li><a href="#experience" className="hover:underline hover:underline-offset-4">experience</a></li>
+                    <li><a href="#education" className="hover:underline hover:underline-offset-4">education</a></li>
+                    <li><a href="#projects" className="hover:underline hover:underline-offset-4">projects</a></li>
+                </ul>
+                <div className="flex gap-0 sm:gap-4">
+                    <ThemeSwitch />
+                </div>
+            </nav>
+        </div>
     )
 }
 

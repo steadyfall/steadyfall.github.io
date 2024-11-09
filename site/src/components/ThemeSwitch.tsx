@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Moon, Sun } from 'lucide-react'
 import { useState, useEffect } from 'react'
@@ -23,10 +23,17 @@ export default function ThemeSwitch() {
     // priority={false}
   )
 
-  if (resolvedTheme === 'dark') {
-    return <Sun onClick={() => setTheme('light')} />
-  }
-  if (resolvedTheme === 'light') {
-    return <Moon onClick={() => setTheme('dark')} />
-  }
+  return (
+    <button
+    className="cursor-pointer"
+    onClick={() => {
+      setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    }}>
+      {
+        resolvedTheme === 'dark' 
+        ? <Sun className="w-4 h-4 md:w-5 md:h-5 text-orange-300"/> 
+        : <Moon className="w-4 h-4 md:w-5 md:h-5 text-indigo-500"/>
+      }
+    </button>
+  )
 }
