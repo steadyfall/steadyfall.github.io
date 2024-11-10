@@ -18,15 +18,13 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        working-directory: ./site
         run: npm ci
 
       - name: Build
-        working-directory: ./site
         run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: ./site/out
+          publish_dir: ./out
