@@ -38,18 +38,23 @@ const About = () => {
             </div>
             <p>
               For those of you curious, the favicon is a <Highlight text="4-hypercube graph" color="cyan" /> made via Python, using NetworkX and Matplotlib.
-              Check <LinkWithArrow
+              Check the <LinkWithArrow
                 href="/icon.ico" target="_blank"
                 className="mr-1 hover:underline hover:underline-offset-2 text-orange-500"
               >
-                it
+                image
               </LinkWithArrow>
-              out and learn <LinkWithArrow
+              out, learn <LinkWithArrow
                 href="https://en.wikipedia.org/wiki/Hypercube_graph" target="_blank"
                 className="mr-1 hover:underline hover:underline-offset-2 text-blue-violet-500"
               >
                 more
-              </LinkWithArrow>.
+              </LinkWithArrow> about hypercube graphs & here is the <LinkWithArrow
+                href="https://github.com/steadyfall/steadyfall.github.io/blob/main/hypercube/generate.py" target="_blank"
+                className="mr-1 hover:underline hover:underline-offset-2 dark:text-firefly-500 text-firefly-600"
+              >
+                code
+              </LinkWithArrow> to generate it yourself.
             </p>
           </div>
         </BlurFade>
