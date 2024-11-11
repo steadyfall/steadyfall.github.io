@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react"
-import { detailsForMetadata, personalDetails } from "@/app/config"
+import { detailsForMetadata, personalDetails } from "@/data/resume"
 import { cn } from "@/lib/utils"
 
 const Footer = () => {

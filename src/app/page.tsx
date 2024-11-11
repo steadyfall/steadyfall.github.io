@@ -6,17 +6,17 @@ import { Experiences } from '@/components/Experiences'
 import { Projects } from '@/components/Projects'
 import { Education } from '@/components/Education'
 import { Skills } from '@/components/Skills';
-import { personalDetails, experiencesArray, projectsArray, skillsArray } from '@/app/config';
+import { personalDetails, experiences, projects, skills } from '@/data/resume';
 
 export default function Portfolio() {
   return (
     <main className="container py-6 z-1">
       <Header {...personalDetails} />
       <About />
-      <Experiences arr={experiencesArray} />
+      <Experiences arr={experiences} />
       <Education />
-      <Skills arr={skillsArray}/>
-      <Projects arr={projectsArray} />
+      <Skills arr={skills}/>
+      <Projects arr={projects} />
     </main>
   )
 }
