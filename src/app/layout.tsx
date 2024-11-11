@@ -3,8 +3,6 @@ import { Inter, Space_Mono } from 'next/font/google'
 import { Providers } from './providers'
 import "./globals.css";
 import { detailsForMetadata } from "@/data/resume";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 
@@ -66,9 +64,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode; }
         <SmoothScrollProvider offset={90}>
           <div className="flex flex-col min-h-screen">
             <Providers>
-              <Navbar />
-              <div className="flex-grow mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">{children}</div>
-              <Footer />
+              {children}
             </Providers>
           </div>
         </SmoothScrollProvider>
