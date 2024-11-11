@@ -1,9 +1,9 @@
-import { ArrowUpRight } from 'lucide-react'
+import { Icon } from '@iconify/react';
+import { techIcons } from '@/lib/techIcons';
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { Badge } from '@/components/ui/Badge'
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
-import { Icon } from '@iconify/react';
-import { techIcons } from '@/lib/techIcons';
+import LinkWithArrow from "@/components/ui/LinkWithArrow";
 
 type ProjectTileDetailProps = {
   title: string
@@ -27,22 +27,22 @@ export function ProjectTile({ delayTime, title, description, repo, repoUrl, live
         <h3 className="text-xl font-semibold">{title}</h3>
         <div className="space-x-2 justify-end">
           {repo && (
-            <a
-            href={repoUrl} target="_blank"
-            rel="noopener noreferrer" aria-label={`Repository link for ${title}`}
-            className="text-pink-500 inline-flex items-center hover:underline hover:underline-offset-2"
+            <LinkWithArrow
+              href={repoUrl} target="_blank"
+              rel="noopener noreferrer" aria-label={`Repository link for ${title}`}
+              className="hover:underline hover:underline-offset-2 text-pink-500"
             >
-              repo <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-            </a>
+              repo
+            </LinkWithArrow>
           )}
           {live && (
-            <a
-            href={liveUrl} target="_blank"
-            rel="noopener noreferrer" aria-label={`Live link for ${title}`}
-            className="text-midnight-blue-500 inline-flex items-center hover:underline hover:underline-offset-2"
+            <LinkWithArrow
+              href={liveUrl} target="_blank"
+              rel="noopener noreferrer" aria-label={`Live link for ${title}`}
+              className="hover:underline hover:underline-offset-2 text-midnight-blue-500"
             >
-              link <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-            </a>
+              link
+            </LinkWithArrow>
           )}
         </div>
       </div>

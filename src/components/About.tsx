@@ -1,7 +1,7 @@
-import { ArrowUpRight } from "lucide-react"
 import BlurFade, { BLUR_FADE_DELAY } from "@/components/ui/BlurFade";
 import Highlight from "@/components/ui/Highlighter";
 import { cn } from "@/lib/utils";
+import LinkWithArrow from "@/components/ui/LinkWithArrow";
 
 const About = () => {
   return (
@@ -38,18 +38,18 @@ const About = () => {
             </div>
             <p>
               For those of you curious, the favicon is a <Highlight text="4-hypercube graph" color="cyan" /> made via Python, using NetworkX and Matplotlib.
-              Check <a
+              Check <LinkWithArrow
                 href="/icon.ico" target="_blank"
-                className="inline-flex items-center hover:underline hover:underline-offset-2 text-orange-500"
+                className="mr-1 hover:underline hover:underline-offset-2 text-orange-500"
               >
-                it <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-              </a>
-              out and learn <a
+                it
+              </LinkWithArrow>
+              out and learn <LinkWithArrow
                 href="https://en.wikipedia.org/wiki/Hypercube_graph" target="_blank"
-                className="inline-flex items-center hover:underline hover:underline-offset-2 text-blue-violet-500"
+                className="mr-1 hover:underline hover:underline-offset-2 text-blue-violet-500"
               >
-                more <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-              </a>.
+                more
+              </LinkWithArrow>.
             </p>
           </div>
         </BlurFade>

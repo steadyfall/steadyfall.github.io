@@ -1,4 +1,4 @@
-import { ArrowUpRight, Briefcase } from 'lucide-react'
+import LinkWithArrow from "@/components/ui/LinkWithArrow";
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import Image from 'next/image'
 
@@ -32,14 +32,14 @@ export function ExperienceTile({ companyLogo, companyName, companyLink, position
                 <div className="flex flex-col md:items-start justify-between sm:flex-row mb-4">
                     <div>
                         <h2 className="text-xl font-bold">{position}</h2>
-                        <a 
+                        <LinkWithArrow 
                           href={companyLink} target="_blank"
                           rel="noopener noreferrer" aria-label={`Link to ${companyName}`}
                         >
-                          <h3 className="text-lg font-semibold inline-flex items-center">
-                            {companyName} <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
+                          <h3 className="text-lg font-semibold">
+                            {companyName}
                           </h3>
-                        </a>
+                        </LinkWithArrow>
                         {(!isDesktop) && <h3 className="text-gray-600 font-typewriter dark:text-gray-400">{period}</h3>}
                     </div>
                     {isDesktop && (<h3 className="text-gray-600 font-typewriter dark:text-gray-400">{period}</h3>)}

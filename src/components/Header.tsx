@@ -1,5 +1,6 @@
-import { ArrowUpRight, Copy, CopyCheck } from 'lucide-react'
+import { Copy, CopyCheck } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import LinkWithArrow from "@/components/ui/LinkWithArrow";
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade'
 import Image from 'next/image'
 
@@ -46,32 +47,36 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
                     </BlurFade>
                     <div className="flex justify-center md:justify-start mt-4 space-x-4">
                         <BlurFade delay={BLUR_FADE_DELAY}>
-                            <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                            className="inline-flex items-center hover:underline hover:underline-offset-2 text-pink-500"
+                            <LinkWithArrow 
+                                href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                                className="hover:underline hover:underline-offset-2 text-pink-500"
                             >
-                            github <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-                            </a>
+                                github
+                            </LinkWithArrow>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY}>
-                            <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                            className="inline-flex items-center hover:underline hover:underline-offset-2 text-thunderbird-600"
+                            <LinkWithArrow 
+                                href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                                className="hover:underline hover:underline-offset-2 text-thunderbird-600"
                             >
-                            linkedin <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-                            </a>
+                                linkedin
+                            </LinkWithArrow>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY}>
-                            <a href={`mailto:` + email} aria-label="Email"
-                            className="inline-flex items-center hover:underline hover:underline-offset-2 text-azure-radiance-600" // text-orange-500"
+                            <LinkWithArrow 
+                                href={`mailto:` + email} aria-label="Email"
+                                className="hover:underline hover:underline-offset-2 text-azure-radiance-600" // text-orange-500"
                             >
-                            email <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-                            </a>
+                                email
+                            </LinkWithArrow>
                         </BlurFade>
                         <BlurFade delay={BLUR_FADE_DELAY}>
-                            <a href={`/` + resumeFile} target="_blank" aria-label="Resume"
-                            className="inline-flex items-center hover:underline hover:underline-offset-2 text-neon-green-500 dark:text-neon-green-400"
+                            <LinkWithArrow 
+                                href={`/` + resumeFile} target="_blank" aria-label="Resume"
+                                className="hover:underline hover:underline-offset-2 text-neon-green-500 dark:text-neon-green-400"
                             >
-                            resume <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5"/>
-                            </a>
+                                resume
+                            </LinkWithArrow>
                         </BlurFade>
                     </div>
                     <div className="mt-4 text-sm md:text-base lg:text-lg">
