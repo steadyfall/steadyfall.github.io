@@ -6,6 +6,7 @@ import { detailsForMetadata } from "./config";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceMono = Space_Mono({ 
@@ -51,11 +52,7 @@ export const metadata: Metadata = {
   verification: { google: "Wwciyzq9ANfCqyfI9hjLic5BhSc30awKaJPxbWCm5mc" }
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode; }) {
   // ${inter.className} 
   return (
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
@@ -66,13 +63,15 @@ export default function RootLayout({
         )} 
         suppressHydrationWarning
       >
-        <div className="flex flex-col min-h-screen">
-          <Providers>
-            <Navbar />
-            <div className="flex-grow mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">{children}</div>
-            <Footer />
-          </Providers>
-        </div>
+        <SmoothScrollProvider offset={90}>
+          <div className="flex flex-col min-h-screen">
+            <Providers>
+              <Navbar />
+              <div className="flex-grow mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">{children}</div>
+              <Footer />
+            </Providers>
+          </div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
