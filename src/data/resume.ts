@@ -16,7 +16,7 @@ export const personalDetails = {
     resumeFile: "resume.pdf",
 }
 
-export const experiencesArray = [
+export const experiences = [
     {
         companyLogo: "/images/cactuscreatives.png",
         companyName: "Cactus Creatives",
@@ -46,7 +46,7 @@ export const experiencesArray = [
     }
 ]
 
-export const projectsArray = [
+export const projects = [
     {
         title: "Trivivo",
         description: "Crafted a feature-rich, dynamic quiz game platform with progressive difficulty levels, real-time analytics, and comprehensive admin tools, complemented by a secure API for question management and user engagement tracking.",
@@ -99,7 +99,7 @@ export const projectsArray = [
     },
 ]
 
-export const skillsArray = {
+export const skills = {
     languages: ["Python", "JavaScript (ES6)", "TypeScript", "Go", "C", "C++20", "SQL"],
     frameworksAndLibraries: ["Django", "Flask", "React", "TailwindCSS", "Next.js", "Node.js", "Postgres", "MySQL"],
     tools: ["Bash", "Powershell", "Docker", "Postman"],
