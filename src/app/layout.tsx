@@ -5,6 +5,7 @@ import "./globals.css";
 import { detailsForMetadata } from "./config";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ['latin'] })
 const spaceMono = Space_Mono({ 
@@ -58,15 +59,19 @@ export default function RootLayout({
   // ${inter.className} 
   return (
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <div className={`min-h-screen bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200`}>
-          <div className="transition-colors duration-300">
-            <Providers> 
-              <Navbar />
-              {children} 
-              <Footer />
-            </Providers>
-          </div>
+      <body className={
+        cn(
+          "bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200",
+          "transition-colors duration-300"
+        )} 
+        suppressHydrationWarning
+      >
+        <div className="flex flex-col min-h-screen">
+          <Providers>
+            <Navbar />
+            <div className="flex-grow mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">{children}</div>
+            <Footer />
+          </Providers>
         </div>
       </body>
     </html>

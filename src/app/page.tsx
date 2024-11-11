@@ -10,15 +10,13 @@ import { personalDetails, experiencesArray, projectsArray, skillsArray } from '@
 
 export default function Portfolio() {
   return (
-    <div className="mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
+    <main className="container py-6 z-1">
       <Header {...personalDetails} />
-      <main className="container mx-auto py-8 z-1">
-        <About />
-        <Experiences arr={experiencesArray} />
-        <Education />
-        <Skills arr={skillsArray}/>
-        <Projects arr={projectsArray} />
-      </main>
-    </div>
+      <About />
+      <Experiences arr={experiencesArray} />
+      <Education />
+      <Skills arr={skillsArray}/>
+      <Projects arr={projectsArray} />
+    </main>
   )
 }

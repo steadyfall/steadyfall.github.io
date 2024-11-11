@@ -6,8 +6,8 @@ const Navbar = () => {
     // const completion = useReadingProgress();
 
     return (
-        <header className="sticky top-0 z-50 py-6 backdrop-blur-xl mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
-            <nav className="flex items-center justify-between">
+        <header className="sticky top-0 z-50 py-6 backdrop-blur-xl">
+            <nav className="flex items-center justify-between mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">
                 <ul className="flex gap-4 sm:gap-8" onClick={
                     (event: React.SyntheticEvent) => {
                         event.preventDefault();
