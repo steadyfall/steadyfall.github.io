@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export default function NotFound() {
     return (
-    <main className="flex flex-col items-center container mt-[28vh] z-1">
+    <main className="flex flex-col items-center justify-center container mx-auto mt-[28vh] z-1">
         <h1 className={
             cn(
                 "font-typewriter text-6xl md:text-7xl lg:text-8xl font-bold",
