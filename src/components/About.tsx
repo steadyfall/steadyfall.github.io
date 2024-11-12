@@ -21,11 +21,11 @@ const About = () => {
               I am eager to work in areas that leverage the combined potential of <Highlight text="machine learning"/> and
               software development, regardless of traditional boundaries.
             </p>
-            <p className="mb-2">
+            {/* <p className="mb-2">
               Outside of academics and professional career, I enjoy contributing to open-source projects, working on side projects, participating in hackathons and playing
               table tennis, football, cricket and badminton. I also like to travel & explore new places, cuisines & restaurants.
-            </p>
-            <div className="inline-flex flex-wrap gap-x-0.5 gap-y-1 mb-2 ">
+            </p> */}
+            {/* <div className="inline-flex flex-wrap gap-x-0.5 gap-y-1 mb-2 ">
               <span>You can find me</span> <Highlight text="re-watching" color="pink"/> <span>any one of these TV series:</span>
               <Highlight text="Silicon Valley" color="pink"/>,
               <Highlight text="South Park" color="pink"/>,
@@ -35,8 +35,13 @@ const About = () => {
               <Highlight text="Brooklyn 9-9" color="pink"/>,
               <Highlight text="How I Met Your Mother" color="pink"/>,
               <Highlight text="Impractical Jokers" color="pink"/>.
-            </div>
-            <p>
+            </div> */}
+            <p className="mb-2">
+            You can find me <Highlight text="re-watching" color="pink"/> any one of these TV series:&nbsp;
+            <Highlight text="Silicon Valley" color="pink"/>,&nbsp;
+            <Highlight text="South Park" color="pink"/> and <Highlight text="The Office" color="pink"/>.
+            </p>
+            <p className="mb-2">
               For those of you curious, the favicon is a <Highlight text="4-hypercube graph" color="cyan" /> made via Python, using NetworkX and Matplotlib.
               Check the <LinkWithArrow
                 href="/icon.ico" target="_blank"
