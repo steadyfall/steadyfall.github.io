@@ -14,7 +14,11 @@ export default function LinkWithArrow({ className, href, children, ...props }: R
       {...props}
     >
         {children}
-        <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
+        <ArrowUpRight className={cn(
+          "w-4 h-4 md:w-5 md:h-5",
+          "transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1",
+          "flex-shrink-0"
+        )}/>
     </a>
   );
 }
