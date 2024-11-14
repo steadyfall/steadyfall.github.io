@@ -5,17 +5,17 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const formatDate = (d: Date): string => {
+export const formatDate = (d: string): string => {
   return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: '2-digit',
     year: 'numeric'
-  }).format(d);
+  }).format(new Date(d));
 };
 
-export const formatShortDate = (d: Date): string => {
+export const formatShortDate = (d: string): string => {
   return new Intl.DateTimeFormat('en-US', {
     month: 'long',
     day: '2-digit',
-  }).format(d);
+  }).format(new Date(d));
 };
