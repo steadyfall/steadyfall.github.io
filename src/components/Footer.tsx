@@ -9,7 +9,7 @@ const Footer = () => {
     )}>
       <div className={cn(
         "flex flex-col items-center justify-center sm:flex-row-reverse sm:justify-between",
-        "mx-auto max-w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl"
+        "max-w-full mx-auto px-8 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl"
       )}>
         <div className="flex justify-center md:justify-start space-x-4">
             <LinkWithArrow 

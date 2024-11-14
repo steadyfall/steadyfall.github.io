@@ -10,7 +10,7 @@ import { personalDetails, experiences, projects, skills } from '@/data/resume';
 
 export default function Portfolio() {
   return (
-    <main className="container py-6 z-1">
+    <main className="py-6 z-1">
       <Header {...personalDetails} />
       <About />
       <Experiences arr={experiences} />

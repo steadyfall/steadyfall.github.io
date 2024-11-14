@@ -9,7 +9,7 @@ export default async function HomeLayout({
   return (
   <>
     <Navbar />
-    <div className="flex-grow mx-auto w-full px-4 sm:px-12 md:px-16 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl">{children}</div>
+    <div className="flex-grow w-full mx-auto px-8 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">{children}</div>
     <Footer />
   </>
   );
