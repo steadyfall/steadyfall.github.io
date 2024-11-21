@@ -1,6 +1,6 @@
 import LinkWithArrow from "@/components/ui/LinkWithArrow";
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import Image from 'next/image'
+// import Image from 'next/image';
 
 export type ExperienceTileProps = {
   companyLogo: string

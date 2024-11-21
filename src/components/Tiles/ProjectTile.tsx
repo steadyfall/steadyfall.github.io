@@ -1,8 +1,7 @@
 import { Icon } from '@iconify/react';
 import { techIcons } from '@/lib/techIcons';
-import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { Badge } from '@/components/ui/Badge'
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import { Badge } from '@/components/ui/Badge';
+import BlurFade from '@/components/ui/BlurFade';
 import LinkWithArrow from "@/components/ui/LinkWithArrow";
 
 type ProjectTileDetailProps = {
@@ -20,7 +19,7 @@ export type ProjectTileProps = ProjectTileDetailProps & {
 };
 
 export function ProjectTile({ delayTime, title, description, repo, repoUrl, live, liveUrl, techStack }: ProjectTileProps) {
-  const isDesktop = useMediaQuery('(min-width: 768px)')
+  // const isDesktop = useMediaQuery('(min-width: 768px)')
   return (
     <div className="items-center">
       <div className="flex flex-col md:items-start justify-between sm:flex-row mb-2">

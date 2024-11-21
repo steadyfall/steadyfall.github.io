@@ -2,7 +2,7 @@ import { Copy, CopyCheck } from 'lucide-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import LinkWithArrow from "@/components/ui/LinkWithArrow";
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import { useEffect, useState } from 'react';
 import copy from 'copy-to-clipboard';

@@ -15,6 +15,7 @@ interface SkillsProps {
 }
 
 export function Skills({ arr }: SkillsProps) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [skills, setSkills] = useState(arr)
     const result = Object.entries(skills).map(([key, value], idx) => {
         return (

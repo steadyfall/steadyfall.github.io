@@ -1,4 +1,5 @@
 import BackButton from "@/components/ui/BackButton";
+import Link from 'next/link'
 import { cn } from "@/lib/utils";
 
 export default function NotFound() {
@@ -13,12 +14,12 @@ export default function NotFound() {
             404
         </h1>
         <div className="mt-4 text-center">
-            The page you're looking for, is either not there or has been moved.
+            The page you&apos;re looking for, is either not there or has been moved.
         </div>
         <ul className="mt-4 flex gap-4 sm:gap-8">
             <li>{<BackButton>go back</BackButton>}</li>
             <li>|</li>
-            <li><a href="/" className="text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:underline hover:underline-offset-4">home</a></li>
+            <li><Link href="/" className="text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:underline hover:underline-offset-4">home</Link></li>
         </ul>
     </main>
     )

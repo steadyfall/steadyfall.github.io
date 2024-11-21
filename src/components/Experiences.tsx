@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ExperienceTileProps, ExperienceTile } from './Tiles/ExperienceTile'
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { cn } from '@/lib/utils';
@@ -10,6 +10,7 @@ interface ExperiencesProps {
 }
 
 export function Experiences({ arr }: ExperiencesProps) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [experiences, setExperiences] = useState(arr)
     return (
         <section id="experience" className="mb-12">

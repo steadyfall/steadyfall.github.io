@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile'
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { cn } from '@/lib/utils';
@@ -8,6 +8,7 @@ interface ProjectProps {
 }
 
 export function Projects({ arr }: ProjectProps) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [projects, setProjects] = useState(arr)
     return (
         <section id="projects" className="mb-12">
