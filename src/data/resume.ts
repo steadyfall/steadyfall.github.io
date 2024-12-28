@@ -9,7 +9,9 @@ export const detailsForMetadata = {
 export const personalDetails = {
     name: "Himank Dave",
     pronouns: "he/him/his",
-    currentEducation: "3A Computational Mathematics @ UWaterloo",
+    currentEducation: "Computational Mathematics @ University of Waterloo",
+    currentJob: ["Software Developer in Test Intern", "Geotab"],
+    basedFrom: "Toronto",
     githubLink: "https://github.com/steadyfall",
     linkedinLink: "https://www.linkedin.com/in/himank-dave/",
     email: "hddave@uwaterloo.ca",

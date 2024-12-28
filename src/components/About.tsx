@@ -15,11 +15,12 @@ const About = () => {
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <div className="text-gray-700 dark:text-gray-300">
             <p className="mb-2">
-              I am a <Highlight text="junior"/> at the <Highlight text="University of Waterloo"/>, pursuing a major in <Highlight text="Computational Mathematics"/>.
-              With a <Highlight text="passion for technology and innovation"/>, I am constantly exploring new
-              areas in <Highlight text="software development"/> and <Highlight text="artificial intelligence"/>.
-              I am eager to work in areas that leverage the combined potential of <Highlight text="machine learning"/> and
-              software development, regardless of traditional boundaries.
+            I am a <Highlight text="software developer" color="red"/> based in <Highlight text="Toronto" color="red"/> and currently a <Highlight text="junior" /> pursuing a 
+            <Highlight text="Computational Mathematics" /> major at the <Highlight text="University of Waterloo" />.
+            I am passionate about tech and innovation, always exploring the <span className="underline underline-offset-4">
+              intersection of software
+              development and AI.
+            </span>
             </p>
             {/* <p className="mb-2">
               Outside of academics and professional career, I enjoy contributing to open-source projects, working on side projects, participating in hackathons and playing
@@ -37,7 +38,8 @@ const About = () => {
               <Highlight text="Impractical Jokers" color="pink"/>.
             </div> */}
             <p className="mb-2">
-            You can find me <Highlight text="re-watching" color="pink"/> any one of these TV series:&nbsp;
+            You can find me <Highlight text="re-watching" color="pink"/> any one of these series:&nbsp;
+            <Highlight text="Breaking Bad" color="pink"/>,&nbsp;
             <Highlight text="Silicon Valley" color="pink"/>,&nbsp;
             <Highlight text="South Park" color="pink"/> and <Highlight text="The Office" color="pink"/>.
             </p>
