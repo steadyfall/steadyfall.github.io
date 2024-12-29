@@ -20,6 +20,13 @@ export const personalDetails = {
 
 export const experiences = [
     {
+        companyLogo: "/images/geotab.jpeg",
+        companyName: "Geotab",
+        companyLink: "https://geotab.com/",
+        position: "Test Automation Developer Intern",
+        period: "Jan 2025 - Present",
+    },
+    {
         companyLogo: "/images/cactuscreatives.png",
         companyName: "Cactus Creatives",
         companyLink: "https://cactuscreatives.com/",
