@@ -19,6 +19,7 @@ export type HeaderProps = {
     resumeFile: string,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Header = ({name, pronouns, currentEducation, currentJob, basedFrom, githubLink, linkedinLink, email, resumeFile}: HeaderProps) => {
     const isDesktop = useMediaQuery('(min-width: 768px)')
     const [copied, setCopiedId] = useState<string>();
