@@ -8,7 +8,7 @@ export type ExperienceTileProps = {
   companyLink: string
   position: string
   period: string
-  responsibilities: string[]
+  responsibilities?: string[]
 }
 
 
@@ -16,7 +16,11 @@ export type ExperienceTileProps = {
 export function ExperienceTile({ companyLogo, companyName, companyLink, position, period, responsibilities }: ExperienceTileProps) {
   const isDesktop = useMediaQuery('(min-width: 768px)')
   return (
-    <div className="mb-6 flex items-center">
+    <div className={
+      (
+        !(responsibilities && responsibilities.length > 0) && !isDesktop ? "-mb-6" : "mb-6"
+      ) + " " + "flex items-center"
+    }>
         <div className="relative flex-grow md:pl-12">
               <div className="bg-white aspect-square absolute left-[5px] top-3 rounded-lg">
                   {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
@@ -44,13 +48,15 @@ export function ExperienceTile({ companyLogo, companyName, companyLink, position
                     </div>
                     {isDesktop && (<h3 className="text-gray-600 font-typewriter dark:text-gray-400">{period}</h3>)}
                 </div>
-                <div className="mt-4">
+                {responsibilities && responsibilities.length > 0 &&
+                  <div className="mt-4">
                     <ul className="list-inside text-gray-700 dark:text-gray-300 space-y-1">
                     {responsibilities.map((responsibility, index) => (
                         <li key={index}>- {responsibility}</li>
                     ))}
                     </ul>
-                </div>
+                  </div>
+                }
             </div>
         </div>
     </div>

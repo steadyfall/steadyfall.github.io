@@ -9,7 +9,9 @@ export const detailsForMetadata = {
 export const personalDetails = {
     name: "Himank Dave",
     pronouns: "he/him/his",
-    currentEducation: "3A Computational Mathematics @ UWaterloo",
+    currentEducation: "Computational Mathematics @ University of Waterloo",
+    currentJob: ["Software Developer in Test Intern", "Geotab"],
+    basedFrom: "Toronto",
     githubLink: "https://github.com/steadyfall",
     linkedinLink: "https://www.linkedin.com/in/himank-dave/",
     email: "hddave@uwaterloo.ca",
@@ -17,6 +19,13 @@ export const personalDetails = {
 }
 
 export const experiences = [
+    {
+        companyLogo: "/images/geotab.jpeg",
+        companyName: "Geotab",
+        companyLink: "https://geotab.com/",
+        position: "Test Automation Developer Intern",
+        period: "Jan 2025 - Present",
+    },
     {
         companyLogo: "/images/cactuscreatives.png",
         companyName: "Cactus Creatives",

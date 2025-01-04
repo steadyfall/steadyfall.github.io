@@ -11,14 +11,15 @@ export type HeaderProps = {
     name: string,
     pronouns: string,
     currentEducation: string,
-    currentJob?: string,
+    currentJob?: string[],
+    basedFrom?: string,
     githubLink: string,
     linkedinLink: string,
     email: string,
     resumeFile: string,
 }
 
-const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linkedinLink, email, resumeFile}: HeaderProps) => {
+const Header = ({name, pronouns, currentEducation, currentJob, basedFrom, githubLink, linkedinLink, email, resumeFile}: HeaderProps) => {
     const isDesktop = useMediaQuery('(min-width: 768px)')
     const [copied, setCopiedId] = useState<string>();
     useEffect(() => { setTimeout(() => { setCopiedId(undefined); }, 3000) }, [copied]);
@@ -81,10 +82,7 @@ const Header = ({name, pronouns, currentEducation, currentJob, githubLink, linke
                     </div>
                     <div className="mt-4 text-sm md:text-base lg:text-lg">
                         {pronouns && (<BlurFade delay={BLUR_FADE_DELAY}>
-                            <p>{pronouns}</p>
-                        </BlurFade>)}
-                        {currentJob && (<BlurFade delay={BLUR_FADE_DELAY}>
-                            <p>{currentJob}</p>
+                            <p className="italic text-xs md:text-sm lg:text-base">{pronouns}</p>
                         </BlurFade>)}
                         {currentEducation && (<BlurFade delay={BLUR_FADE_DELAY}>
                             <p>{currentEducation}</p>
