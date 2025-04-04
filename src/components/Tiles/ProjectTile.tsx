@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { techIcons } from '@/lib/techIcons';
 import { Badge } from '@/components/ui/Badge';
 import BlurFade from '@/components/ui/BlurFade';
-import LinkWithArrow from "@/components/ui/LinkWithArrow";
+import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 type ProjectTileDetailProps = {
   title: string
@@ -47,37 +47,37 @@ export function ProjectTile({ delayTime, title, description, repo, repoUrl, live
       </div>
       <p className="text-gray-700 dark:text-gray-300">{description}</p>
       {techStack && techStack.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1">
-              {techStack.map((skillText, index) => (
-                  delayTime ? (
-                  <BlurFade
-                  key={index}
-                  delay={delayTime + index * 0.05}
-                  >
-                    <Badge key={index} variant={`secondary`}>
-                      {
-                        techIcons?.[skillText] &&
+        <div className="mt-3 flex flex-wrap gap-1">
+          {techStack.map((skillText, index) => (
+            delayTime ? (
+              <BlurFade
+                key={index}
+                delay={delayTime + index * 0.05}
+              >
+                <Badge key={index} variant={'secondary'}>
+                  {
+                    techIcons?.[skillText] &&
                         <span className="mr-2">{
-                            <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
+                          <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
                         }</span>
-                      }
-                      <span>{skillText}</span>
-                    </Badge>
-                  </BlurFade>
-                  ) : (
-                    <Badge key={index} variant={`secondary`}>
-                      {
-                        techIcons?.[skillText] &&
+                  }
+                  <span>{skillText}</span>
+                </Badge>
+              </BlurFade>
+            ) : (
+              <Badge key={index} variant={'secondary'}>
+                {
+                  techIcons?.[skillText] &&
                         <span className="mr-2">{
-                            <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
+                          <Icon icon={techIcons[skillText]} inline={true} width={18} height={18}/>
                         }</span>
-                      }
-                      <span>{skillText}</span>
-                    </Badge>
-                  )
-              ))}
-          </div>
+                }
+                <span>{skillText}</span>
+              </Badge>
+            )
+          ))}
+        </div>
       )}
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 export default async function HomeLayout({
   children,
@@ -7,10 +7,10 @@ export default async function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <>
-    <Navbar />
-    <div className="flex-grow w-full mx-auto px-8 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">{children}</div>
-    <Footer />
-  </>
+    <>
+      <Navbar />
+      <div className="flex-grow w-full mx-auto px-8 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl">{children}</div>
+      <Footer />
+    </>
   );
 }
