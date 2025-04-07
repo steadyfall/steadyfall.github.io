@@ -11,15 +11,6 @@
     "format": "prettier --write .",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "next lint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css,scss,html}": [
-      "prettier --write"
-    ]
-  },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
