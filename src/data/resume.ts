@@ -3,7 +3,8 @@ export const detailsForMetadata = {
   title: 'Himank Dave',
   name: 'Himank Dave',
   ogImage: '/icon.ico',
-  description: 'A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion.',
+  description:
+    'A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion.',
 };
 
 export const personalDetails = {
@@ -36,7 +37,7 @@ export const experiences = [
       'Developed an ETL pipeline for unstructured hierarchical data with Flask, supporting interactive visualizations via React and D3.js.',
       'Built a self-hosted uptime monitoring tool using Node.js, Axios for web & database monitoring, Redis for data storage, and Socket.IO for real-time websocket communication, with VPS deployment via Docker.',
       'Designed multiple CI/CD pipelines using Github Actions to automate unit and integration testing with Jest and Cypress, deployment, and monitoring processes for the uptime monitoring tool.',
-      'Engineered a domain-specific chatbot with 85% accuracy, leveraging a PDF-trained algorithm, custom model trainer, and OpenAI\'s NLP API for multilingual responses.',
+      "Engineered a domain-specific chatbot with 85% accuracy, leveraging a PDF-trained algorithm, custom model trainer, and OpenAI's NLP API for multilingual responses.",
     ],
   },
   {
@@ -58,7 +59,8 @@ export const experiences = [
 export const projects = [
   {
     title: 'Trivivo',
-    description: 'Crafted a feature-rich, dynamic quiz game platform with progressive difficulty levels, real-time analytics, and comprehensive admin tools, complemented by a secure API for question management and user engagement tracking.',
+    description:
+      'Crafted a feature-rich, dynamic quiz game platform with progressive difficulty levels, real-time analytics, and comprehensive admin tools, complemented by a secure API for question management and user engagement tracking.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/wwbm-webapp',
     live: false,
@@ -66,7 +68,8 @@ export const projects = [
   },
   {
     title: 'SpectraSVD',
-    description: 'Designed and deployed an advanced image compression algorithm achieving 25%+ size reduction, complemented by a real-time interactive web application for demonstrating compression quality and efficiency.',
+    description:
+      'Designed and deployed an advanced image compression algorithm achieving 25%+ size reduction, complemented by a real-time interactive web application for demonstrating compression quality and efficiency.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/svd-compression',
     live: true,
@@ -75,23 +78,26 @@ export const projects = [
   },
   {
     title: 'Personal Website',
-    description: 'Built a modern, responsive portfolio website with fluid animations, architected as a customizable template.',
+    description:
+      'Built a modern, responsive portfolio website with fluid animations, architected as a customizable template.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/steadyfall.github.io.git',
     live: true,
     liveUrl: 'https://steadyfall.github.io',
-    techStack: ['TypeScript', 'React', 'TailwindCSS', 'Next.js', 'Framer Motion','Node.js'],
+    techStack: ['TypeScript', 'React', 'TailwindCSS', 'Next.js', 'Framer Motion', 'Node.js'],
   },
   {
     title: 'Chess (CS246 Final Project)',
-    description: 'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, employing advanced software design patterns and rigorous testing methodologies in a Linux environment.',
+    description:
+      'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, employing advanced software design patterns and rigorous testing methodologies in a Linux environment.',
     repo: false,
     live: false,
     techStack: ['C++', 'CMake', 'XQuartz'],
   },
   {
     title: 'EcoWiz',
-    description: 'Engineered a full-stack application featuring a multimodal image classification system for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.',
+    description:
+      'Engineered a full-stack application featuring a multimodal image classification system for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.',
     repo: true,
     repoUrl: 'https://github.com/karman103/DeltaHacksX',
     live: false,
@@ -99,7 +105,8 @@ export const projects = [
   },
   {
     title: 'RedWish',
-    description: 'Developed a comprehensive full-stack health application to streamline blood donation and transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and accessibility.',
+    description:
+      'Developed a comprehensive full-stack health application to streamline blood donation and transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and accessibility.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/RedWish',
     live: true,
@@ -110,7 +117,16 @@ export const projects = [
 
 export const skills = {
   languages: ['Python', 'JavaScript (ES6)', 'TypeScript', 'Go', 'C', 'C++20', 'SQL'],
-  frameworksAndLibraries: ['Django', 'Flask', 'React', 'TailwindCSS', 'Next.js', 'Node.js', 'Postgres', 'MySQL'],
+  frameworksAndLibraries: [
+    'Django',
+    'Flask',
+    'React',
+    'TailwindCSS',
+    'Next.js',
+    'Node.js',
+    'Postgres',
+    'MySQL',
+  ],
   tools: ['Bash', 'Powershell', 'Docker', 'Postman'],
 };
 // "Axios", "Socket.IO"

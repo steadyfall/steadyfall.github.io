@@ -1,19 +1,22 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { useEffect, useCallback } from 'react';
 
 export function useSmoothScroll(offset = 0) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const scrollToElement = useCallback((hash: string) => {
-    const targetElement = document.getElementById(hash.substring(1));
-    if (targetElement) {
-      const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: yPosition, behavior: 'smooth' });
-    }
-  }, [offset]);
+  const scrollToElement = useCallback(
+    (hash: string) => {
+      const targetElement = document.getElementById(hash.substring(1));
+      if (targetElement) {
+        const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: yPosition, behavior: 'smooth' });
+      }
+    },
+    [offset],
+  );
 
   useEffect(() => {
     if (window.location.hash) {

@@ -1,13 +1,17 @@
-import type { Metadata } from 'next';
 import { Inter, Space_Mono } from 'next/font/google';
-import { Providers } from './providers';
-import './globals.css';
+
+import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
 import { detailsForMetadata } from '@/data/resume';
 import { cn } from '@/lib/utils';
-import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
+
+import { Providers } from './providers';
+
+import type { Metadata } from 'next';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
-const spaceMono = Space_Mono({ 
+const spaceMono = Space_Mono({
   weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-spaceMono',
@@ -50,22 +54,20 @@ export const metadata: Metadata = {
   verification: { google: 'Wwciyzq9ANfCqyfI9hjLic5BhSc30awKaJPxbWCm5mc' },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode; }) {
-  // ${inter.className} 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // ${inter.className}
   return (
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
-      <body className={
-        cn(
-          'bg-neutral-100 dark:bg-neutral-950 text-gray-800 dark:text-gray-200',
-          'transition-colors duration-300'
-        )} 
-      suppressHydrationWarning
+      <body
+        className={cn(
+          'bg-neutral-100 text-gray-800 dark:bg-neutral-950 dark:text-gray-200',
+          'transition-colors duration-300',
+        )}
+        suppressHydrationWarning
       >
         <SmoothScrollProvider offset={90}>
-          <div className="flex flex-col min-h-screen">
-            <Providers>
-              {children}
-            </Providers>
+          <div className="flex min-h-screen flex-col">
+            <Providers>{children}</Providers>
           </div>
         </SmoothScrollProvider>
       </body>
