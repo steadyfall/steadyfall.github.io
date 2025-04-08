@@ -27,10 +27,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Determine base branch
+        id: vars
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_ENV
+          else
+            echo "BASE_BRANCH=${{ github.ref_name }}" >> $GITHUB_ENV
+          fi
+      
+      - name: Fetch base branch
+        run: |
+          git fetch origin $BASE_BRANCH
+
       - name: Get list of changed files
         id: files
         run: |
-          echo "CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref || github.ref_name }} | tr '\n' ' ')" >> $GITHUB_ENV
+          echo "CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT origin/$BASE_BRANCH | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Lint JS/TS files with ESLint (no auto-fix)
         if: ${{ env.CHANGED_FILES != ''}}
@@ -44,7 +57,7 @@ jobs:
             echo "No JS/TS files to lint."
           fi
 
-      - name: Format other files with Prettier
+      - name: Format other files with Prettier (no auto-fix)
         if: ${{ env.CHANGED_FILES != ''}}
         run: |
           FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(json|md|css|scss|html)$' | xargs)
@@ -55,11 +68,6 @@ jobs:
           else
             echo "No files to format with Prettier."
           fi
-      
-      - name: Type Check
-        run: |
-          echo "Running TypeScript type checking..."
-          npx tsc --noEmit
   
   type-check:
     name: Type Checking 
