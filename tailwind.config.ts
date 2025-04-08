@@ -1,21 +1,21 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)'],
         typewriter: ['var(--font-spaceMono)'],
-        'section': ['Starlight', 'sans-serif'],
+        section: ['Starlight', 'sans-serif'],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
         'midnight-blue': {
           '50': '#ebfaff',
           '100': '#d3f3ff',
@@ -29,7 +29,7 @@ const config: Config = {
           '900': '#0452a4',
           '950': '#0a3b76',
         },
-        'mantis': {
+        mantis: {
           '50': '#f2fbf2',
           '100': '#e2f7e1',
           '200': '#c4eec4',
@@ -42,7 +42,7 @@ const config: Config = {
           '900': '#1d4a1f',
           '950': '#0b280c',
         },
-        'sushi': {
+        sushi: {
           '50': '#f4f9ec',
           '100': '#e5f1d6',
           '200': '#cee4b2',
@@ -94,7 +94,7 @@ const config: Config = {
           '900': '#1d478b',
           '950': '#162d55',
         },
-        'thunderbird': {
+        thunderbird: {
           '50': '#fff2f1',
           '100': '#ffe1e0',
           '200': '#ffc8c6',
@@ -107,7 +107,7 @@ const config: Config = {
           '900': '#861a16',
           '950': '#490906',
         },
-        'starship': {
+        starship: {
           '50': '#fbfde9',
           '100': '#f6fcc5',
           '200': '#f1f98f',
@@ -133,7 +133,7 @@ const config: Config = {
           '900': '#6e2d43',
           '950': '#3d1421',
         },
-        'firefly': {
+        firefly: {
           '50': '#f1f9fa',
           '100': '#dceff1',
           '200': '#bedfe3',

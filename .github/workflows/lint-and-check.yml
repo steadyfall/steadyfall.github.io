@@ -1,0 +1,83 @@
+name: Lint and Type-checking
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    name: ESLint & Prettier 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get list of changed files
+        id: files
+        run: |
+          echo "CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT origin/${{ github.base_ref || github.ref_name }} | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Lint JS/TS files with ESLint (no auto-fix)
+        if: ${{ env.CHANGED_FILES != ''}}
+        run: |
+          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(js|jsx|ts|tsx)$' | xargs)
+          if [ -n "$FILES" ]; then
+            echo "Running ESLint on:"
+            echo "$FILES"
+            npx next lint --file $FILES
+          else
+            echo "No JS/TS files to lint."
+          fi
+
+      - name: Format other files with Prettier
+        if: ${{ env.CHANGED_FILES != ''}}
+        run: |
+          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(json|md|css|scss|html)$' | xargs)
+          if [ -n "$FILES" ]; then
+            echo "Running Prettier on:"
+            echo "$FILES"
+            npx prettier --check $FILES
+          else
+            echo "No files to format with Prettier."
+          fi
+      
+      - name: Type Check
+        run: |
+          echo "Running TypeScript type checking..."
+          npx tsc --noEmit
+  
+  type-check:
+    name: Type Checking 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type Check
+        run: |
+          echo "Running TypeScript type checking..."
+          npx tsc --noEmit
