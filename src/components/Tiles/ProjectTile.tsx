@@ -29,7 +29,7 @@ export function ProjectTile({
   liveUrl,
   techStack,
 }: ProjectTileProps) {
-  // const isDesktop = useMediaQuery('(min-width: 768px)')
+  // const isTablet = useMediaQuery('(min-width: 768px)')
   return (
     <div className="items-center">
       <div className="mb-2 flex flex-col justify-between sm:flex-row md:items-start">

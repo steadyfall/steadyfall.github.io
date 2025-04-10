@@ -19,17 +19,17 @@ export function ExperienceTile({
   period,
   responsibilities,
 }: ExperienceTileProps) {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 768px)');
   return (
     <div
       className={
-        (!(responsibilities && responsibilities.length > 0) && !isDesktop ? '-mb-6' : 'mb-6') +
+        (!(responsibilities && responsibilities.length > 0) && !isTablet ? '-mb-6' : 'mb-6') +
         ' ' +
         'flex items-center'
       }
     >
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
-        {isDesktop && (
+        {isTablet && (
           <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
             <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-white">
               {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
@@ -55,11 +55,11 @@ export function ExperienceTile({
               >
                 <h3 className="text-lg font-semibold">{companyName}</h3>
               </LinkWithArrow>
-              {!isDesktop && (
+              {!isTablet && (
                 <h3 className="font-typewriter text-gray-600 dark:text-gray-400">{period}</h3>
               )}
             </div>
-            {isDesktop && (
+            {isTablet && (
               <h3 className="font-typewriter text-gray-600 dark:text-gray-400">{period}</h3>
             )}
           </div>
