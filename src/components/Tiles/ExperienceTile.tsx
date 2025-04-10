@@ -20,6 +20,7 @@ export function ExperienceTile({
   responsibilities,
 }: ExperienceTileProps) {
   const isTablet = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
   return (
     <div
       className={
@@ -31,13 +32,13 @@ export function ExperienceTile({
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
         {isTablet && (
           <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
-            <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-white">
+            <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-transparent">
               {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
               <img
                 src={companyLogo}
                 alt={`${companyName} logo`}
-                width={80}
-                height={80}
+                width={isDesktop ? 80 : 70}
+                height={isDesktop ? 80 : 70}
                 className="rounded-md"
               />
             </div>
