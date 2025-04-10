@@ -22,13 +22,7 @@ export function ExperienceTile({
   const isTablet = useMediaQuery('(min-width: 768px)');
   const isDesktop = useMediaQuery('(min-width: 1280px)');
   return (
-    <div
-      className={
-        (!(responsibilities && responsibilities.length > 0) && !isTablet ? '-mb-6' : 'mb-6') +
-        ' ' +
-        'flex items-center'
-      }
-    >
+    <div className="-mb-2 flex items-center">
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
         {isTablet && (
           <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
@@ -45,7 +39,7 @@ export function ExperienceTile({
           </div>
         )}
         <div className="py-3 lg:pl-[132px] xl:pl-40 2xl:pl-52">
-          <div className="mb-4 flex flex-col justify-between sm:flex-row md:items-start">
+          <div className="flex flex-col justify-between sm:flex-row md:items-start">
             <div>
               <h2 className="text-xl font-bold">{position}</h2>
               <LinkWithArrow
@@ -65,7 +59,7 @@ export function ExperienceTile({
             )}
           </div>
           {responsibilities && responsibilities.length > 0 && (
-            <div className="mt-4">
+            <div className="mt-3">
               <ul className="list-inside list-['-_'] space-y-1 text-gray-700 dark:text-gray-300">
                 {responsibilities.map((responsibility, index) => (
                   <li key={index}>{responsibility}</li>
