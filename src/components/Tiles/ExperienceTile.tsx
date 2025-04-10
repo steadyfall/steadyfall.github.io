@@ -61,9 +61,9 @@ export function ExperienceTile({
           </div>
           {responsibilities && responsibilities.length > 0 && (
             <div className="mt-4">
-              <ul className="list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <ul className="list-inside list-['-_'] space-y-1 text-gray-700 dark:text-gray-300">
                 {responsibilities.map((responsibility, index) => (
-                  <li key={index}>- {responsibility}</li>
+                  <li key={index}>{responsibility}</li>
                 ))}
               </ul>
             </div>
