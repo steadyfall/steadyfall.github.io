@@ -28,18 +28,22 @@ export function ExperienceTile({
         'flex items-center'
       }
     >
-      <div className="relative flex-grow md:pl-12">
-        <div className="absolute left-[5px] top-3 aspect-square rounded-lg bg-white">
-          {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
-          <img
-            src={companyLogo}
-            alt={`${companyName} logo`}
-            width={isDesktop ? 80 : 45}
-            height={isDesktop ? 80 : 45}
-            className="rounded-md"
-          />
-        </div>
-        <div className="py-3 pl-16">
+      <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
+        {isDesktop && (
+          <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
+            <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-white">
+              {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
+              <img
+                src={companyLogo}
+                alt={`${companyName} logo`}
+                width={80}
+                height={80}
+                className="rounded-md"
+              />
+            </div>
+          </div>
+        )}
+        <div className="py-3 lg:pl-[132px] xl:pl-40 2xl:pl-52">
           <div className="mb-4 flex flex-col justify-between sm:flex-row md:items-start">
             <div>
               <h2 className="text-xl font-bold">{position}</h2>
