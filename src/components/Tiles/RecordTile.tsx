@@ -51,8 +51,20 @@ function jobDescriptorSection(
   return (
     <div className="flex flex-col justify-between sm:flex-row md:items-start">
       <div>
-        {isOrganizationBeforeRole ? organizationNameHeading : roleHeading}
-        {!isOrganizationBeforeRole ? organizationNameHeading : roleHeading}
+        <>
+          {isOrganizationBeforeRole && (
+            <>
+              {organizationNameHeading}
+              {roleHeading}
+            </>
+          )}
+          {!isOrganizationBeforeRole && (
+            <>
+              {roleHeading}
+              {organizationNameHeading}
+            </>
+          )}
+        </>
         {!isWidth768pxOrMore && (
           <h3 className="font-typewriter text-gray-600 dark:text-gray-400">{duration}</h3>
         )}
