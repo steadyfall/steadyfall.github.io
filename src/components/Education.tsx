@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { RecordTile, RecordTileProps } from '@/components/Tiles/RecordTile';
+import { EducationTile } from '@/components/Tiles/EducationTile';
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { cn } from '@/lib/utils';
 
@@ -20,15 +20,7 @@ export function Education() {
       {/* TODO: Insert all courses using a recursive React component */}
     </p>
   );
-  const uwrecord: RecordTileProps = {
-    organizationLogo: '/images/uwaterlooLogo.png',
-    organizationName: 'University of Waterloo',
-    organizationLink: 'https://uwaterloo.ca/',
-    role: 'Bachelor of Mathematics, Computational Mathematics Major',
-    duration: 'Sept 2022 - Present',
-    details: educationDetails,
-    organizationBeforeRole: true,
-  };
+
   return (
     <section id="education" className="mb-12">
       <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -42,7 +34,15 @@ export function Education() {
         </h2>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 8}>
-        <RecordTile {...uwrecord} />
+        <EducationTile
+          institutionLogo={'/images/uwaterlooLogo.png'}
+          institutionName={'University of Waterloo'}
+          institutionLink={'https://uwaterloo.ca/'}
+          degree={'Bachelor of Mathematics'}
+          major={'Computational Mathematics Major'}
+          duration={'Sept 2022 - Present'}
+          details={educationDetails}
+        />
       </BlurFade>
     </section>
   );
