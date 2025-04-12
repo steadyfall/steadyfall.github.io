@@ -10,7 +10,7 @@ export type RecordTileProps = {
   organizationLink: string;
   role: string;
   duration: string;
-  details?: React.ReactNode;
+  body?: React.ReactNode;
   organizationBeforeRole?: boolean;
 };
 
@@ -82,7 +82,7 @@ export function RecordTile({
   organizationLink,
   role,
   duration,
-  details,
+  body,
   organizationBeforeRole = false,
 }: RecordTileProps) {
   const isTablet = useMediaQuery('(min-width: 768px)');
@@ -118,7 +118,7 @@ export function RecordTile({
             organizationBeforeRole,
             isTablet,
           )}
-          {details}
+          {body}
         </div>
       </div>
     </div>
