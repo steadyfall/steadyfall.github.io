@@ -32,7 +32,7 @@ const Header = ({
   email,
   resumeFile,
 }: HeaderProps) => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 768px)');
   const [copied, setCopiedId] = useState<string>();
   useEffect(() => {
     setTimeout(() => {
@@ -44,7 +44,7 @@ const Header = ({
     <div className="container mx-auto mb-10">
       <div className="flex flex-col items-center justify-between md:flex-row">
         <BlurFade delay={BLUR_FADE_DELAY}>
-          {!isDesktop && (
+          {!isTablet && (
             <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8">
               <img
                 src="/images/headshot.jpg"
@@ -145,7 +145,7 @@ const Header = ({
           </div>
         </div>
         <BlurFade delay={BLUR_FADE_DELAY} inView={true}>
-          {isDesktop && (
+          {isTablet && (
             <div className="flex-shrink-0">
               <img
                 src="/images/headshot.jpg"

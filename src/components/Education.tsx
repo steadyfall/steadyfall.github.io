@@ -4,7 +4,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 
 export function Education() {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 768px)');
   return (
     <section id="education" className="mb-12">
       <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -25,12 +25,12 @@ export function Education() {
               <img
                 src="/images/uwaterlooLogo.png"
                 alt={'University of Waterloo logo'}
-                width={isDesktop ? 80 : 45}
-                height={isDesktop ? 80 : 45}
+                width={isTablet ? 80 : 45}
+                height={isTablet ? 80 : 45}
                 className="rounded-md"
               />
             </div>
-            <div className={'pl-16 ' + (isDesktop && 'py-3')}>
+            <div className={'pl-16 ' + (isTablet && 'py-3')}>
               <div className="mb-2 flex flex-col justify-between sm:flex-row md:items-start">
                 <div>
                   <LinkWithArrow
@@ -46,13 +46,13 @@ export function Education() {
                   <h3 className="text-lg font-semibold">
                     Bachelor of Mathematics, Computational Mathematics Major
                   </h3>
-                  {!isDesktop && (
+                  {!isTablet && (
                     <h3 className="font-typewriter text-gray-600 dark:text-gray-400">
                       Sept 2022 - Present
                     </h3>
                   )}
                 </div>
-                {isDesktop && (
+                {isTablet && (
                   <h3 className="font-typewriter text-gray-600 dark:text-gray-400">
                     Sept 2022 - Present
                   </h3>
