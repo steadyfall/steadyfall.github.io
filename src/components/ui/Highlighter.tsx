@@ -37,5 +37,5 @@ export default function Highlight({ text, color = 'yellow' }: HighlightProps) {
     colorClass = 'bg-[#ffff77] dark:bg-[#fce913]/30';
   }
 
-  return <span className={cn('rounded px-1', colorClass)}>{text}</span>;
+  return <span className={cn('rounded px-0.5', colorClass)}>{text}</span>;
 }
