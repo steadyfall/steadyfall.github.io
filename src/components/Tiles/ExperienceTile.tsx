@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import { ChevronRight } from 'lucide-react';
 
 import { RecordTile } from '@/components/Tiles/RecordTile';
 
@@ -24,9 +24,7 @@ export function ExperienceTile({
       <ul className="list-inside list-none space-y-1 text-gray-700 dark:text-gray-300">
         {responsibilities.map((responsibility, index) => (
           <li key={index}>
-            <span className="mr-1 inline-block align-middle">
-              {<Icon icon={'icons8:angle-right'} inline={true} />}
-            </span>
+            {<ChevronRight className="mr-0.25 inline-block h-4 w-4 align-middle md:h-5 md:w-5" />}
             {responsibility}
           </li>
         ))}
