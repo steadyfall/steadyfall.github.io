@@ -22,20 +22,21 @@ interface HighlightProps {
  *
  */
 export default function Highlight({ text, color = 'yellow' }: HighlightProps) {
-  let colorClass: string;
+  const colors: Record<string, string> = {
+    cyan: 'bg-cyan-200 dark:bg-cyan-500/30',
+    pink: 'bg-[#ffa7ee] dark:bg-[#f73ed2]/30',
+    'slate-blue': 'bg-[#a0a8ff] dark:bg-[#675bf9]/50',
+    red: 'bg-[#ffa0a0] dark:bg-[#f83b3b]/50',
+    yellow: 'bg-[#ffff77] dark:bg-[#fce913]/30',
+  };
 
-  if (color === 'cyan') {
-    colorClass = 'bg-cyan-200 dark:bg-cyan-500/30';
-  } else if (color === 'pink' || color === 'violet-web') {
-    colorClass = 'bg-[#ffa7ee] dark:bg-[#f73ed2]/30';
-  } else if (color === 'slate-blue') {
-    colorClass = 'bg-[#a0a8ff] dark:bg-[#675bf9]/50';
-  } else if (color === 'red') {
-    colorClass = 'bg-[#ffa0a0] dark:bg-[#f83b3b]/50';
-  } else {
-    // This covers "yellow", "lemon", "laser-lemon", and the default case
-    colorClass = 'bg-[#ffff77] dark:bg-[#fce913]/30';
+  if (color === 'violet-web') {
+    color = 'pink';
+  } else if (color === 'lemon' || color === 'laser-lemon') {
+    color = 'yellow';
   }
 
-  return <span className={cn('rounded px-1', colorClass)}>{text}</span>;
+  const colorClass = colors[color];
+
+  return <span className={cn('rounded-sm px-[0.1em]', colorClass)}>{text}</span>;
 }
