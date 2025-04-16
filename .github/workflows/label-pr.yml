@@ -1,0 +1,19 @@
+name: Label All PRs
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+  schedule:
+    - cron: '0 0 */2 * *'  # Every 2 days at 00:00 UTC
+  workflow_dispatch:  # Enables manual run from GitHub UI
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label PRs
+        uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
+          enable-branch-labels: true
