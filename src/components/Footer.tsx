@@ -39,7 +39,7 @@ const Footer = () => {
           </LinkWithArrow>
         </div>
         <div className="mt-6 sm:mt-0">
-          &copy; 2024 {new URL(detailsForMetadata.baseUrl).hostname}
+          &copy; {new Date(Date.now()).getFullYear()} {new URL(detailsForMetadata.baseUrl).hostname}
         </div>
       </div>
     </footer>
