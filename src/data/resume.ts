@@ -24,20 +24,30 @@ export const experiences = [
     companyLogo: '/images/geotab.jpeg',
     companyName: 'Geotab',
     companyLink: 'https://geotab.com/',
-    position: 'Test Automation Developer Intern',
-    period: 'Jan 2025 - Present',
+    position: 'Embedded Software Developer Intern',
+    period: 'Jan 2025 - Aug 2025',
+    responsibilities: [
+      'Geotab enables safe, sustainable, and efficient fleet and asset management \
+      through data-driven connected solutions.',
+      'I worked as a Test Automation Developer on the Embedded Software Quality team.',
+      'Apart from day-to-day tasks supporting 10k+ pipelines/month across 250+ GitLab repositories, \
+      I built a high-performance artifact-retrieval gRPC microservice for an in-house SIL testing framework and containerized \
+      a Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
+    ],
   },
   {
     companyLogo: '/images/cactuscreatives.png',
     companyName: 'Cactus Creatives',
     companyLink: 'https://cactuscreatives.com/',
-    position: 'Software Developer Intern, Core',
+    position: 'Software Developer Intern',
     period: 'May 2024 - August 2024',
     responsibilities: [
-      'Developed an ETL pipeline for unstructured hierarchical data with Flask, supporting interactive visualizations via React and D3.js.',
-      'Built a self-hosted uptime monitoring tool using Node.js, Axios for web & database monitoring, Redis for data storage, and Socket.IO for real-time websocket communication, with VPS deployment via Docker.',
-      'Designed multiple CI/CD pipelines using Github Actions to automate unit and integration testing with Jest and Cypress, deployment, and monitoring processes for the uptime monitoring tool.',
-      "Engineered a domain-specific chatbot with 85% accuracy, leveraging a PDF-trained algorithm, custom model trainer, and OpenAI's NLP API for multilingual responses.",
+      'Cactus Creatives partners with clients to design and deliver innovative, \
+      reliable, and cost-effective digital and IoT solutions.',
+      'I worked on the Core Services team.',
+      'I developed a self-hosted uptime monitoring tool with real-time web & \
+      database status tracking, and implemented CI/CD pipelines using \
+      GitHub Actions across 25+ projects.',
     ],
   },
   {
@@ -47,20 +57,34 @@ export const experiences = [
     position: 'Python Developer Intern',
     period: 'May 2023 - August 2023',
     responsibilities: [
-      'Developed and maintained full-stack content management system in HTMX and Django, handling real-time metrics.',
-      'Designed REST APIs with Flask and REST Framework in production with 1000+ requests/day.',
-      'Implemented a Python script to parse and migrate over 25,000+ records from MySQL to PostgreSQL databases.',
-      'Optimized SQL queries in the client codebase to align with updated database schema and improve performance post-migration.',
-      'Analyzed large product usage datasets through linear/logistic regression and outlier detection, leading to over 25% client savings.',
+      'Cactus Creatives partners with clients to design and deliver innovative, \
+      reliable, and cost-effective digital and IoT solutions.',
+      'I worked on the Internal Tools team.',
+      'I built and maintained a full-stack content management system with \
+      real-time metrics, while spearheading major MySQL-to-PostgreSQL migrations \
+      across projects and optimizing queries for post-migration performance gains.',
     ],
   },
 ];
 
 export const projects = [
   {
+    title: 'Deris',
+    description:
+      'A minimalist key-value store with network socket interface, \
+      supporting CRUD operations, data integrity, high throughput (50k+ ops/sec) \
+      and <1ms latency.',
+    repo: true,
+    repoUrl: 'https://github.com/steadyfall/deris',
+    live: false,
+    techStack: ['Go'],
+  },
+  {
     title: 'Trivivo',
     description:
-      'Crafted a feature-rich, dynamic quiz game platform with progressive difficulty levels, real-time analytics, and comprehensive admin tools, complemented by a secure API for question management and user engagement tracking.',
+      'Crafted a feature-rich, dynamic quiz game platform with progressive \
+      difficulty levels, real-time analytics, and comprehensive admin tools, \
+      complemented by a secure API for question management and user engagement tracking.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/wwbm-webapp',
     live: false,
@@ -69,7 +93,9 @@ export const projects = [
   {
     title: 'SpectraSVD',
     description:
-      'Designed and deployed an advanced image compression algorithm achieving 25%+ size reduction, complemented by a real-time interactive web application for demonstrating compression quality and efficiency.',
+      'Designed and deployed an advanced image compression algorithm achieving \
+      25%+ size reduction, complemented by a real-time interactive web \
+      application for demonstrating compression quality and efficiency.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/svd-compression',
     live: true,
@@ -79,7 +105,8 @@ export const projects = [
   {
     title: 'Personal Website',
     description:
-      'Built a modern, responsive portfolio website with fluid animations, architected as a customizable template.',
+      'Built a modern, responsive portfolio website with fluid animations, \
+      architected as a customizable template.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/steadyfall.github.io.git',
     live: true,
@@ -87,9 +114,11 @@ export const projects = [
     techStack: ['TypeScript', 'React', 'TailwindCSS', 'Next.js', 'Framer Motion', 'Node.js'],
   },
   {
-    title: 'Chess (CS246 Final Project)',
+    title: 'Chess',
     description:
-      'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, employing advanced software design patterns and rigorous testing methodologies in a Linux environment.',
+      'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, \
+      employing advanced software design patterns and rigorous testing methodologies in a \
+      Linux environment.',
     repo: false,
     live: false,
     techStack: ['C++', 'CMake', 'XQuartz'],
@@ -97,7 +126,8 @@ export const projects = [
   {
     title: 'EcoWiz',
     description:
-      'Engineered a full-stack application featuring a multimodal image classification system for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.',
+      'Engineered a full-stack application featuring a multimodal image classification system \
+      for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.',
     repo: true,
     repoUrl: 'https://github.com/karman103/DeltaHacksX',
     live: false,
@@ -106,7 +136,9 @@ export const projects = [
   {
     title: 'RedWish',
     description:
-      'Developed a comprehensive full-stack health application to streamline blood donation and transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and accessibility.',
+      'Developed a comprehensive full-stack health application to streamline blood donation and \
+      transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and \
+      accessibility.',
     repo: true,
     repoUrl: 'https://github.com/steadyfall/RedWish',
     live: true,
@@ -116,7 +148,7 @@ export const projects = [
 ];
 
 export const skills = {
-  languages: ['Python', 'JavaScript (ES6)', 'TypeScript', 'Go', 'C', 'C++20', 'SQL'],
+  languages: ['Python', 'Go', 'TypeScript', 'C++20', 'Bash', 'Powershell', 'SQL'],
   frameworksAndLibraries: [
     'Django',
     'Flask',
@@ -127,7 +159,7 @@ export const skills = {
     'Postgres',
     'MySQL',
   ],
-  tools: ['Bash', 'Powershell', 'Docker', 'Postman'],
+  tools: ['Docker', 'Kubernetes', 'GitLab CI', 'GitHub Actions', 'Google Cloud'],
 };
 // "Axios", "Socket.IO"
 // databases: ["Postgres", "MySQL", "Redis"]
