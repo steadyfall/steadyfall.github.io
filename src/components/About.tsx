@@ -60,12 +60,13 @@ const AccordionForExtraInfo = (items: CustomAccordionItemDetails[] = []) => {
 
 const About = () => {
   const findMeDoingBody = [
+    <>tinkering on projects that make my life a little easier.</>,
     <>
       <StrikeHighlight text="re-watching" color="pink" /> any one of these series:{' '}
-      <StrikeHighlight text="Breaking Bad" color="pink" />,{' '}
+      <StrikeHighlight text="Better Call Saul" color="pink" />,{' '}
       <StrikeHighlight text="Silicon Valley" color="pink" />,{' '}
       <StrikeHighlight text="South Park" color="pink" /> and{' '}
-      <StrikeHighlight text="The Office" color="pink" />.
+      <StrikeHighlight text="House" color="pink" />.
     </>,
   ];
   const thoseOfYouCuriousBody = [
@@ -143,14 +144,14 @@ const About = () => {
         <div className="text-gray-700 dark:text-gray-300">
           <p className="mb-2">
             I am a <StrikeHighlight text="software developer" color="red" /> based in{' '}
-            <StrikeHighlight text="Toronto" color="red" /> and currently a{' '}
-            <StrikeHighlight text="junior" /> pursuing a{' '}
-            <StrikeHighlight text="Computational Mathematics" /> major at the{' '}
-            <StrikeHighlight text="University of Waterloo" />. I am passionate about tech and
-            innovation, always exploring the{' '}
-            <span className="underline underline-offset-4">
-              intersection of software development and AI.
-            </span>
+            <StrikeHighlight text="Waterloo" color="red" /> and currently a{' '}
+            <StrikeHighlight text="junior" /> majoring in{' '}
+            <StrikeHighlight text="Computational Mathematics" /> at the{' '}
+            <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and
+            innovation, especially exploring{' '}
+            <span className="underline underline-offset-4">unexplored or complex domains</span> and
+            uncovering their{' '}
+            <span className="underline underline-offset-4">intersection with tech</span>.
           </p>
           <div className="mb-2">{AccordionForExtraInfo(itemsForExtraInfo)}</div>
         </div>
