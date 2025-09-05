@@ -95,15 +95,15 @@ export function RecordTile({
   return (
     <div className="-mb-2 flex items-center">
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
-        {isTablet && (
+        {isDesktop && (
           <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
             <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-transparent">
               {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
               <img
                 src={organizationLogo}
                 alt={`${organizationName} logo`}
-                width={isDesktop ? 80 : 70}
-                height={isDesktop ? 80 : 70}
+                width={80}
+                height={80}
                 className="rounded-md"
               />
             </div>
