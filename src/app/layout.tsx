@@ -1,4 +1,4 @@
-import { Inter, Space_Mono } from 'next/font/google';
+import { Instrument_Sans, Space_Mono } from 'next/font/google';
 
 import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
 import { detailsForMetadata } from '@/data/resume';
@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const instrumentsans = Instrument_Sans({ subsets: ['latin'] });
 const spaceMono = Space_Mono({
   weight: ['400', '700'],
   subsets: ['latin'],
@@ -55,12 +55,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // ${inter.className}
+  // ${instrumentsans.className}
   return (
-    <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${instrumentsans.className} ${spaceMono.variable}`}
+      suppressHydrationWarning
+    >
       <body
         className={cn(
-          'bg-neutral-100 text-gray-800 dark:bg-neutral-950 dark:text-gray-200',
+          'bg-[#ff5e33] text-neutral-200 dark:bg-[#1a0089] dark:text-gray-200',
           'transition-colors duration-300',
         )}
         suppressHydrationWarning

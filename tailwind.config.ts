@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-instrumentsans)'],
         typewriter: ['var(--font-spaceMono)'],
         section: ['Starlight', 'sans-serif'],
       },
