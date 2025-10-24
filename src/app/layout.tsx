@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.className} ${spaceMono.variable}`} suppressHydrationWarning>
       <body
         className={cn(
-          'bg-neutral-100 text-gray-800 dark:bg-neutral-950 dark:text-gray-200',
+          'bg-neutral-100 text-neutral-100 dark:bg-neutral-950 dark:text-gray-200',
           'transition-colors duration-300',
         )}
         suppressHydrationWarning
