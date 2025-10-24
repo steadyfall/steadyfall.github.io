@@ -11,11 +11,12 @@ const Navbar = () => {
   // const completion = useReadingProgress();
 
   return (
-    <header className="sticky top-0 z-50 py-6 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 pt-2">
       <nav
         className={cn(
           'flex items-center justify-between',
-          'mx-auto max-w-full px-8 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl',
+          'mx-auto max-w-full px-8 py-4 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl',
+          'rounded-lg bg-neutral-100/50 backdrop-blur-md dark:bg-neutral-950/50',
         )}
       >
         <ul className="flex gap-4 sm:gap-8">
