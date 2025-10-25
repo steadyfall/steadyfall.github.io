@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body
         className={cn(
-          'bg-[#ff5e33] text-neutral-200 dark:bg-[#1a0089] dark:text-gray-200',
+          'bg-[#ff5e33] text-white dark:bg-[#1a0089] dark:text-gray-100',
           'transition-colors duration-300',
         )}
         suppressHydrationWarning
