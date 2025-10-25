@@ -1,4 +1,8 @@
-import React from 'react';
+'use client';
+
+import { PaperTexture } from '@paper-design/shaders-react';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useState } from 'react';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -88,6 +92,41 @@ export function RecordTile({
   const isTablet = useMediaQuery('(min-width: 768px)');
   const isDesktop = useMediaQuery('(min-width: 1280px)');
 
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  // for useTheme
+  useEffect(() => setMounted(true), []);
+
+  const isDarkMode = resolvedTheme === 'dark';
+
+  const OrganizationLogoOnPaper = (
+    <PaperTexture
+      width={80}
+      height={80}
+      image={organizationLogo}
+      colorBack={isDarkMode ? '#1a0089' : '#ff5e33'} // Dark mode: blue, Light mode: orange
+      colorFront={isDarkMode ? '#1a0089' : '#ff5e33'} // Dark mode: blue, Light mode: orange
+      contrast={0.3}
+      roughness={0.25}
+      fiber={0.4}
+      fiberSize={0.01}
+      crumples={0}
+      crumpleSize={0.01}
+      folds={0}
+      foldCount={1}
+      drops={0}
+      fade={0}
+      seed={100}
+      scale={1}
+      imageAlphaMode="preserve"
+      fit="contain"
+      className="rounded-md"
+    />
+  );
+
+  if (!mounted) return null;
+
   //   const topRow = (
   //     <h2 className="text-xl font-bold">{!organizationBeforeRole ? role : organizationName}</h2>
   //   );
@@ -99,13 +138,7 @@ export function RecordTile({
           <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
             <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-transparent">
               {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
-              <img
-                src={organizationLogo}
-                alt={`${organizationName} logo`}
-                width={80}
-                height={80}
-                className="rounded-md"
-              />
+              {OrganizationLogoOnPaper}
             </div>
           </div>
         )}
