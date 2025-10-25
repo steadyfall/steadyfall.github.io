@@ -1,5 +1,9 @@
+'use client';
+
+import { ImageDithering } from '@paper-design/shaders-react';
 import copy from 'copy-to-clipboard';
 import { Copy, CopyCheck } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
@@ -34,26 +38,47 @@ const Header = ({
 }: HeaderProps) => {
   const isTablet = useMediaQuery('(min-width: 768px)');
   const [copied, setCopiedId] = useState<string>();
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  // for useTheme
+  useEffect(() => setMounted(true), []);
+
+  // for copy button
   useEffect(() => {
     setTimeout(() => {
       setCopiedId(undefined);
     }, 3000);
   }, [copied]);
 
+  const isDarkMode = resolvedTheme === 'dark';
+
+  const DitheredHeadshot = (
+    <div className="size-36 md:size-48 lg:size-56">
+      <ImageDithering
+        style={{ height: '100%', width: '100%' }}
+        image="/images/headshot.jpg"
+        colorBack={isDarkMode ? '#1a0098' : '#ff3600'} // Dark mode: blue, Light mode: orange
+        colorFront="#ffffff"
+        colorHighlight="#ffffff"
+        // originalColors
+        type="8x8"
+        size={1}
+        colorSteps={5}
+        fit="contain"
+        className="rounded-lg object-cover"
+      />
+    </div>
+  );
+
+  if (!mounted) return null;
+
   return (
     <div className="container mx-auto mb-10">
       <div className="flex flex-col items-center justify-between md:flex-row">
         <BlurFade delay={BLUR_FADE_DELAY}>
           {!isTablet && (
-            <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8">
-              <img
-                src="/images/headshot.jpg"
-                alt="Profile"
-                width={200}
-                height={200}
-                className="size-36 rounded-lg object-cover md:size-48 lg:size-56"
-              />
-            </div>
+            <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8">{DitheredHeadshot}</div>
           )}
         </BlurFade>
         <div className="flex-grow text-center md:text-left">
@@ -124,7 +149,7 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer text-slate-600 hover:text-black dark:text-slate-300 dark:hover:text-white"
+                  className="ml-3 cursor-pointer text-white hover:text-slate-300 dark:text-slate-300 dark:hover:text-white"
                   onClick={async () => {
                     if ('clipboard' in navigator) {
                       await navigator.clipboard.writeText(email);
@@ -145,30 +170,22 @@ const Header = ({
           </div>
         </div>
         <BlurFade delay={BLUR_FADE_DELAY} inView={true}>
-          {isTablet && (
-            <div className="flex-shrink-0">
-              <img
-                src="/images/headshot.jpg"
-                alt="Profile"
-                width={200}
-                height={200}
-                className="size-36 rounded-lg object-cover md:size-48 lg:size-56"
-              />
-            </div>
-          )}
+          {isTablet && <div className="flex-shrink-0">{DitheredHeadshot}</div>}
         </BlurFade>
       </div>
-      {/* <BlurFade delay={BLUR_FADE_DELAY * 2}>
-                <nav className="mt-8">
-                    <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
-                    <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
-                    <li><a href="#experience" className="hover:underline hover:underline-offset-4">Experience</a></li>
-                    <li><a href="#education" className="hover:underline hover:underline-offset-4">Education</a></li>
-                    <li><a href="#skills" className="hover:underline hover:underline-offset-4">Skills</a></li>
-                    <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
-                    </ul>
-                </nav>
-            </BlurFade> */}
+      {/* 
+        <BlurFade delay={BLUR_FADE_DELAY * 2}>
+          <nav className="mt-8">
+              <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
+              <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
+              <li><a href="#experience" className="hover:underline hover:underline-offset-4">Experience</a></li>
+              <li><a href="#education" className="hover:underline hover:underline-offset-4">Education</a></li>
+              <li><a href="#skills" className="hover:underline hover:underline-offset-4">Skills</a></li>
+              <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
+              </ul>
+          </nav>
+        </BlurFade>
+      */}
     </div>
   );
 };
