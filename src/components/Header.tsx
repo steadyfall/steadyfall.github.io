@@ -66,7 +66,7 @@ const Header = ({
         size={1}
         colorSteps={5}
         fit="contain"
-        className="rounded-lg object-cover"
+        className="object-cover"
       />
     </div>
   );

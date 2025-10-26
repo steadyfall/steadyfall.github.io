@@ -121,7 +121,6 @@ export function RecordTile({
       scale={1}
       imageAlphaMode="preserve"
       fit="contain"
-      className="rounded-md"
     />
   );
 
