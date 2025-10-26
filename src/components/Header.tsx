@@ -74,7 +74,7 @@ const Header = ({
   if (!mounted) return null;
 
   return (
-    <div className="container mx-auto mb-10">
+    <div className="container mx-auto mb-10 lg:mb-16">
       <div className="flex flex-col items-center justify-between md:flex-row">
         <BlurFade delay={BLUR_FADE_DELAY}>
           {!isTablet && (

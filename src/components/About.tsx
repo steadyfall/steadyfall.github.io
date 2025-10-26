@@ -129,7 +129,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="mb-12">
+    <section id="about" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 3}>
         <h2
           className={cn(

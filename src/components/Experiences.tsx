@@ -15,7 +15,7 @@ export function Experiences({ arr }: ExperiencesProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [experiences, setExperiences] = useState(arr);
   return (
-    <section id="experience" className="mb-12">
+    <section id="experience" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 5}>
         <h2
           className={cn(

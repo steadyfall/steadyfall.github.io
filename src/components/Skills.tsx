@@ -51,7 +51,7 @@ export function Skills({ arr }: SkillsProps) {
     );
   });
   return (
-    <section id="skills" className="mb-12">
+    <section id="skills" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 9}>
         <h2
           className={cn(

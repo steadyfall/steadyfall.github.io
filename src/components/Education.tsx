@@ -22,7 +22,7 @@ export function Education() {
   );
 
   return (
-    <section id="education" className="mb-12">
+    <section id="education" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 7}>
         <h2
           className={cn(
