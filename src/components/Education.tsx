@@ -27,7 +27,7 @@ export function Education() {
         <h2
           className={cn(
             'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-white to-black bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
+            'inline-block bg-gradient-to-r from-chinese-black-950 to-white bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
           )}
         >
           Education

@@ -69,9 +69,13 @@ function jobDescriptorSection(
             </>
           )}
         </>
-        {!isWidth768pxOrMore && <h3 className="font-typewriter">{duration}</h3>}
+        {!isWidth768pxOrMore && (
+          <h3 className="font-typewriter text-white dark:text-selago-100">{duration}</h3>
+        )}
       </div>
-      {isWidth768pxOrMore && <h3 className="font-typewriter">{duration}</h3>}
+      {isWidth768pxOrMore && (
+        <h3 className="font-typewriter text-white dark:text-selago-100">{duration}</h3>
+      )}
     </div>
   );
 }

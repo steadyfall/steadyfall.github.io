@@ -74,17 +74,18 @@ const About = () => {
   const findMeDoingBody = [
     <>tinkering on projects that make my life a little easier.</>,
     <>
-      <StrikeHighlight text="re-watching" color="pink" /> any one of these series:{' '}
-      <StrikeHighlight text="Better Call Saul" color="pink" />,{' '}
-      <StrikeHighlight text="Silicon Valley" color="pink" />,{' '}
-      <StrikeHighlight text="South Park" color="pink" /> and{' '}
-      <StrikeHighlight text="House" color="pink" />.
+      <StrikeHighlight text="re-watching" color={isDarkMode ? 'pink' : 'white'} /> any one of these{' '}
+      series: <StrikeHighlight text="Better Call Saul" color={isDarkMode ? 'pink' : 'white'} />,{' '}
+      <StrikeHighlight text="Silicon Valley" color={isDarkMode ? 'pink' : 'white'} />,{' '}
+      <StrikeHighlight text="South Park" color={isDarkMode ? 'pink' : 'white'} /> and{' '}
+      <StrikeHighlight text="House" color={isDarkMode ? 'pink' : 'white'} />.
     </>,
   ];
   const thoseOfYouCuriousBody = [
     <>
-      The favicon is a <StrikeHighlight text="4-hypercube graph" color="cyan" /> made via Python,
-      using NetworkX and Matplotlib. Check the{' '}
+      The favicon is a{' '}
+      <StrikeHighlight text="4-hypercube graph" color={isDarkMode ? 'cyan' : 'white'} /> made via
+      Python, using NetworkX and Matplotlib. Check the{' '}
       <LinkWithArrow
         href="/icon.ico"
         target="_blank"
@@ -146,7 +147,7 @@ const About = () => {
         <h2
           className={cn(
             'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-white to-black bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
+            'inline-block bg-gradient-to-r from-chinese-black-950 to-white bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
           )}
         >
           About
@@ -155,8 +156,9 @@ const About = () => {
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
         <div className="text-chinese-black-900 dark:text-selago-200">
           <p className="mb-2">
-            I am a <StrikeHighlight text="software developer" color={isDarkMode ? 'red' : 'turq'} />{' '}
-            based in <StrikeHighlight text="Waterloo" color={isDarkMode ? 'red' : 'turq'} /> and
+            I am a{' '}
+            <StrikeHighlight text="software developer" color={isDarkMode ? 'red' : 'white'} /> based
+            in <StrikeHighlight text="Waterloo" color={isDarkMode ? 'red' : 'white'} /> and
             currently a <StrikeHighlight text="junior" /> majoring in{' '}
             <StrikeHighlight text="Computational Mathematics" /> at the{' '}
             <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and

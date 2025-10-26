@@ -4,6 +4,7 @@ interface StrikeHighlightProps {
   text: string;
   color?:
     | 'cyan'
+    | 'white'
     | 'pink'
     | 'darkpink'
     | 'violet-web'
@@ -32,6 +33,7 @@ export default function StrikeHighlight({ text, color = 'yellow' }: StrikeHighli
     yellow: 'bg-[#ffff77] dark:bg-[#fce913]/40',
     turq: 'bg-[#60D394] dark:bg-[#60D394]/40',
     darkpink: 'bg-[#fe36cf] dark:bg-[#fe36cf]/35',
+    white: 'bg-white',
   };
 
   if (color === 'violet-web') {
