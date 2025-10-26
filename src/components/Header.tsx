@@ -149,7 +149,7 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer text-black hover:text-white dark:text-chinese-black-300 dark:hover:text-white"
+                  className="ml-3 cursor-pointer text-black hover:text-white dark:text-white dark:hover:text-chinese-black-300"
                   onClick={async () => {
                     if ('clipboard' in navigator) {
                       await navigator.clipboard.writeText(email);
