@@ -9,7 +9,7 @@ export default function NotFound() {
       <h1
         className={cn(
           'font-typewriter text-6xl font-bold md:text-7xl lg:text-8xl',
-          'bg-gradient-to-r from-gray-500 to-gray-700 bg-clip-text text-transparent dark:from-gray-500 dark:to-gray-300',
+          'bg-gradient-to-r from-chinese-black-500 to-chinese-black-800 bg-clip-text text-transparent dark:from-gray-500 dark:to-gray-300',
         )}
       >
         404
@@ -18,12 +18,18 @@ export default function NotFound() {
         The page you&apos;re looking for, is either not there or has been moved.
       </div>
       <ul className="mt-4 flex gap-4 sm:gap-8">
-        <li>{<BackButton>go back</BackButton>}</li>
+        <li>
+          {
+            <BackButton className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-slate-300 dark:hover:text-white">
+              go back
+            </BackButton>
+          }
+        </li>
         <li>|</li>
         <li>
           <Link
             href="/"
-            className="text-slate-600 hover:text-black hover:underline hover:underline-offset-4 dark:text-slate-300 dark:hover:text-white"
+            className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-slate-300 dark:hover:text-white"
           >
             home
           </Link>
