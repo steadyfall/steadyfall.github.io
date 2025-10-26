@@ -88,7 +88,7 @@ const About = () => {
       <LinkWithArrow
         href="/icon.ico"
         target="_blank"
-        className="mr-1 text-orange-500 hover:underline hover:underline-offset-2"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-orange-500"
       >
         image
       </LinkWithArrow>
@@ -96,15 +96,15 @@ const About = () => {
       <LinkWithArrow
         href="https://en.wikipedia.org/wiki/Hypercube_graph"
         target="_blank"
-        className="mr-1 text-blue-violet-500 hover:underline hover:underline-offset-2"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-[#60d394]"
       >
         more
       </LinkWithArrow>{' '}
       about hypercube graphs & here is the{' '}
       <LinkWithArrow
-        href="https://github.com/steadyfall/steadyfall.github.io/blob/main/hypercube/generate.py"
+        href="https://github.com/steadyfall/steadyfall.github.io/blob/dev/hypercube/generate.py"
         target="_blank"
-        className="mr-1 text-firefly-600 hover:underline hover:underline-offset-2 dark:text-firefly-500"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-firefly-400"
       >
         code
       </LinkWithArrow>{' '}

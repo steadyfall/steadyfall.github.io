@@ -94,7 +94,7 @@ const Header = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-pink-500 hover:underline hover:underline-offset-2"
+                className="text-white hover:underline hover:underline-offset-2 dark:text-pink-500"
               >
                 github
               </LinkWithArrow>
@@ -105,7 +105,7 @@ const Header = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-thunderbird-600 hover:underline hover:underline-offset-2"
+                className="text-white hover:underline hover:underline-offset-2 dark:text-thunderbird-500"
               >
                 linkedin
               </LinkWithArrow>
@@ -114,7 +114,7 @@ const Header = ({
               <LinkWithArrow
                 href={'mailto:' + email}
                 aria-label="Email"
-                className="text-azure-radiance-600 hover:underline hover:underline-offset-2" // text-orange-500"
+                className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500" // text-orange-500"
               >
                 email
               </LinkWithArrow>
@@ -124,7 +124,7 @@ const Header = ({
                 href={'/' + resumeFile}
                 target="_blank"
                 aria-label="Resume"
-                className="text-neon-green-500 hover:underline hover:underline-offset-2 dark:text-neon-green-400"
+                className="text-white hover:underline hover:underline-offset-2 dark:text-neon-green-400"
               >
                 resume
               </LinkWithArrow>
@@ -149,7 +149,7 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer text-white hover:text-chinese-black-400 dark:text-chinese-black-300 dark:hover:text-white"
+                  className="ml-3 cursor-pointer text-black hover:text-white dark:text-chinese-black-300 dark:hover:text-white"
                   onClick={async () => {
                     if ('clipboard' in navigator) {
                       await navigator.clipboard.writeText(email);

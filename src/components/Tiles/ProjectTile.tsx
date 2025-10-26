@@ -41,7 +41,7 @@ export function ProjectTile({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Repository link for ${title}`}
-              className="text-pink-500 hover:underline hover:underline-offset-2"
+              className="text-white hover:underline hover:underline-offset-2 dark:text-pink-500"
             >
               repo
             </LinkWithArrow>
@@ -52,7 +52,7 @@ export function ProjectTile({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Live link for ${title}`}
-              className="text-midnight-blue-500 hover:underline hover:underline-offset-2"
+              className="text-white hover:underline hover:underline-offset-2 dark:text-[#40b9d0]"
             >
               link
             </LinkWithArrow>
