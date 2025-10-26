@@ -1,4 +1,8 @@
+'use client';
+
 import { FlagTriangleRight, GitCommitVertical, Signpost } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 import {
   Accordion,
@@ -59,6 +63,14 @@ const AccordionForExtraInfo = (items: CustomAccordionItemDetails[] = []) => {
 };
 
 const About = () => {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  // for useTheme
+  useEffect(() => setMounted(true), []);
+  const isDarkMode = resolvedTheme === 'dark';
+  if (!mounted) return null;
+
   const findMeDoingBody = [
     <>tinkering on projects that make my life a little easier.</>,
     <>
@@ -143,9 +155,9 @@ const About = () => {
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
         <div className="text-chinese-black-900 dark:text-selago-200">
           <p className="mb-2">
-            I am a <StrikeHighlight text="software developer" color="red" /> based in{' '}
-            <StrikeHighlight text="Waterloo" color="red" /> and currently a{' '}
-            <StrikeHighlight text="junior" /> majoring in{' '}
+            I am a <StrikeHighlight text="software developer" color={isDarkMode ? 'red' : 'turq'} />{' '}
+            based in <StrikeHighlight text="Waterloo" color={isDarkMode ? 'red' : 'turq'} /> and
+            currently a <StrikeHighlight text="junior" /> majoring in{' '}
             <StrikeHighlight text="Computational Mathematics" /> at the{' '}
             <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and
             innovation, especially exploring{' '}
