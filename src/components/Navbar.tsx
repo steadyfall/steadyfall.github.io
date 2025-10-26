@@ -15,8 +15,8 @@ const Navbar = () => {
       <nav
         className={cn(
           'flex items-center justify-between',
-          'mx-auto px-8 py-4 sm:px-16 md:px-24 lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl',
-          'bg-neutral-100/50 backdrop-blur-md dark:bg-neutral-950/50 lg:rounded-lg',
+          'mx-auto mb-3 px-8 py-4 sm:px-16 md:px-24 lg:max-w-3xl lg:px-8 xl:max-w-4xl 2xl:max-w-5xl',
+          'bg-neutral-100/50 backdrop-blur-md dark:bg-neutral-950/50',
         )}
       >
         <ul className="flex gap-4 sm:gap-8">
