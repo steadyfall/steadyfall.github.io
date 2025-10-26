@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 export function Education() {
   const educationDetails = (
-    <p className="mt-1 py-0 text-gray-700 dark:text-gray-300">
+    <p className="mt-1 py-0 text-chinese-black-900 dark:text-selago-200">
       <Link
         href="https://uwaterloo.ca/computational-mathematics/"
         target="_blank"
@@ -27,7 +27,7 @@ export function Education() {
         <h2
           className={cn(
             'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-[#434343] to-[#000000] bg-clip-text text-transparent dark:from-gray-300 dark:to-gray-100',
+            'inline-block bg-gradient-to-r from-white to-black bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
           )}
         >
           Education

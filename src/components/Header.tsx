@@ -149,7 +149,7 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer text-white hover:text-slate-300 dark:text-slate-300 dark:hover:text-white"
+                  className="ml-3 cursor-pointer text-white hover:text-chinese-black-400 dark:text-chinese-black-300 dark:hover:text-white"
                   onClick={async () => {
                     if ('clipboard' in navigator) {
                       await navigator.clipboard.writeText(email);
@@ -173,7 +173,7 @@ const Header = ({
           {isTablet && <div className="flex-shrink-0">{DitheredHeadshot}</div>}
         </BlurFade>
       </div>
-      {/* 
+      {/*
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
           <nav className="mt-8">
               <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">

@@ -19,7 +19,7 @@ export function ExperienceTile({
 }: ExperienceTileProps) {
   const responsibilitiesAsHTML = responsibilities && responsibilities.length > 0 && (
     <div className="mt-2">
-      <ul className="-pb-1 list-inside list-none space-y-1 text-gray-700 dark:text-gray-300">
+      <ul className="-pb-1 list-inside list-none space-y-1 text-chinese-black-900 dark:text-selago-200">
         {responsibilities.map((responsibility, index) => (
           <li key={index} className="py-1">
             {responsibility}

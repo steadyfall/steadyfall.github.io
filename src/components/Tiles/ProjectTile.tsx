@@ -59,7 +59,7 @@ export function ProjectTile({
           )}
         </div>
       </div>
-      <p className="text-gray-700 dark:text-gray-300">{description}</p>
+      <p className="text-chinese-black-900 dark:text-selago-200">{description}</p>
       {techStack && techStack.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1">
           {techStack.map((skillText, index) =>

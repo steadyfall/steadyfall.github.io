@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const Footer = () => {
   return (
-    <footer className={cn('py-12 text-gray-500 dark:text-gray-400')}>
+    <footer className={cn('py-12')}>
       <div
         className={cn(
           'flex flex-col items-center justify-center sm:flex-row-reverse sm:justify-between',

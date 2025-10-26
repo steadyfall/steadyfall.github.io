@@ -29,14 +29,14 @@ const AccordionForExtraInfo = (items: CustomAccordionItemDetails[] = []) => {
   }: CustomAccordionItemDetails) => {
     return (
       <AccordionItem value={value}>
-        <AccordionTrigger className="text-black dark:text-white">
+        <AccordionTrigger className="text-chinese-black-950 dark:text-selago-100">
           <span className="flex items-center gap-2">
             {iconTitle}
             <span>{title}</span>
           </span>
         </AccordionTrigger>
         <AccordionContent className="ps-7 text-base">
-          <ul className="list-inside list-none space-y-1 text-gray-700 dark:text-gray-300">
+          <ul className="list-inside list-none space-y-1 text-chinese-black-900 dark:text-selago-200">
             {body.map((node, idx) => (
               <li key={idx}>
                 {iconBody}
@@ -134,14 +134,14 @@ const About = () => {
         <h2
           className={cn(
             'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-[#434343] to-[#000000] bg-clip-text text-transparent dark:from-gray-300 dark:to-gray-100',
+            'inline-block bg-gradient-to-r from-white to-black bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
           )}
         >
           About
         </h2>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
-        <div className="text-gray-700 dark:text-gray-300">
+        <div className="text-chinese-black-900 dark:text-selago-200">
           <p className="mb-2">
             I am a <StrikeHighlight text="software developer" color="red" /> based in{' '}
             <StrikeHighlight text="Waterloo" color="red" /> and currently a{' '}
