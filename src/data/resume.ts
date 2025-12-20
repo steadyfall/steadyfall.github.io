@@ -25,7 +25,7 @@ export const experiences = [
     companyName: 'Geotab',
     companyLink: 'https://geotab.com/',
     position: 'Embedded Software Developer Intern',
-    period: 'Jan 2025 - Aug 2025',
+    period: 'January 2025 - August 2025',
     responsibilities: [
       'Geotab enables safe, sustainable, and efficient fleet and asset management \
       through data-driven connected solutions.',
