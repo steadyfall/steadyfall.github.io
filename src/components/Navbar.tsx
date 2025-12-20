@@ -34,11 +34,11 @@ const Navbar = () => {
               <HoverHighlight text="projects" />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/posts">
               <HoverHighlight text="blog" />
             </Link>
-          </li>
+          </li> */}
         </ul>
         <div className="flex gap-0 sm:gap-4">
           <ThemeSwitch />
