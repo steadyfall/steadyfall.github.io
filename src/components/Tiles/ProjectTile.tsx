@@ -64,7 +64,7 @@ export function ProjectTile({
           {techStack.map((skillText, index) =>
             delayTime ? (
               <BlurFade key={index} delay={delayTime + index * 0.05}>
-                <Badge key={index} variant={'secondary'}>
+                <Badge variant={'secondary'}>
                   {techIcons?.[skillText] && (
                     <span className="mr-2">
                       {<Icon icon={techIcons[skillText]} inline={true} width={18} height={18} />}
