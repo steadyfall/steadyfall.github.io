@@ -3,7 +3,6 @@ import { Icon } from '@iconify/react';
 import { Badge } from '@/components/ui/Badge';
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { techIcons } from '@/lib/techIcons';
-import { cn } from '@/lib/utils';
 
 interface SkillsProps {
   arr: {
@@ -50,12 +49,7 @@ export function Skills({ arr }: SkillsProps) {
   return (
     <section id="skills" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 9}>
-        <h2
-          className={cn(
-            'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-chinese-black-950 to-white bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
-          )}
-        >
+        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
           Skills
         </h2>
       </BlurFade>

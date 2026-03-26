@@ -1,5 +1,4 @@
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
-import { cn } from '@/lib/utils';
 
 import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile';
 
@@ -11,12 +10,7 @@ export function Projects({ arr }: ProjectProps) {
   return (
     <section id="projects" className="mb-12">
       <BlurFade delay={BLUR_FADE_DELAY * 11}>
-        <h2
-          className={cn(
-            'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-chinese-black-950 to-white bg-clip-text text-transparent dark:from-chinese-black-400/80 dark:to-white',
-          )}
-        >
+        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
           Projects
         </h2>
       </BlurFade>
