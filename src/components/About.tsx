@@ -1,7 +1,6 @@
 'use client';
 
 import { FlagTriangleRight, GitCommitVertical, Signpost } from 'lucide-react';
-import { useTheme } from 'next-themes';
 
 import {
   Accordion,
@@ -61,23 +60,19 @@ const AccordionForExtraInfo = (items: CustomAccordionItemDetails[] = []) => {
 };
 
 const About = () => {
-  const { resolvedTheme } = useTheme();
-  const isDarkMode = resolvedTheme === 'dark';
-
   const findMeDoingBody = [
     <>tinkering on projects that make my life a little easier.</>,
     <>
-      <StrikeHighlight text="re-watching" color={isDarkMode ? 'pink' : 'white'} /> any one of these{' '}
-      series: <StrikeHighlight text="Better Call Saul" color={isDarkMode ? 'pink' : 'white'} />,{' '}
-      <StrikeHighlight text="Silicon Valley" color={isDarkMode ? 'pink' : 'white'} />,{' '}
-      <StrikeHighlight text="South Park" color={isDarkMode ? 'pink' : 'white'} /> and{' '}
-      <StrikeHighlight text="House" color={isDarkMode ? 'pink' : 'white'} />.
+      <StrikeHighlight text="re-watching" color="white-pink" /> any one of these series:{' '}
+      <StrikeHighlight text="Better Call Saul" color="white-pink" />,{' '}
+      <StrikeHighlight text="Silicon Valley" color="white-pink" />,{' '}
+      <StrikeHighlight text="South Park" color="white-pink" /> and{' '}
+      <StrikeHighlight text="House" color="white-pink" />.
     </>,
   ];
   const thoseOfYouCuriousBody = [
     <>
-      The favicon is a{' '}
-      <StrikeHighlight text="4-hypercube graph" color={isDarkMode ? 'cyan' : 'white'} /> made via
+      The favicon is a <StrikeHighlight text="4-hypercube graph" color="white-cyan" /> made via
       Python, using NetworkX and Matplotlib. Check the{' '}
       <LinkWithArrow
         href="/icon.ico"
@@ -144,10 +139,9 @@ const About = () => {
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
         <div className="text-chinese-black-900 dark:text-selago-200">
           <p className="mb-2">
-            I am a{' '}
-            <StrikeHighlight text="software developer" color={isDarkMode ? 'red' : 'white'} /> based
-            in <StrikeHighlight text="Waterloo" color={isDarkMode ? 'red' : 'white'} /> and
-            currently a <StrikeHighlight text="junior" /> majoring in{' '}
+            I am a <StrikeHighlight text="software developer" color="white-red" /> based in{' '}
+            <StrikeHighlight text="Waterloo" color="white-red" /> and currently a{' '}
+            <StrikeHighlight text="junior" /> majoring in{' '}
             <StrikeHighlight text="Computational Mathematics" /> at the{' '}
             <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and
             innovation, especially exploring{' '}
