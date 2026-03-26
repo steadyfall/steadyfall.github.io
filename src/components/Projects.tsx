@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import { cn } from '@/lib/utils';
 
@@ -10,8 +8,6 @@ interface ProjectProps {
 }
 
 export function Projects({ arr }: ProjectProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [projects, setProjects] = useState(arr);
   return (
     <section id="projects" className="mb-12">
       <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -24,9 +20,9 @@ export function Projects({ arr }: ProjectProps) {
           Projects
         </h2>
       </BlurFade>
-      {projects && projects.length > 0 ? (
+      {arr && arr.length > 0 ? (
         <div className="space-y-5">
-          {projects.map((project, index) => {
+          {arr.map((project, index) => {
             project.delayTime = BLUR_FADE_DELAY * 12 + index * 0.2;
             return (
               <BlurFade key={index} delay={BLUR_FADE_DELAY * 12 + index * 0.2}>
