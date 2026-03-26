@@ -26,7 +26,7 @@ export function Projects({ arr }: ProjectProps) {
             project.delayTime = BLUR_FADE_DELAY * 12 + index * 0.2;
             return (
               <BlurFade key={index} delay={BLUR_FADE_DELAY * 12 + index * 0.2}>
-                <ProjectTile key={index} {...project} />
+                <ProjectTile {...project} />
               </BlurFade>
             );
           })}
