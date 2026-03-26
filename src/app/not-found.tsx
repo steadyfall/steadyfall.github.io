@@ -1,17 +1,11 @@
 import Link from 'next/link';
 
 import BackButton from '@/components/ui/BackButton';
-import { cn } from '@/lib/utils';
 
 export default function NotFound() {
   return (
     <main className="z-1 container mx-auto mt-[28vh] flex flex-col items-center justify-center">
-      <h1
-        className={cn(
-          'font-typewriter text-6xl font-bold md:text-7xl lg:text-8xl',
-          'bg-gradient-to-r from-chinese-black-500 to-chinese-black-800 bg-clip-text text-transparent dark:from-gray-500 dark:to-gray-300',
-        )}
-      >
+      <h1 className="font-typewriter text-6xl font-bold text-chinese-black-950 dark:text-selago-100 md:text-7xl lg:text-8xl">
         404
       </h1>
       <div className="mt-4 text-center">
