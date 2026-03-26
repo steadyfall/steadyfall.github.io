@@ -11,7 +11,14 @@ export default function LinkWithArrow({
   ...props
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
-    <a className={cn('group inline-flex items-center', className)} href={href} {...props}>
+    <a
+      className={cn(
+        'group inline-flex items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current',
+        className,
+      )}
+      href={href}
+      {...props}
+    >
       {children}
       <ArrowUpRight
         className={cn(

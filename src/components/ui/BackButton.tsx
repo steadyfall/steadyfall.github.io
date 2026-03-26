@@ -23,6 +23,7 @@ export default function BackButton({
       className={cn(
         'text-slate-600 hover:text-black dark:text-slate-300 dark:hover:text-white',
         'cursor-pointer hover:underline hover:underline-offset-4',
+        'rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current',
         className,
       )}
       onClick={router.back}

@@ -46,9 +46,11 @@ const Header = ({
 
   // for copy button
   useEffect(() => {
-    setTimeout(() => {
+    if (!copied) return;
+    const timer = setTimeout(() => {
       setCopiedId(undefined);
     }, 3000);
+    return () => clearTimeout(timer);
   }, [copied]);
 
   const isDarkMode = resolvedTheme === 'dark';
@@ -149,7 +151,10 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer text-black hover:text-white dark:text-white dark:hover:text-chinese-black-300"
+                  className="ml-3 cursor-pointer rounded text-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-white dark:hover:text-chinese-black-300"
+                  aria-label={
+                    copied === 'copied-email' ? 'Email address copied' : 'Copy email address'
+                  }
                   onClick={async () => {
                     if ('clipboard' in navigator) {
                       await navigator.clipboard.writeText(email);
@@ -160,9 +165,9 @@ const Header = ({
                   }}
                 >
                   {copied === 'copied-email' ? (
-                    <CopyCheck className="h-4 w-4 md:h-5 md:w-5" />
+                    <CopyCheck className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
                   ) : (
-                    <Copy className="h-4 w-4 md:h-5 md:w-5" />
+                    <Copy className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
                   )}
                 </button>
               </div>
