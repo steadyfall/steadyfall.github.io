@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 // import Image from 'next/image'
 
 export type HeaderProps = {
@@ -36,7 +35,6 @@ const Header = ({
   email,
   resumeFile,
 }: HeaderProps) => {
-  const isTablet = useMediaQuery('(min-width: 768px)');
   const [copied, setCopiedId] = useState<string>();
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -79,9 +77,7 @@ const Header = ({
     <div className="container mx-auto mb-10 lg:mb-16">
       <div className="flex flex-col items-center justify-between md:flex-row">
         <BlurFade delay={BLUR_FADE_DELAY}>
-          {!isTablet && (
-            <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8">{DitheredHeadshot}</div>
-          )}
+          <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8 md:hidden">{DitheredHeadshot}</div>
         </BlurFade>
         <div className="flex-grow text-center md:text-left">
           <BlurFade delay={BLUR_FADE_DELAY}>
@@ -175,7 +171,7 @@ const Header = ({
           </div>
         </div>
         <BlurFade delay={BLUR_FADE_DELAY} inView={true}>
-          {isTablet && <div className="flex-shrink-0">{DitheredHeadshot}</div>}
+          <div className="hidden flex-shrink-0 md:block">{DitheredHeadshot}</div>
         </BlurFade>
       </div>
       {/*

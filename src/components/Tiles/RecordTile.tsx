@@ -5,7 +5,6 @@ import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 // import Image from 'next/image';
 
 export type RecordTileProps = {
@@ -24,7 +23,6 @@ function jobDescriptorSection(
   role: string,
   duration: string,
   isOrganizationBeforeRole: boolean = false,
-  isWidth768pxOrMore: boolean,
 ) {
   // styling for:
   //    h2 - text-xl font-bold
@@ -71,13 +69,9 @@ function jobDescriptorSection(
             </>
           )}
         </>
-        {!isWidth768pxOrMore && (
-          <h3 className="font-typewriter text-white dark:text-selago-100">{duration}</h3>
-        )}
+        <p className="font-typewriter text-white dark:text-selago-100 md:hidden">{duration}</p>
       </div>
-      {isWidth768pxOrMore && (
-        <h3 className="font-typewriter text-white dark:text-selago-100">{duration}</h3>
-      )}
+      <p className="hidden font-typewriter text-white dark:text-selago-100 md:block">{duration}</p>
     </div>
   );
 }
@@ -91,9 +85,6 @@ export function RecordTile({
   body,
   organizationBeforeRole = false,
 }: RecordTileProps) {
-  const isTablet = useMediaQuery('(min-width: 768px)');
-  const isDesktop = useMediaQuery('(min-width: 1280px)');
-
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
@@ -135,14 +126,11 @@ export function RecordTile({
   return (
     <div className="-mb-2 flex items-center">
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">
-        {isDesktop && (
-          <div className="opacity-0 transition-opacity delay-100 md:group-hover:opacity-100">
-            <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-transparent">
-              {/* // center the bullet : `top-1/2 transform -translate-y-1/2` */}
-              {OrganizationLogoOnPaper}
-            </div>
+        <div className="hidden xl:block xl:opacity-0 xl:transition-opacity xl:delay-100 xl:group-hover:opacity-100">
+          <div className="absolute top-1/2 aspect-square -translate-y-1/2 transform rounded-lg bg-transparent">
+            {OrganizationLogoOnPaper}
           </div>
-        )}
+        </div>
         <div className="py-3 lg:pl-[132px] xl:pl-40 2xl:pl-52">
           {jobDescriptorSection(
             organizationName,
@@ -150,7 +138,6 @@ export function RecordTile({
             role,
             duration,
             organizationBeforeRole,
-            isTablet,
           )}
           {body}
         </div>

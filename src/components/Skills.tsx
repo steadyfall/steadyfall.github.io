@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { useState } from 'react';
 
 import { Badge } from '@/components/ui/Badge';
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
@@ -16,16 +15,14 @@ interface SkillsProps {
 }
 
 export function Skills({ arr }: SkillsProps) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [skills, setSkills] = useState(arr);
-  const result = Object.entries(skills).map(([key, value], idx) => {
+  const result = Object.entries(arr).map(([key, value], idx) => {
     return (
-      <div className="mb-4" key={idx} suppressHydrationWarning>
+      <div className="mb-4" key={idx}>
         <div className="mb-2 text-xl font-bold">
           {
             <BlurFade delay={BLUR_FADE_DELAY * 10}>
               {key === 'frameworksAndLibraries'
-                ? 'databases' in skills
+                ? 'databases' in arr
                   ? 'Frameworks & Libraries'
                   : 'Frameworks, Libraries & Databases'
                 : key.charAt(0).toUpperCase() + key.slice(1)}
@@ -62,7 +59,7 @@ export function Skills({ arr }: SkillsProps) {
           Skills
         </h2>
       </BlurFade>
-      {skills ? result : <p>No skills to display.</p>}
+      {arr ? result : <p>No skills to display.</p>}
     </section>
   );
 }
