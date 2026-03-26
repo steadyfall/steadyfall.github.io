@@ -21,22 +21,34 @@ const Navbar = () => {
       >
         <ul className="flex gap-4 sm:gap-8">
           <li>
-            <Link href="/">
+            <Link
+              href="/"
+              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+            >
               <HoverHighlight text="home" />
             </Link>
           </li>
           <li>
-            <Link href="/#experience">
+            <Link
+              href="/#experience"
+              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+            >
               <HoverHighlight text="experience" />
             </Link>
           </li>
           <li>
-            <Link href="/#projects">
+            <Link
+              href="/#projects"
+              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+            >
               <HoverHighlight text="projects" />
             </Link>
           </li>
           <li>
-            <Link href="/posts">
+            <Link
+              href="/posts"
+              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+            >
               <HoverHighlight text="blog" />
             </Link>
           </li>

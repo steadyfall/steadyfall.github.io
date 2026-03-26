@@ -30,7 +30,7 @@ function jobDescriptorSection(
   //    h2 - text-xl font-bold
   //    h3 - text-lg font-semibold
 
-  const organizationNameHeadingTag = isOrganizationBeforeRole ? 'h2' : 'h3';
+  const organizationNameHeadingTag = isOrganizationBeforeRole ? 'h3' : 'h4';
   const organizationNameHeading = React.createElement(
     LinkWithArrow,
     {
@@ -38,6 +38,8 @@ function jobDescriptorSection(
       target: '_blank',
       rel: 'noopener noreferrer',
       'aria-label': `Link to ${organization}`,
+      className:
+        'rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current',
     },
     React.createElement(
       organizationNameHeadingTag,
@@ -45,7 +47,7 @@ function jobDescriptorSection(
       organization,
     ),
   );
-  const roleHeadingTag = !isOrganizationBeforeRole ? 'h2' : 'h3';
+  const roleHeadingTag = !isOrganizationBeforeRole ? 'h3' : 'h4';
   const roleHeading = React.createElement(
     roleHeadingTag,
     { className: !isOrganizationBeforeRole ? 'text-xl font-bold' : 'text-lg font-semibold' },
