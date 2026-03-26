@@ -52,7 +52,7 @@ export function ProjectTile({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Live link for ${title}`}
-              className="text-white hover:underline hover:underline-offset-2 dark:text-[#40b9d0]"
+              className="text-white hover:underline hover:underline-offset-2 dark:text-firefly-300"
             >
               link
             </LinkWithArrow>

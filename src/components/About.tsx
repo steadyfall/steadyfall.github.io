@@ -91,7 +91,7 @@ const About = () => {
       <LinkWithArrow
         href="https://en.wikipedia.org/wiki/Hypercube_graph"
         target="_blank"
-        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-[#60d394]"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-spring-green-400"
       >
         more
       </LinkWithArrow>{' '}

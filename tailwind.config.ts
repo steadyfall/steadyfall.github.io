@@ -14,10 +14,10 @@ const config: Config = {
         section: ['Starlight', 'sans-serif'],
       },
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
         'dark-blue': '#1a0089',
+        'cobalt-blue': '#2b40f5',
         'portland-orange': '#ff5e33',
+        'portland-peach': '#ff9871',
         'midnight-blue': {
           '50': '#ebfaff',
           '100': '#d3f3ff',
