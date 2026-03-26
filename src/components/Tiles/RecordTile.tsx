@@ -2,7 +2,7 @@
 
 import { PaperTexture } from '@paper-design/shaders-react';
 import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 // import Image from 'next/image';
@@ -85,12 +85,7 @@ export function RecordTile({
   body,
   organizationBeforeRole = false,
 }: RecordTileProps) {
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-
-  // for useTheme
-  useEffect(() => setMounted(true), []);
-
   const isDarkMode = resolvedTheme === 'dark';
 
   const OrganizationLogoOnPaper = (
@@ -117,12 +112,6 @@ export function RecordTile({
     />
   );
 
-  if (!mounted) return null;
-
-  //   const topRow = (
-  //     <h2 className="text-xl font-bold">{!organizationBeforeRole ? role : organizationName}</h2>
-  //   );
-  //   const bottomRow = "";
   return (
     <div className="-mb-2 flex items-center">
       <div className="group relative flex-grow lg:-ml-[132px] xl:-ml-40 2xl:-ml-52">

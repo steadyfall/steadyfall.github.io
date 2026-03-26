@@ -24,7 +24,7 @@ export function Experiences({ arr }: ExperiencesProps) {
         <div className="space-y-6">
           {arr.map((experience, index) => (
             <BlurFade key={index} delay={BLUR_FADE_DELAY * 6 + index * 0.2}>
-              <ExperienceTile key={index} {...experience} />
+              <ExperienceTile {...experience} />
             </BlurFade>
           ))}
         </div>
