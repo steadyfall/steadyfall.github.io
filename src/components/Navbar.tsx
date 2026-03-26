@@ -8,8 +8,6 @@ import { cn } from '@/lib/utils';
 import ThemeSwitch from './ThemeSwitch';
 
 const Navbar = () => {
-  // const completion = useReadingProgress();
-
   return (
     <header className="sticky top-0 z-50 lg:pt-6">
       <nav

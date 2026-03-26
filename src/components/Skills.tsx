@@ -32,7 +32,7 @@ export function Skills({ arr }: SkillsProps) {
         <div className="flex flex-wrap gap-1">
           {value.map((skillText, index) => (
             <BlurFade key={index} delay={BLUR_FADE_DELAY * 10 + index * 0.05}>
-              <Badge key={index}>
+              <Badge>
                 {techIcons?.[skillText] && (
                   <span className="mr-2">
                     {<Icon icon={techIcons[skillText]} inline={true} width={18} height={18} />}

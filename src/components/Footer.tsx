@@ -33,7 +33,7 @@ const Footer = () => {
           <LinkWithArrow
             href={'mailto:' + personalDetails.email}
             aria-label="Email"
-            className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500" // text-orange-500"
+            className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500"
           >
             email
           </LinkWithArrow>

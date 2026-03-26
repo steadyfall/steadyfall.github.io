@@ -111,7 +111,10 @@ const About = () => {
       title: 'You can find me:',
       iconBody: (
         <>
-          <GitCommitVertical className="mr-1 inline-block h-4 w-4 align-middle md:h-5 md:w-5" />
+          <GitCommitVertical
+            className="mr-1 inline-block h-4 w-4 align-middle md:h-5 md:w-5"
+            aria-hidden="true"
+          />
         </>
       ),
       body: findMeDoingBody,
