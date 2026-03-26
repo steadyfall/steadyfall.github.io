@@ -13,7 +13,10 @@ interface StrikeHighlightProps {
     | 'turq'
     | 'yellow'
     | 'lemon'
-    | 'laser-lemon';
+    | 'laser-lemon'
+    | 'white-red'
+    | 'white-pink'
+    | 'white-cyan';
 }
 
 /**
@@ -34,6 +37,9 @@ export default function StrikeHighlight({ text, color = 'yellow' }: StrikeHighli
     turq: 'bg-[#60D394] dark:bg-[#60D394]/40',
     darkpink: 'bg-[#fe36cf] dark:bg-[#fe36cf]/35',
     white: 'bg-white',
+    'white-red': 'bg-white dark:bg-[#f83b3b]/40',
+    'white-pink': 'bg-white dark:bg-[#f73ed2]/35',
+    'white-cyan': 'bg-white dark:bg-cyan-500/35',
   };
 
   if (color === 'violet-web') {
