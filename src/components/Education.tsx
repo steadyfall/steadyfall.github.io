@@ -15,7 +15,7 @@ export function Education() {
       >
         Computational Mathematics
       </Link>{' '}
-      is a interdisplinary major that combines Mathematics, Statistics, Optimization and Computer
+      is an interdisciplinary major that combines Mathematics, Statistics, Optimization and Computer
       Science, offered by the Faculty of Mathematics.
       {/* TODO: Insert all courses using a recursive React component */}
     </p>
