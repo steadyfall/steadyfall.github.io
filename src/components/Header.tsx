@@ -135,7 +135,7 @@ const Header = ({
                   })}
                 </p>
                 <button
-                  className="ml-3 cursor-pointer rounded text-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-white dark:hover:text-chinese-black-300"
+                  className="ml-1 cursor-pointer rounded p-1.5 text-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-white dark:hover:text-chinese-black-300"
                   aria-label={
                     copied === 'copied-email' ? 'Email address copied' : 'Copy email address'
                   }

@@ -10,7 +10,7 @@ export function Education() {
         href="https://uwaterloo.ca/computational-mathematics/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mr-0.5 hover:text-black hover:underline hover:underline-offset-4 dark:hover:text-white"
+        className="mr-0.5 rounded hover:text-black hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-white"
       >
         Computational Mathematics
       </Link>{' '}
