@@ -14,7 +14,7 @@ export default function NotFound() {
       <ul className="mt-4 flex gap-4 sm:gap-8">
         <li>
           {
-            <BackButton className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-slate-300 dark:hover:text-white">
+            <BackButton className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-selago-300 dark:hover:text-white">
               go back
             </BackButton>
           }
@@ -23,7 +23,7 @@ export default function NotFound() {
         <li>
           <Link
             href="/"
-            className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-slate-300 dark:hover:text-white"
+            className="text-chinese-black-50 hover:text-chinese-black-950 hover:underline hover:underline-offset-4 dark:text-selago-300 dark:hover:text-white"
           >
             home
           </Link>

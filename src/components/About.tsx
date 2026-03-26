@@ -77,7 +77,7 @@ const About = () => {
       <LinkWithArrow
         href="/icon.ico"
         target="_blank"
-        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-orange-500"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-portland-orange"
       >
         image
       </LinkWithArrow>

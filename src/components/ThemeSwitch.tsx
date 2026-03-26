@@ -21,9 +21,9 @@ export default function ThemeSwitch() {
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       {isDark ? (
-        <Sun className="h-4 w-4 text-orange-300 md:h-5 md:w-5" aria-hidden="true" />
+        <Sun className="h-4 w-4 text-portland-peach md:h-5 md:w-5" aria-hidden="true" />
       ) : (
-        <Moon className="h-4 w-4 text-indigo-500 md:h-5 md:w-5" aria-hidden="true" />
+        <Moon className="h-4 w-4 text-blue-violet-500 md:h-5 md:w-5" aria-hidden="true" />
       )}
     </button>
   );
