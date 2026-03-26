@@ -16,7 +16,6 @@ export function Education() {
       </Link>{' '}
       is an interdisciplinary major that combines Mathematics, Statistics, Optimization and Computer
       Science, offered by the Faculty of Mathematics.
-      {/* TODO: Insert all courses using a recursive React component */}
     </p>
   );
 
