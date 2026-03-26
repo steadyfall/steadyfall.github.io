@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
-// import Image from 'next/image'
 
 export type HeaderProps = {
   name: string;
@@ -26,21 +25,13 @@ const Header = ({
   name,
   pronouns,
   currentEducation,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  currentJob,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  basedFrom,
   githubLink,
   linkedinLink,
   email,
   resumeFile,
 }: HeaderProps) => {
   const [copied, setCopiedId] = useState<string>();
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-
-  // for useTheme
-  useEffect(() => setMounted(true), []);
 
   // for copy button
   useEffect(() => {
@@ -61,7 +52,6 @@ const Header = ({
         colorBack={isDarkMode ? '#1a0098' : '#ff3600'} // Dark mode: blue, Light mode: orange
         colorFront="#ffffff"
         colorHighlight="#ffffff"
-        // originalColors
         type="8x8"
         size={1}
         colorSteps={5}
@@ -70,8 +60,6 @@ const Header = ({
       />
     </div>
   );
-
-  if (!mounted) return null;
 
   return (
     <div className="container mx-auto mb-10 lg:mb-16">
@@ -112,7 +100,7 @@ const Header = ({
               <LinkWithArrow
                 href={'mailto:' + email}
                 aria-label="Email"
-                className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500" // text-orange-500"
+                className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500"
               >
                 email
               </LinkWithArrow>
@@ -174,19 +162,6 @@ const Header = ({
           <div className="hidden flex-shrink-0 md:block">{DitheredHeadshot}</div>
         </BlurFade>
       </div>
-      {/*
-        <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <nav className="mt-8">
-              <ul className="flex justify-center md:justify-start space-x-6 text-sm md:text-base">
-              <li><a href="#about" className="hover:underline hover:underline-offset-4">About</a></li>
-              <li><a href="#experience" className="hover:underline hover:underline-offset-4">Experience</a></li>
-              <li><a href="#education" className="hover:underline hover:underline-offset-4">Education</a></li>
-              <li><a href="#skills" className="hover:underline hover:underline-offset-4">Skills</a></li>
-              <li><a href="#projects" className="hover:underline hover:underline-offset-4">Projects</a></li>
-              </ul>
-          </nav>
-        </BlurFade>
-      */}
     </div>
   );
 };

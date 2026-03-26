@@ -5,7 +5,6 @@ import { useTheme } from 'next-themes';
 import React from 'react';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
-// import Image from 'next/image';
 
 export type RecordTileProps = {
   organizationLogo: string;
@@ -24,10 +23,6 @@ function jobDescriptorSection(
   duration: string,
   isOrganizationBeforeRole: boolean = false,
 ) {
-  // styling for:
-  //    h2 - text-xl font-bold
-  //    h3 - text-lg font-semibold
-
   const organizationNameHeadingTag = isOrganizationBeforeRole ? 'h3' : 'h4';
   const organizationNameHeading = React.createElement(
     LinkWithArrow,
