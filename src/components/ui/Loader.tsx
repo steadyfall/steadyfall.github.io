@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <main className="z-1 container mt-[28vh] flex flex-col items-center">
       <svg
-        className="size-7 animate-spin text-gray-300 sm:size-8 md:size-9 lg:size-10"
+        className="size-7 animate-spin text-chinese-black-200 sm:size-8 md:size-9 lg:size-10"
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export default function Loading() {
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-gray-900"
+          className="text-chinese-black-950"
         ></path>
       </svg>
     </main>
