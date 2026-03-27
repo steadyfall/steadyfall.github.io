@@ -4,7 +4,7 @@ import { ImageDithering } from '@paper-design/shaders-react';
 import copy from 'copy-to-clipboard';
 import { Copy, CopyCheck } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { startTransition, useEffect, useState } from 'react';
 
 import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
@@ -42,7 +42,9 @@ const Header = ({
   const { resolvedTheme } = useTheme();
 
   // for useTheme
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    startTransition(() => setMounted(true));
+  }, []);
 
   // for copy button
   useEffect(() => {
@@ -58,9 +60,9 @@ const Header = ({
       <ImageDithering
         style={{ height: '100%', width: '100%' }}
         image="/images/headshot.jpg"
-        colorBack={isDarkMode ? '#1a0098' : '#ff3600'} // Dark mode: blue, Light mode: orange
-        colorFront="#ffffff"
-        colorHighlight="#ffffff"
+        colorBack={isDarkMode ? '#0a0a0a' : '#fc3f37'} // Dark mode: site bg, Light mode: thunderbird red
+        colorFront={isDarkMode ? '#1be825' : '#ffffff'} // Dark mode: neon green, Light mode: white
+        colorHighlight={isDarkMode ? '#e6ffe6' : '#ffffff'} // Dark mode: neon green tint, Light mode: white
         // originalColors
         type="8x8"
         size={1}

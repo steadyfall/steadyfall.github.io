@@ -2,7 +2,7 @@
 
 import { PaperTexture } from '@paper-design/shaders-react';
 import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
+import React, { startTransition, useEffect, useState } from 'react';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -96,7 +96,9 @@ export function RecordTile({
   const { resolvedTheme } = useTheme();
 
   // for useTheme
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    startTransition(() => setMounted(true));
+  }, []);
 
   const isDarkMode = resolvedTheme === 'dark';
 
@@ -105,8 +107,8 @@ export function RecordTile({
       width={80}
       height={80}
       image={organizationLogo}
-      colorBack={isDarkMode ? '#1a0089' : '#ff5e33'} // Dark mode: blue, Light mode: orange
-      colorFront={isDarkMode ? '#1a0089' : '#ff5e33'} // Dark mode: blue, Light mode: orange
+      colorBack={isDarkMode ? '#0a0a0a' : '#fc3f37'} // Dark mode: site bg, Light mode: thunderbird red
+      colorFront={isDarkMode ? '#0a0a0a' : '#fc3f37'} // Dark mode: site bg, Light mode: thunderbird red
       contrast={0.3}
       roughness={0.25}
       fiber={0.4}
