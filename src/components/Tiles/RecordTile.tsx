@@ -107,8 +107,8 @@ export function RecordTile({
       width={80}
       height={80}
       image={organizationLogo}
-      colorBack={isDarkMode ? '#0a0a0a' : '#fc3f37'} // Dark mode: site bg, Light mode: thunderbird red
-      colorFront={isDarkMode ? '#0a0a0a' : '#fc3f37'} // Dark mode: site bg, Light mode: thunderbird red
+      colorBack={isDarkMode ? '#0a0a0a' : '#f5f5f5'} // neutral-950 / neutral-100
+      colorFront={isDarkMode ? '#0a0a0a' : '#f5f5f5'} // neutral-950 / neutral-100
       contrast={0.3}
       roughness={0.25}
       fiber={0.4}
