@@ -1,50 +1,66 @@
 import { defineConfig } from "eslint/config";
+import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import prettier from "eslint-plugin-prettier";
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import nextTypescript from "eslint-config-next/typescript";
-import prettierConfig from "eslint-config-prettier";
+import _import from "eslint-plugin-import";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import js from "@eslint/js";
+import { FlatCompat } from "@eslint/eslintrc";
 
-export default defineConfig([
-    ...nextCoreWebVitals,
-    ...nextTypescript,
-    prettierConfig,
-    {
-        plugins: {
-            prettier,
-        },
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const compat = new FlatCompat({
+    baseDirectory: __dirname,
+    recommendedConfig: js.configs.recommended,
+    allConfig: js.configs.all
+});
 
-        rules: {
-            // Code quality
-            "no-console": "warn",
-            "no-debugger": "error",
-            "no-unused-vars": "off", // Handled by TS version above
+export default defineConfig([{
+    extends: fixupConfigRules(compat.extends(
+        "next/core-web-vitals",
+        "next/typescript",
+        "plugin:prettier/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+    )),
 
-            // Import sorting and cleanliness
-            "import/order": ["error", {
-                groups: [
-                    "builtin",
-                    "external",
-                    "internal",
-                    "parent",
-                    "sibling",
-                    "index",
-                    "object",
-                    "type",
-                ],
-
-                "newlines-between": "always",
-
-                alphabetize: {
-                    order: "asc",
-                    caseInsensitive: true,
-                },
-            }],
-
-            "import/newline-after-import": "error",
-            "import/no-duplicates": "error",
-
-            // Prettier takes over formatting rules now
-            "prettier/prettier": "error",
-        },
+    plugins: {
+        prettier: fixupPluginRules(prettier),
+        import: fixupPluginRules(_import),
     },
-]);
+
+    rules: {
+        // Code quality
+        "no-console": "warn",
+        "no-debugger": "error",
+        "no-unused-vars": "off", // Handled by TS version above
+
+        // Import sorting and cleanliness
+        "import/order": ["error", {
+            groups: [
+                "builtin",
+                "external",
+                "internal",
+                "parent",
+                "sibling",
+                "index",
+                "object",
+                "type",
+            ],
+
+            "newlines-between": "always",
+
+            alphabetize: {
+                order: "asc",
+                caseInsensitive: true,
+            },
+        }],
+
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        
+        // Prettier takes over formatting rules now
+        "prettier/prettier": "error",
+    },
+}]);
