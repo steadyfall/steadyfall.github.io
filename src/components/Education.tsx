@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import { EducationTile } from '@/components/Tiles/EducationTile';
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 
 export function Education() {
   const educationDetails = (

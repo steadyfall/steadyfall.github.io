@@ -1,7 +1,8 @@
 import { Icon } from '@iconify/react';
 
 import { Badge } from '@/components/ui/Badge';
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 import { techIcons } from '@/lib/techIcons';
 
 interface SkillsProps {

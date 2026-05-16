@@ -6,7 +6,8 @@ import { Copy, CopyCheck } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 export type HeaderProps = {
