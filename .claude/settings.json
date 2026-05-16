@@ -1,6 +1,0 @@
-{
-  "enabledPlugins": {
-    "commit-commands@claude-plugins-official": true
-  },
-  "includeCoAuthoredBy": false
-}
