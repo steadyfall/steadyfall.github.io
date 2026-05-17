@@ -50,7 +50,7 @@ export default function HoverHighlight({ text, color = 'background' }: HoverHigh
       <span
         className={cn(
           'z-1 relative',
-          color === 'background' ? 'group-hover:text-gray-200 group-hover:dark:text-gray-800' : '',
+          color === 'background' ? 'group-hover:text-gray-100 group-hover:dark:text-gray-800' : '',
         )}
       >
         {text}

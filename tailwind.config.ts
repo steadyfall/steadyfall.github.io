@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-instrumentsans)'],
         typewriter: ['var(--font-spaceMono)'],
         section: ['Starlight', 'sans-serif'],
       },
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        'dark-blue': '#1a0089',
+        'cobalt-blue': '#2b40f5',
+        'portland-orange': '#ff5e33',
+        'portland-peach': '#ff9871',
         'midnight-blue': {
           '50': '#ebfaff',
           '100': '#d3f3ff',
@@ -159,20 +161,32 @@ const config: Config = {
           '900': '#0e5932',
           '950': '#013219',
         },
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+        selago: {
+          '50': '#f3f4fa',
+          '100': '#e4e6f3',
+          '200': '#d8daed',
+          '300': '#c0c3e1',
+          '400': '#a6a6d3',
+          '500': '#938fc5',
+          '600': '#8077b4',
+          '700': '#6e659d',
+          '800': '#5a5380',
+          '900': '#4c4867',
+          '950': '#2d2a3c',
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+        'chinese-black': {
+          '50': '#f6f6f6',
+          '100': '#e7e7e7',
+          '200': '#d1d1d1',
+          '300': '#b0b0b0',
+          '400': '#888888',
+          '500': '#6d6d6d',
+          '600': '#5d5d5d',
+          '700': '#4f4f4f',
+          '800': '#454545',
+          '900': '#3d3d3d',
+          '950': '#171717',
         },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },

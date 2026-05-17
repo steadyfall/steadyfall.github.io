@@ -1,3 +1,5 @@
+'use client';
+
 import { FlagTriangleRight, GitCommitVertical, Signpost } from 'lucide-react';
 
 import {
@@ -6,10 +8,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/Accordion';
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 import StrikeHighlight from '@/components/ui/StrikeHighlighter';
-import { cn } from '@/lib/utils';
 
 type CustomAccordionItemDetails = {
   value: string;
@@ -29,14 +31,14 @@ const AccordionForExtraInfo = (items: CustomAccordionItemDetails[] = []) => {
   }: CustomAccordionItemDetails) => {
     return (
       <AccordionItem value={value}>
-        <AccordionTrigger className="text-black dark:text-white">
+        <AccordionTrigger className="text-chinese-black-950 dark:text-selago-100">
           <span className="flex items-center gap-2">
             {iconTitle}
             <span>{title}</span>
           </span>
         </AccordionTrigger>
         <AccordionContent className="ps-7 text-base">
-          <ul className="list-inside list-none space-y-1 text-gray-700 dark:text-gray-300">
+          <ul className="list-inside list-none space-y-1 text-chinese-black-900 dark:text-selago-200">
             {body.map((node, idx) => (
               <li key={idx}>
                 {iconBody}
@@ -62,21 +64,21 @@ const About = () => {
   const findMeDoingBody = [
     <>tinkering on projects that make my life a little easier.</>,
     <>
-      <StrikeHighlight text="re-watching" color="pink" /> any one of these series:{' '}
-      <StrikeHighlight text="Better Call Saul" color="pink" />,{' '}
-      <StrikeHighlight text="Silicon Valley" color="pink" />,{' '}
-      <StrikeHighlight text="South Park" color="pink" /> and{' '}
-      <StrikeHighlight text="House" color="pink" />.
+      <StrikeHighlight text="re-watching" color="white-pink" /> any one of these series:{' '}
+      <StrikeHighlight text="Better Call Saul" color="white-pink" />,{' '}
+      <StrikeHighlight text="Silicon Valley" color="white-pink" />,{' '}
+      <StrikeHighlight text="South Park" color="white-pink" /> and{' '}
+      <StrikeHighlight text="House" color="white-pink" />.
     </>,
   ];
   const thoseOfYouCuriousBody = [
     <>
-      The favicon is a <StrikeHighlight text="4-hypercube graph" color="cyan" /> made via Python,
-      using NetworkX and Matplotlib. Check the{' '}
+      The favicon is a <StrikeHighlight text="4-hypercube graph" color="white-cyan" /> made via
+      Python, using NetworkX and Matplotlib. Check the{' '}
       <LinkWithArrow
         href="/icon.ico"
         target="_blank"
-        className="mr-1 text-orange-500 hover:underline hover:underline-offset-2"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-portland-orange"
       >
         image
       </LinkWithArrow>
@@ -84,15 +86,15 @@ const About = () => {
       <LinkWithArrow
         href="https://en.wikipedia.org/wiki/Hypercube_graph"
         target="_blank"
-        className="mr-1 text-blue-violet-500 hover:underline hover:underline-offset-2"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-spring-green-400"
       >
         more
       </LinkWithArrow>{' '}
       about hypercube graphs & here is the{' '}
       <LinkWithArrow
-        href="https://github.com/steadyfall/steadyfall.github.io/blob/main/hypercube/generate.py"
+        href="https://github.com/steadyfall/steadyfall.github.io/blob/dev/hypercube/generate.py"
         target="_blank"
-        className="mr-1 text-firefly-600 hover:underline hover:underline-offset-2 dark:text-firefly-500"
+        className="mr-1 text-white hover:underline hover:underline-offset-2 dark:text-firefly-400"
       >
         code
       </LinkWithArrow>{' '}
@@ -110,7 +112,10 @@ const About = () => {
       title: 'You can find me:',
       iconBody: (
         <>
-          <GitCommitVertical className="mr-1 inline-block h-4 w-4 align-middle md:h-5 md:w-5" />
+          <GitCommitVertical
+            className="mr-1 inline-block h-4 w-4 align-middle md:h-5 md:w-5"
+            aria-hidden="true"
+          />
         </>
       ),
       body: findMeDoingBody,
@@ -129,22 +134,17 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="mb-12">
+    <section id="about" className="mb-12 lg:mb-20">
       <BlurFade delay={BLUR_FADE_DELAY * 3}>
-        <h2
-          className={cn(
-            'mb-4 font-section text-2xl md:text-3xl lg:text-4xl',
-            'inline-block bg-gradient-to-r from-[#434343] to-[#000000] bg-clip-text text-transparent dark:from-gray-300 dark:to-gray-100',
-          )}
-        >
+        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
           About
         </h2>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 4}>
-        <div className="text-gray-700 dark:text-gray-300">
+        <div className="text-chinese-black-900 dark:text-selago-200">
           <p className="mb-2">
-            I am a <StrikeHighlight text="software developer" color="red" /> based in{' '}
-            <StrikeHighlight text="Waterloo" color="red" /> and currently a{' '}
+            I am a <StrikeHighlight text="software developer" color="white-red" /> based in{' '}
+            <StrikeHighlight text="Waterloo" color="white-red" /> and currently a{' '}
             <StrikeHighlight text="junior" /> majoring in{' '}
             <StrikeHighlight text="Computational Mathematics" /> at the{' '}
             <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and

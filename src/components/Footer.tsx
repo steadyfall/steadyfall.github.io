@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 const Footer = () => {
   return (
-    <footer className={cn('py-12 text-gray-500 dark:text-gray-400')}>
+    <footer className={cn('py-12')}>
       <div
         className={cn(
           'flex flex-col items-center justify-center sm:flex-row-reverse sm:justify-between',
@@ -17,7 +17,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-pink-500 hover:underline hover:underline-offset-2"
+            className="text-white hover:underline hover:underline-offset-2 dark:text-pink-500"
           >
             github
           </LinkWithArrow>
@@ -26,14 +26,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-thunderbird-600 hover:underline hover:underline-offset-2"
+            className="text-white hover:underline hover:underline-offset-2 dark:text-thunderbird-500"
           >
             linkedin
           </LinkWithArrow>
           <LinkWithArrow
             href={'mailto:' + personalDetails.email}
             aria-label="Email"
-            className="text-azure-radiance-600 hover:underline hover:underline-offset-2" // text-orange-500"
+            className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500"
           >
             email
           </LinkWithArrow>

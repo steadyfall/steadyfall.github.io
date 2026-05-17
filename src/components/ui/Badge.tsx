@@ -4,15 +4,15 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const badgeVariants = cva(
-  'flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  'flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors',
   {
     variants: {
       variant: {
         default:
-          'border-transparent shadow bg-neutral-950 text-gray-200 hover:bg-neutral-950/80 dark:bg-neutral-100 dark:text-gray-800 dark:hover:bg-neutral-100/80 focus:bg-neutral-900 dark:focus:bg-neutral-200',
+          'border-transparent shadow bg-portland-peach text-chinese-black-900 hover:bg-portland-orange hover:shadow-none dark:bg-selago-100 dark:text-chinese-black-950 dark:hover:bg-selago-200 dark:hover:text-chinese-black-950',
         secondary:
-          'border-transparent shadow bg-neutral-200 text-gray-800 hover:bg-neutral-200/80 dark:bg-neutral-700 dark:text-gray-200 dark:hover:bg-neutral-700/80',
-        outline: 'text-foreground focus:bg-accent focus:text-accent-foreground',
+          'border-transparent shadow bg-chinese-black-950 text-selago-100 hover:text-chinese-black-950 hover:bg-portland-orange hover:shadow-none dark:bg-selago-200 dark:text-chinese-black-900 dark:hover:text-selago-200 dark:hover:bg-dark-blue',
+        outline: 'text-chinese-black-950 dark:text-selago-100',
       },
     },
     defaultVariants: {

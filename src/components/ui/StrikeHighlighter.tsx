@@ -4,13 +4,19 @@ interface StrikeHighlightProps {
   text: string;
   color?:
     | 'cyan'
+    | 'white'
     | 'pink'
+    | 'darkpink'
     | 'violet-web'
     | 'slate-blue'
     | 'red'
+    | 'turq'
     | 'yellow'
     | 'lemon'
-    | 'laser-lemon';
+    | 'laser-lemon'
+    | 'white-red'
+    | 'white-pink'
+    | 'white-cyan';
 }
 
 /**
@@ -23,11 +29,17 @@ interface StrikeHighlightProps {
  */
 export default function StrikeHighlight({ text, color = 'yellow' }: StrikeHighlightProps) {
   const colors: Record<string, string> = {
-    cyan: 'bg-cyan-200/80 dark:bg-cyan-500/35',
-    pink: 'bg-[#ffa7ee]/80 dark:bg-[#f73ed2]/35',
+    cyan: 'bg-cyan-500 dark:bg-cyan-500/35',
+    pink: 'bg-[#ffa7ee] dark:bg-[#f73ed2]/35',
     'slate-blue': 'bg-[#a0a8ff] dark:bg-[#675bf9]/40',
-    red: 'bg-[#ffa0a0]/75 dark:bg-[#f83b3b]/40',
-    yellow: 'bg-[#ffff77]/75 dark:bg-[#fce913]/40',
+    red: 'bg-[#ffa0a0] dark:bg-[#f83b3b]/40',
+    yellow: 'bg-[#ffff77] dark:bg-[#fce913]/40',
+    turq: 'bg-[#60D394] dark:bg-[#60D394]/40',
+    darkpink: 'bg-[#fe36cf] dark:bg-[#fe36cf]/35',
+    white: 'bg-white',
+    'white-red': 'bg-white dark:bg-[#f83b3b]/40',
+    'white-pink': 'bg-white dark:bg-[#f73ed2]/35',
+    'white-cyan': 'bg-white dark:bg-cyan-500/35',
   };
 
   if (color === 'violet-web') {
@@ -42,7 +54,7 @@ export default function StrikeHighlight({ text, color = 'yellow' }: StrikeHighli
     <span className="relative inline-block">
       <span
         className={cn(
-          'absolute left-0 right-0 top-[60%] h-[0.6em] -translate-y-1/2 px-[0.1em]',
+          'absolute left-0 right-0 top-[50%] h-[1em] -translate-y-1/2 px-[0.2em]',
           colorClass,
         )}
       ></span>
