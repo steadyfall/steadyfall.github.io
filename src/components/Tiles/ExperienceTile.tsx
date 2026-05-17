@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown';
+
 import { RecordTile } from '@/components/Tiles/RecordTile';
 
 export type ExperienceTileProps = {
@@ -22,7 +24,7 @@ export function ExperienceTile({
       <ul className="-pb-1 list-inside list-none space-y-1 text-chinese-black-900 dark:text-selago-200">
         {responsibilities.map((responsibility, index) => (
           <li key={index} className="py-1">
-            {responsibility}
+            <ReactMarkdown>{responsibility}</ReactMarkdown>
           </li>
         ))}
       </ul>
