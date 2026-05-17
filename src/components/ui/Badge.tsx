@@ -9,7 +9,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          'border-transparent shadow bg-portland-peach text-chinese-black-900 hover:bg-portland-orange hover:shadow-none dark:bg-cobalt-blue dark:text-selago-200 dark:hover:bg-dark-blue',
+          'border-transparent shadow bg-portland-peach text-chinese-black-900 hover:bg-portland-orange hover:shadow-none dark:bg-selago-100 dark:text-chinese-black-950 dark:hover:bg-selago-200 dark:hover:text-chinese-black-950',
         secondary:
           'border-transparent shadow bg-chinese-black-950 text-selago-100 hover:text-chinese-black-950 hover:bg-portland-orange hover:shadow-none dark:bg-selago-200 dark:text-chinese-black-900 dark:hover:text-selago-200 dark:hover:bg-dark-blue',
         outline: 'text-chinese-black-950 dark:text-selago-100',

@@ -1,4 +1,5 @@
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 
 import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile';
 

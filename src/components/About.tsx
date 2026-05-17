@@ -8,7 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/Accordion';
-import BlurFade, { BLUR_FADE_DELAY } from '@/components/ui/BlurFade';
+import BlurFade from '@/components/ui/BlurFade';
+import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 import StrikeHighlight from '@/components/ui/StrikeHighlighter';
 
