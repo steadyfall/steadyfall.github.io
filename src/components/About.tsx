@@ -145,7 +145,7 @@ const About = () => {
           <p className="mb-2">
             I am a <StrikeHighlight text="software developer" color="white-red" /> based in{' '}
             <StrikeHighlight text="Waterloo" color="white-red" /> and currently a{' '}
-            <StrikeHighlight text="junior" /> majoring in{' '}
+            <StrikeHighlight text="senior" /> majoring in{' '}
             <StrikeHighlight text="Computational Mathematics" /> at the{' '}
             <StrikeHighlight text="University of Waterloo" />. I am passionate about technology and
             innovation, especially exploring{' '}
