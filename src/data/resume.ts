@@ -11,8 +11,8 @@ export const personalDetails = {
   name: 'Himank Dave',
   pronouns: 'he/him/his',
   currentEducation: 'Computational Mathematics [at] UWaterloo',
-  currentJob: ['Software Developer in Test Intern', 'Geotab'],
-  basedFrom: 'Toronto',
+  // currentJob: ['Software Developer in Test Intern', 'Geotab'],
+  // basedFrom: 'Toronto',
   githubLink: 'https://github.com/steadyfall',
   linkedinLink: 'https://www.linkedin.com/in/himank-dave/',
   email: 'hddave@uwaterloo.ca',
@@ -29,9 +29,9 @@ export const experiences = [
     responsibilities: [
       'Geotab enables safe, sustainable, and efficient fleet and asset management \
       through data-driven connected solutions.',
-      'I worked as a Test Automation Developer on the Embedded Software Quality team.',
+      'I worked as an Embedded Developer on the Pipeline Automation team, under Embedded Software Quality.',
       'Apart from day-to-day tasks supporting 10k+ pipelines/month across 250+ GitLab repositories, \
-      I built a high-performance artifact-retrieval gRPC microservice for an in-house SIL testing framework and containerized \
+      I built a high-performance artifact-retrieval gRPC microservice for an in-house Software-in-the-Loop (SIL) testing framework and containerized \
       a Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
     ],
   },
