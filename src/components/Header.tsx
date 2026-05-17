@@ -49,7 +49,7 @@ const Header = ({
     <div className="size-36 md:size-48 lg:size-56">
       <ImageDithering
         style={{ height: '100%', width: '100%' }}
-        image="/images/headshot.jpg"
+        image="/images/headshot.jpeg"
         colorBack={isDarkMode ? '#1a0098' : '#ff3600'} // Dark mode: blue, Light mode: orange
         colorFront="#ffffff"
         colorHighlight="#ffffff"
