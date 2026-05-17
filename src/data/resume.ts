@@ -21,6 +21,19 @@ export const personalDetails = {
 
 export const experiences = [
   {
+    companyLogo: '/images/miovision.png',
+    companyName: 'Miovision',
+    companyLink: 'https://miovision.com/',
+    position: 'Software Developer Intern',
+    period: 'May 2026 - Present',
+    responsibilities: [
+      "Miovision provides cities with modern tools to fix today's traffic problems, \
+      using multimodal traffic data and actionable insights to help municipalities \
+      move people more safely, efficiently, and sustainably.",
+      'I am working as a Software Developer on [Adaptive](https://miovision.com/adaptive/).',
+    ],
+  },
+  {
     companyLogo: '/images/geotab.jpeg',
     companyName: 'Geotab',
     companyLink: 'https://geotab.com/',
