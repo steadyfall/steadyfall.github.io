@@ -34,7 +34,7 @@ export function Education() {
           institutionLink={'https://uwaterloo.ca/'}
           degree={'Bachelor of Mathematics'}
           major={'Computational Mathematics Major'}
-          duration={'Sept 2022 - Present'}
+          duration={'September 2022 - May 2027'}
           details={educationDetails}
         />
       </BlurFade>
