@@ -61,13 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${instrumentsans.className} ${spaceMono.variable}`}
       suppressHydrationWarning
     >
-      <body
-        className={cn(
-          'bg-portland-orange text-chinese-black-950 dark:bg-dark-blue dark:text-selago-100',
-          'transition-colors duration-300',
-        )}
-        suppressHydrationWarning
-      >
+      <body className={cn('bg-white text-chinese-black-950')} suppressHydrationWarning>
         <SmoothScrollProvider offset={90}>
           <div className="flex min-h-screen flex-col">
             <Providers>{children}</Providers>

@@ -4,7 +4,7 @@ export const detailsForMetadata = {
   name: 'Himank Dave',
   ogImage: '/icon.ico',
   description:
-    'A sleek, minimalistic and dynamic personal website built with React, TailwindCSS, Next.js and Framer Motion.',
+    'Himank Dave is a software engineer and Computational Mathematics student at the University of Waterloo.',
 };
 
 export const personalDetails = {
