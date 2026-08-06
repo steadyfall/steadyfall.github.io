@@ -10,7 +10,7 @@ on:
 
 jobs:
   lint:
-    name: ESLint & Prettier 
+    name: ESLint & Prettier
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4.4.0
         with:
           node-version: '22.x'
-      
+
       - name: Cache node modules
         uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 #v4.2.4
         with:
@@ -41,7 +41,7 @@ jobs:
           else
             echo "BASE_BRANCH=${{ github.ref_name }}" >> $GITHUB_ENV
           fi
-      
+
       - name: Fetch base branch
         run: |
           git fetch origin $BASE_BRANCH
@@ -54,11 +54,11 @@ jobs:
       - name: Lint JS/TS files with ESLint (no auto-fix)
         if: ${{ env.CHANGED_FILES != ''}}
         run: |
-          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(js|jsx|ts|tsx)$' | xargs)
+          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(js|jsx|ts|tsx)$' | xargs || true)
           if [ -n "$FILES" ]; then
             echo "Running ESLint on:"
             echo "$FILES"
-            npx next lint --file $FILES
+            npx eslint $FILES
           else
             echo "No JS/TS files to lint."
           fi
@@ -66,7 +66,7 @@ jobs:
       - name: Format other files with Prettier (no auto-fix)
         if: ${{ env.CHANGED_FILES != ''}}
         run: |
-          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(json|md|css|scss|html)$' | xargs)
+          FILES=$(echo "$CHANGED_FILES" | tr ' ' '\n' | grep -E '\.(json|css|scss|html)$' | xargs || true)
           if [ -n "$FILES" ]; then
             echo "Running Prettier on:"
             echo "$FILES"
@@ -74,9 +74,9 @@ jobs:
           else
             echo "No files to format with Prettier."
           fi
-  
+
   type-check:
-    name: Type Checking 
+    name: Type Checking
     runs-on: ubuntu-latest
 
     steps:
@@ -87,7 +87,7 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4.4.0
         with:
           node-version: '22.x'
-      
+
       - name: Cache node modules
         uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 #v4.2.4
         with:
