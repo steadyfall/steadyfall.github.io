@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -10,11 +10,11 @@ export default function BackButton({
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const router = useRouter();
-  const [hasHistory, setHasHistory] = useState(true);
-
-  useEffect(() => {
-    setHasHistory(window.history?.length > 1);
-  }, []);
+  const hasHistory = useSyncExternalStore(
+    () => () => {},
+    () => window.history.length > 1,
+    () => true,
+  );
 
   if (!hasHistory) {
     return null;
