@@ -1,59 +1,33 @@
 'use client';
 
-import Link from 'next/link';
+import { Tabs } from '@base-ui/react/tabs';
 
-import HoverHighlight from '@/components/ui/HoverHighlighter';
-import { cn } from '@/lib/utils';
+import { personalDetails } from '@/data/resume';
 
-import ThemeSwitch from './ThemeSwitch';
+export default function Navbar() {
+  const navItemClassName =
+    'm-0 cursor-pointer rounded-none border-0 bg-transparent p-0 text-sm leading-[1.3] text-[#55544f] hover:text-[#11110f] hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] data-[active]:font-semibold data-[active]:text-[#11110f] data-[active]:underline data-[active]:underline-offset-4';
 
-const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 lg:pt-6">
-      <nav
-        className={cn(
-          'flex items-center justify-between',
-          'mx-auto mb-3 px-8 py-4 sm:px-16 md:px-24 lg:max-w-3xl lg:px-8 xl:max-w-4xl 2xl:max-w-5xl',
-          'bg-neutral-100/50 backdrop-blur-md dark:bg-neutral-950/50',
-        )}
-      >
-        <ul className="flex gap-4 sm:gap-8">
-          <li>
-            <Link
-              href="/"
-              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
-            >
-              <HoverHighlight text="home" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/#experience"
-              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
-            >
-              <HoverHighlight text="experience" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/#projects"
-              className="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
-            >
-              <HoverHighlight text="projects" />
-            </Link>
-          </li>
-          {/* <li>
-            <Link href="/posts">
-              <HoverHighlight text="blog" />
-            </Link>
-          </li> */}
-        </ul>
-        <div className="flex gap-0 sm:gap-4">
-          <ThemeSwitch />
-        </div>
+    <header className="sticky top-0 z-20 mx-auto flex max-w-[1100px] justify-end bg-white/95 px-[22px] py-[18px] backdrop-blur-xl md:px-12 md:py-5">
+      <nav className="flex items-baseline gap-[22px] md:gap-7" aria-label="Portfolio pages">
+        <Tabs.List className="flex items-baseline gap-[22px] md:gap-7">
+          <Tabs.Tab value="index" className={navItemClassName}>
+            Index
+          </Tabs.Tab>
+          <Tabs.Tab value="projects" className={navItemClassName}>
+            Projects
+          </Tabs.Tab>
+        </Tabs.List>
+        <a
+          href={`/${personalDetails.resumeFile}`}
+          target="_blank"
+          rel="noreferrer"
+          className={navItemClassName}
+        >
+          Résumé
+        </a>
       </nav>
     </header>
   );
-};
-
-export default Navbar;
+}

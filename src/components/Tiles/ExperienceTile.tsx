@@ -1,6 +1,8 @@
+import { Accordion } from '@base-ui/react/accordion';
+import { ArrowUpRight, Plus } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-import { RecordTile } from '@/components/Tiles/RecordTile';
+import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 export type ExperienceTileProps = {
   companyLogo: string;
@@ -12,34 +14,48 @@ export type ExperienceTileProps = {
 };
 
 export function ExperienceTile({
-  companyLogo,
   companyName,
   companyLink,
   position,
   period,
-  responsibilities,
+  responsibilities = [],
 }: ExperienceTileProps) {
-  const responsibilitiesAsHTML = responsibilities && responsibilities.length > 0 && (
-    <div className="mt-2">
-      <ul className="-pb-1 list-inside list-none space-y-1 text-chinese-black-900 dark:text-selago-200">
-        {responsibilities.map((responsibility, index) => (
-          <li key={index} className="py-1">
-            <ReactMarkdown>{responsibility}</ReactMarkdown>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
   return (
-    <RecordTile
-      organizationLogo={companyLogo}
-      organizationName={companyName}
-      organizationLink={companyLink}
-      role={position}
-      duration={period}
-      body={responsibilitiesAsHTML}
-      organizationBeforeRole={true}
-    />
+    <Accordion.Item value={`${companyName}-${position}`}>
+      <Accordion.Header className="m-0">
+        <Accordion.Trigger className="group flex w-full cursor-pointer items-start justify-between gap-4 rounded-none border-0 bg-transparent pb-4 text-left text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] md:items-baseline">
+          <span className="min-w-0 pr-1 text-[15px] leading-[1.45] text-[#454440] md:pr-0">
+            <strong className="font-semibold">
+              {companyName}{' '}
+              <ArrowUpRight className="inline-block size-[0.9em] stroke-[1.7]" aria-hidden />
+            </strong>
+            <span aria-hidden> · </span>
+            <span>{position}</span>
+          </span>
+          <span className="flex max-w-[118px] flex-none flex-col items-end gap-[5px] text-right text-[11px] text-[#66645f] md:max-w-none md:flex-row md:items-baseline md:gap-3.5 md:whitespace-nowrap md:text-[13px]">
+            <span>{period.replaceAll(' - ', ' – ')}</span>
+            <Plus
+              className="mt-0.5 size-3.5 flex-none stroke-[1.2] transition-transform duration-200 group-data-[panel-open]:rotate-45 motion-reduce:transition-none md:mt-0"
+              aria-hidden
+            />
+          </span>
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0 motion-reduce:transition-none">
+        <div className="max-w-[620px] pb-5 text-sm leading-[1.6] text-[#55544f] [&_p+p]:mt-1 [&_p]:m-0">
+          {responsibilities.map((responsibility, index) => (
+            <ReactMarkdown key={index}>{`· ${responsibility}`}</ReactMarkdown>
+          ))}
+          <LinkWithArrow
+            href={companyLink}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2.5 text-xs text-[#11110f] underline underline-offset-[3px] hover:text-[#55544f]"
+          >
+            Visit {companyName}
+          </LinkWithArrow>
+        </div>
+      </Accordion.Panel>
+    </Accordion.Item>
   );
 }

@@ -1,7 +1,6 @@
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
+import { Accordion } from '@base-ui/react/accordion';
 
-import { ExperienceTileProps, ExperienceTile } from './Tiles/ExperienceTile';
+import { ExperienceTile, ExperienceTileProps } from './Tiles/ExperienceTile';
 
 interface ExperiencesProps {
   arr: ExperienceTileProps[];
@@ -9,23 +8,25 @@ interface ExperiencesProps {
 
 export function Experiences({ arr }: ExperiencesProps) {
   return (
-    <section id="experience" className="mb-12 lg:mb-20">
-      <BlurFade delay={BLUR_FADE_DELAY * 5}>
-        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
-          Experience
-        </h2>
-      </BlurFade>
-      {arr && arr.length > 0 ? (
-        <div className="space-y-6">
-          {arr.map((experience, index) => (
-            <BlurFade key={index} delay={BLUR_FADE_DELAY * 6 + index * 0.2}>
-              <ExperienceTile {...experience} />
-            </BlurFade>
-          ))}
-        </div>
-      ) : (
-        <p>No experiences to display.</p>
-      )}
+    <section
+      id="experience"
+      className="mt-[52px] grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0 [&:first-of-type]:mt-[62px] md:[&:first-of-type]:mt-[72px]"
+      aria-labelledby="experience-title"
+    >
+      <h2
+        id="experience-title"
+        className="m-0 font-display text-[21px] font-normal italic leading-tight"
+      >
+        Experience
+      </h2>
+      <Accordion.Root multiple className="flex w-full flex-col">
+        {arr.map((experience) => (
+          <ExperienceTile
+            key={`${experience.companyName}-${experience.position}`}
+            {...experience}
+          />
+        ))}
+      </Accordion.Root>
     </section>
   );
 }

@@ -9,9 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-instrumentsans)'],
-        typewriter: ['var(--font-spaceMono)'],
+        sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Instrument Serif', 'Georgia', 'serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        typewriter: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
         section: ['Starlight', 'sans-serif'],
+      },
+      keyframes: {
+        rainbow: {
+          to: { backgroundPosition: '-250% 0' },
+        },
+      },
+      animation: {
+        rainbow: 'rainbow 7s linear infinite',
       },
       colors: {
         'dark-blue': '#1a0089',

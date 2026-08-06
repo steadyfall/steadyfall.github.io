@@ -1,11 +1,6 @@
-import { Icon } from '@iconify/react';
-
-import { Badge } from '@/components/ui/Badge';
-import BlurFade from '@/components/ui/BlurFade';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
-import { techIcons } from '@/lib/techIcons';
 
-type ProjectTileDetailProps = {
+export type ProjectTileProps = {
   title: string;
   description: string;
   repo: boolean;
@@ -13,79 +8,60 @@ type ProjectTileDetailProps = {
   live: boolean;
   liveUrl?: string;
   techStack: string[];
-};
-
-export type ProjectTileProps = ProjectTileDetailProps & {
-  delayTime?: number;
+  variant?: 'selected' | 'full';
 };
 
 export function ProjectTile({
-  delayTime,
   title,
   description,
   repo,
   repoUrl,
-  live,
   liveUrl,
   techStack,
+  variant = 'full',
 }: ProjectTileProps) {
-  return (
-    <div className="items-center">
-      <div className="mb-2 flex flex-col justify-between sm:flex-row md:items-start">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <div className="justify-end space-x-2">
-          {repo && (
-            <LinkWithArrow
-              href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Repository link for ${title}`}
-              className="text-white hover:underline hover:underline-offset-2 dark:text-pink-500"
-            >
-              repo
-            </LinkWithArrow>
-          )}
-          {live && (
-            <LinkWithArrow
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Live link for ${title}`}
-              className="text-white hover:underline hover:underline-offset-2 dark:text-firefly-300"
-            >
-              link
-            </LinkWithArrow>
-          )}
-        </div>
+  const destination = liveUrl ?? repoUrl;
+  const titleNode = destination ? (
+    <LinkWithArrow
+      href={destination}
+      target="_blank"
+      rel="noreferrer"
+      className="font-semibold text-[#11110f] no-underline hover:text-[#55544f]"
+    >
+      {title.toLowerCase()}
+    </LinkWithArrow>
+  ) : (
+    title.toLowerCase()
+  );
+
+  if (variant === 'selected') {
+    return (
+      <div className="text-[15px] leading-6 text-[#55544f]">
+        {titleNode}
+        <span> · {description}</span>
       </div>
-      <p className="text-chinese-black-900 dark:text-selago-200">{description}</p>
-      {techStack && techStack.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1">
-          {techStack.map((skillText, index) =>
-            delayTime ? (
-              <BlurFade key={index} delay={delayTime + index * 0.05}>
-                <Badge variant={'secondary'}>
-                  {techIcons?.[skillText] && (
-                    <span className="mr-2">
-                      {<Icon icon={techIcons[skillText]} inline={true} width={18} height={18} />}
-                    </span>
-                  )}
-                  <span>{skillText}</span>
-                </Badge>
-              </BlurFade>
-            ) : (
-              <Badge key={index} variant={'secondary'}>
-                {techIcons?.[skillText] && (
-                  <span className="mr-2">
-                    {<Icon icon={techIcons[skillText]} inline={true} width={18} height={18} />}
-                  </span>
-                )}
-                <span>{skillText}</span>
-              </Badge>
-            ),
-          )}
-        </div>
-      )}
-    </div>
+    );
+  }
+
+  return (
+    <article className="grid grid-cols-1 items-baseline gap-3 min-[431px]:grid-cols-[minmax(0,1fr)_auto] min-[431px]:gap-6">
+      <div>
+        <h3 className="m-0 inline text-[15px] font-semibold">{titleNode}</h3>
+        <p className="m-0 ml-1.5 inline text-[15px] leading-[1.55] text-[#55544f] before:content-['·__']">
+          {description}
+        </p>
+        <div className="mt-2 font-mono text-xs text-[#88857e]">{techStack.join(' · ')}</div>
+      </div>
+      {repo && repoUrl ? (
+        <LinkWithArrow
+          href={repoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="w-max whitespace-nowrap text-[13px] text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f]"
+        >
+          code
+        </LinkWithArrow>
+      ) : null}
+    </article>
   );
 }
