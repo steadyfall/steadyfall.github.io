@@ -1,6 +1,5 @@
 import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
 import { detailsForMetadata } from '@/data/resume';
-import { cn } from '@/lib/utils';
 
 import { Providers } from './providers';
 
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('bg-white font-sans text-chinese-black-950')} suppressHydrationWarning>
+      <body className="bg-white font-sans text-[#11110f]" suppressHydrationWarning>
         <SmoothScrollProvider offset={90}>
           <div className="flex min-h-screen flex-col">
             <Providers>{children}</Providers>
