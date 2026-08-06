@@ -21,6 +21,7 @@ export function EducationTile({
       organizationLink={institutionLink}
       role={degree}
       duration={duration}
+      previewDescription={major}
       body={<p className="mt-[7px] text-sm leading-6 text-[#55544f]">{major}</p>}
     />
   );

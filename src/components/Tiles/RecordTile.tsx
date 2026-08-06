@@ -1,4 +1,4 @@
-import LinkWithArrow from '@/components/ui/LinkWithArrow';
+import { PreviewLinkWithArrow } from '@/components/ui/PreviewLinkWithArrow';
 
 export type RecordTileProps = {
   organizationName: string;
@@ -6,6 +6,7 @@ export type RecordTileProps = {
   role: string;
   duration: string;
   body?: React.ReactNode;
+  previewDescription?: string;
 };
 
 export function RecordTile({
@@ -14,18 +15,22 @@ export function RecordTile({
   role,
   duration,
   body,
+  previewDescription,
 }: RecordTileProps) {
   return (
     <div>
       <div className="text-[15px] text-[#454440]">
-        <LinkWithArrow
+        <PreviewLinkWithArrow
           href={organizationLink}
           target="_blank"
           rel="noreferrer"
+          previewTitle={organizationName}
+          previewDescription={[role, previewDescription].filter(Boolean).join(' · ')}
+          previewMeta={duration}
           className="font-semibold text-[#11110f] no-underline hover:text-[#55544f]"
         >
           {organizationName}
-        </LinkWithArrow>
+        </PreviewLinkWithArrow>
         <span> · {role}</span>
       </div>
       {body}

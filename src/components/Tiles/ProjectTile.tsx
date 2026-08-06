@@ -1,4 +1,4 @@
-import LinkWithArrow from '@/components/ui/LinkWithArrow';
+import { PreviewLinkWithArrow } from '@/components/ui/PreviewLinkWithArrow';
 
 export type ProjectTileProps = {
   title: string;
@@ -22,14 +22,17 @@ export function ProjectTile({
 }: ProjectTileProps) {
   const destination = liveUrl ?? repoUrl;
   const titleNode = destination ? (
-    <LinkWithArrow
+    <PreviewLinkWithArrow
       href={destination}
       target="_blank"
       rel="noreferrer"
+      previewTitle={title}
+      previewDescription={description}
+      previewMeta={techStack.join(' · ')}
       className="font-semibold text-[#11110f] no-underline hover:text-[#55544f]"
     >
       {title.toLowerCase()}
-    </LinkWithArrow>
+    </PreviewLinkWithArrow>
   ) : (
     title.toLowerCase()
   );
@@ -53,14 +56,17 @@ export function ProjectTile({
         <div className="mt-2 font-mono text-xs text-[#88857e]">{techStack.join(' · ')}</div>
       </div>
       {repo && repoUrl ? (
-        <LinkWithArrow
+        <PreviewLinkWithArrow
           href={repoUrl}
           target="_blank"
           rel="noreferrer"
+          previewTitle={`${title} source`}
+          previewDescription={description}
+          previewMeta={techStack.join(' · ')}
           className="w-max whitespace-nowrap text-[13px] text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f]"
         >
           code
-        </LinkWithArrow>
+        </PreviewLinkWithArrow>
       ) : null}
     </article>
   );
