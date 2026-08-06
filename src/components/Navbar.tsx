@@ -26,14 +26,14 @@ export default function Navbar() {
             <span className="sr-only">Home</span>
           </Link>
           <Link
-            href="/projects"
+            href="/projects/"
             className={cn(navItemClassName, isProjectsRoute && activeClassName)}
             aria-current={isProjectsRoute ? 'page' : undefined}
           >
             Projects
           </Link>
           <Link
-            href="/blogs"
+            href="/blogs/"
             className={cn(navItemClassName, isBlogRoute && activeClassName)}
             aria-current={isBlogRoute ? 'page' : undefined}
           >
