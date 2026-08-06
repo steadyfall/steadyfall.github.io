@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Instrument Serif', 'Georgia', 'serif'],
+        reader: ['Newsreader', 'Georgia', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
         typewriter: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
         section: ['Starlight', 'sans-serif'],

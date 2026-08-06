@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isProjectsRoute = pathname === '/projects' || pathname.startsWith('/projects/');
+  const isBlogRoute = pathname === '/blogs' || pathname.startsWith('/blogs/');
   const navItemClassName =
     'm-0 rounded-none p-0 text-sm leading-[1.3] text-[#55544f] hover:text-[#11110f] hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]';
   const activeClassName = 'font-semibold text-[#11110f] underline underline-offset-4';
@@ -25,10 +27,17 @@ export default function Navbar() {
           </Link>
           <Link
             href="/projects"
-            className={cn(navItemClassName, pathname === '/projects' && activeClassName)}
-            aria-current={pathname === '/projects' ? 'page' : undefined}
+            className={cn(navItemClassName, isProjectsRoute && activeClassName)}
+            aria-current={isProjectsRoute ? 'page' : undefined}
           >
             Projects
+          </Link>
+          <Link
+            href="/blogs"
+            className={cn(navItemClassName, isBlogRoute && activeClassName)}
+            aria-current={isBlogRoute ? 'page' : undefined}
+          >
+            Blog
           </Link>
         </div>
       </nav>
