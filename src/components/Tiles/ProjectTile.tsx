@@ -38,7 +38,7 @@ export function ProjectTile({
     return (
       <div className="text-[15px] leading-6 text-[#55544f]">
         {titleNode}
-        <span> · {description}</span>
+        <span> – {description}</span>
       </div>
     );
   }
@@ -47,10 +47,10 @@ export function ProjectTile({
     <article className="grid grid-cols-1 items-baseline gap-3 min-[431px]:grid-cols-[minmax(0,1fr)_auto] min-[431px]:gap-6">
       <div>
         <h3 className="m-0 inline text-[15px] font-semibold">{titleNode}</h3>
-        <p className="m-0 ml-1.5 inline text-[15px] leading-[1.55] text-[#55544f] before:content-['·__']">
+        <p className="m-0 ml-1.5 inline text-[15px] leading-[1.55] text-[#55544f] before:content-['–__']">
           {description}
         </p>
-        <div className="mt-2 font-mono text-xs text-[#88857e]">{techStack.join(' · ')}</div>
+        <div className="mt-2 font-mono text-xs text-[#88857e]">{techStack.join(' / ')}</div>
       </div>
       {repo && repoUrl ? (
         <LinkWithArrow

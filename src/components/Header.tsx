@@ -1,4 +1,3 @@
-import { ArrowDown } from 'lucide-react';
 import Image from 'next/image';
 
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
@@ -56,18 +55,17 @@ export default function Header({
           >
             LinkedIn
           </LinkWithArrow>
-          <a href={`mailto:${email}`} className={linkClassName}>
+          <LinkWithArrow href={`mailto:${email}`} className={linkClassName}>
             Email
-          </a>
-          <a
+          </LinkWithArrow>
+          <LinkWithArrow
             href={`/${resumeFile}`}
             target="_blank"
             rel="noreferrer"
-            className={`${linkClassName} inline-flex items-center`}
+            className={linkClassName}
           >
-            Resume{' '}
-            <ArrowDown className="ml-0.5 inline-block size-[0.9em] stroke-[1.7]" aria-hidden />
-          </a>
+            Resume
+          </LinkWithArrow>
         </div>
       </div>
       <div className="order-1 h-[116px] w-[94px] overflow-hidden bg-[#e9e7e1] min-[431px]:order-none min-[431px]:col-start-2 min-[431px]:row-start-1 min-[431px]:h-[132px] min-[431px]:w-[104px] md:h-[210px] md:w-[170px]">
