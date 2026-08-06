@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { personalDetails } from '@/data/resume';
 
 import styles from './Portfolio.module.css';
-import { PortfolioArrow } from './PortfolioArrow';
+import { PortfolioArrow, PortfolioDownloadArrow } from './PortfolioArrow';
 
 export default function PortfolioHero() {
   return (
@@ -23,7 +23,7 @@ export default function PortfolioHero() {
           </a>
           <a href={`mailto:${personalDetails.email}`}>Email</a>
           <a href={`/${personalDetails.resumeFile}`} target="_blank" rel="noreferrer">
-            Resume ↓
+            Resume <PortfolioDownloadArrow />
           </a>
         </div>
       </div>

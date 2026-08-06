@@ -165,6 +165,14 @@
   color: var(--muted);
 }
 
+.arrowIcon {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: -0.08em;
+  stroke-width: 1.7;
+}
+
 .portraitWrap {
   flex: none;
   width: 170px;
