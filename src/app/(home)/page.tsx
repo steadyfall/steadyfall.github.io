@@ -4,7 +4,6 @@ import { Tabs } from '@base-ui/react/tabs';
 import { useState } from 'react';
 
 import About from '@/components/About';
-import { Education } from '@/components/Education';
 import { Experiences } from '@/components/Experiences';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -39,7 +38,6 @@ export default function Portfolio() {
             <About />
           </Header>
           <Experiences arr={experiences} />
-          <Education />
           <Projects arr={projects.slice(0, 3)} showProjects={() => changePage('projects')} />
           <Skills arr={skills} />
           <Footer />
