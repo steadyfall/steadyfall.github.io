@@ -51,7 +51,7 @@ export function ProjectTile({
       <div>
         <h3 className="m-0 inline text-[15px] font-semibold">{titleNode}</h3>{' '}
         <p className="m-0 ml-1.5 inline text-[15px] leading-[1.55] text-[#55544f]">{description}</p>
-        <div className="mt-2 font-mono text-xs text-[#88857e]">{techStack.join(' / ')}</div>
+        <div className="mt-2 font-mono text-xs text-[#77746d]">{techStack.join(' / ')}</div>
       </div>
       {repo && repoUrl ? (
         <LinkWithArrow

@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <PortfolioShell>
       <section className="mx-auto flex min-h-[62vh] max-w-[720px] flex-col justify-center py-12 md:py-20">
-        <p className="m-0 font-mono text-xs uppercase tracking-[0.16em] text-[#88857e]">
+        <p className="m-0 font-mono text-xs uppercase tracking-[0.16em] text-[#77746d]">
           404 / page not found
         </p>
         <h1 className="mt-4 font-display text-5xl font-normal italic leading-[1.05] tracking-[-0.01em] md:text-[64px]">

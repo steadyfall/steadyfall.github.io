@@ -199,6 +199,7 @@ export function getMdxComponents(): MDXComponents {
     td: (props) => <td className="px-3 py-2.5 align-top first:pl-0 last:pr-0" {...props} />,
     input: (props) => (
       <input
+        aria-label={props.checked ? 'Completed task' : 'Incomplete task'}
         className="mr-2 size-3.5 accent-[#11110f] disabled:cursor-default disabled:opacity-100"
         {...props}
       />

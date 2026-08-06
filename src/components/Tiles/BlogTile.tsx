@@ -15,7 +15,7 @@ export default function BlogTile({ blog }: { blog: BlogPost }) {
       </h3>
       <time
         dateTime={blog.date}
-        className="flex-none whitespace-nowrap font-mono text-xs text-[#88857e]"
+        className="flex-none whitespace-nowrap font-mono text-xs text-[#77746d]"
       >
         {formatBlogMonth(blog.date)}
       </time>
