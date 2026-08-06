@@ -22,7 +22,7 @@ export function ExperienceTile({
 }: ExperienceTileProps) {
   return (
     <Accordion.Item value={`${companyName}-${position}`}>
-      <Accordion.Header className="m-0 flex w-full items-start gap-1 pb-4 md:items-baseline">
+      <Accordion.Header className="m-0 flex w-full items-start gap-2.5 pb-4 md:items-baseline">
         <LinkWithArrow
           href={companyLink}
           target="_blank"
@@ -33,7 +33,6 @@ export function ExperienceTile({
         </LinkWithArrow>
         <Accordion.Trigger className="group flex min-w-0 flex-1 cursor-pointer items-start justify-between gap-4 rounded-none border-0 bg-transparent p-0 text-left text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] md:items-baseline">
           <span className="min-w-0 pr-1 text-[15px] leading-[1.45] text-[#454440] md:pr-0">
-            <span aria-hidden>– </span>
             <span>{position}</span>
           </span>
           <span className="flex max-w-[118px] flex-none flex-col items-end gap-[5px] text-right text-[11px] text-[#66645f] md:max-w-none md:flex-row md:items-baseline md:gap-3.5 md:whitespace-nowrap md:text-[13px]">
