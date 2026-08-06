@@ -83,6 +83,8 @@ export const experiences = [
 export const projects = [
   {
     title: 'Deris',
+    selected_work: true,
+    tldr: 'A networked key-value store delivering 50k+ operations per second with sub-millisecond latency.',
     description:
       'A minimalist key-value store with network socket interface, \
       supporting CRUD operations, data integrity, high throughput (50k+ ops/sec) \
@@ -94,6 +96,8 @@ export const projects = [
   },
   {
     title: 'Trivivo',
+    selected_work: true,
+    tldr: 'A quiz platform with progressive difficulty, real-time analytics, admin tools, and a secure question API.',
     description:
       'Crafted a feature-rich, dynamic quiz game platform with progressive \
       difficulty levels, real-time analytics, and comprehensive admin tools, \
@@ -105,6 +109,8 @@ export const projects = [
   },
   {
     title: 'SpectraSVD',
+    selected_work: true,
+    tldr: 'An interactive SVD image compressor that reduces file sizes by over 25% while preserving visual quality.',
     description:
       'Designed and deployed an advanced image compression algorithm achieving \
       25%+ size reduction, complemented by a real-time interactive web \
@@ -117,6 +123,8 @@ export const projects = [
   },
   {
     title: 'Personal Website',
+    selected_work: false,
+    tldr: 'A responsive, animated portfolio built as a reusable and customizable Next.js template.',
     description:
       'Built a modern, responsive portfolio website with fluid animations, \
       architected as a customizable template.',
@@ -128,6 +136,8 @@ export const projects = [
   },
   {
     title: 'Chess',
+    selected_work: false,
+    tldr: 'A C++ chess engine with AI opponents, multiplayer variants, and rigorously tested object-oriented design.',
     description:
       'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, \
       employing advanced software design patterns and rigorous testing methodologies in a \
@@ -138,6 +148,8 @@ export const projects = [
   },
   {
     title: 'EcoWiz',
+    selected_work: false,
+    tldr: 'A garbage-sorting assistant using multimodal deep learning to classify waste with 80% accuracy.',
     description:
       'Engineered a full-stack application featuring a multimodal image classification system \
       for garbage sorting, achieving 80% accuracy through advanced deep learning techniques.',
@@ -148,6 +160,8 @@ export const projects = [
   },
   {
     title: 'RedWish',
+    selected_work: false,
+    tldr: 'A blood donation platform with an AI chatbot for accessible donor and transfusion coordination.',
     description:
       'Developed a comprehensive full-stack health application to streamline blood donation and \
       transfusion processes, incorporating an AI-powered chatbot to enhance user engagement and \

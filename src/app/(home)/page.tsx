@@ -38,7 +38,10 @@ export default function Portfolio() {
             <About />
           </Header>
           <Experiences arr={experiences} />
-          <Projects arr={projects.slice(0, 3)} showProjects={() => changePage('projects')} />
+          <Projects
+            arr={projects.filter((project) => project.selected_work)}
+            showProjects={() => changePage('projects')}
+          />
           <Skills arr={skills} />
           <Footer />
         </Tabs.Panel>

@@ -2,6 +2,8 @@ import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 export type ProjectTileProps = {
   title: string;
+  selected_work: boolean;
+  tldr: string;
   description: string;
   repo: boolean;
   repoUrl?: string;
@@ -13,6 +15,7 @@ export type ProjectTileProps = {
 
 export function ProjectTile({
   title,
+  tldr,
   description,
   repo,
   repoUrl,
@@ -38,7 +41,7 @@ export function ProjectTile({
     return (
       <div className="text-[15px] leading-6 text-[#55544f]">
         {titleNode}
-        <span> – {description}</span>
+        <span> – {tldr}</span>
       </div>
     );
   }
