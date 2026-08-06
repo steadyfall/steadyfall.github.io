@@ -1,15 +1,12 @@
-import { Button } from '@base-ui/react/button';
-import { ArrowUpRight } from 'lucide-react';
-
 import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile';
+import LinkWithArrow from './ui/LinkWithArrow';
 
 interface ProjectsProps {
   arr: ProjectTileProps[];
   variant?: 'selected' | 'all';
-  showProjects?: () => void;
 }
 
-export function Projects({ arr, variant = 'selected', showProjects }: ProjectsProps) {
+export function Projects({ arr, variant = 'selected' }: ProjectsProps) {
   if (variant === 'all') {
     return (
       <>
@@ -27,7 +24,7 @@ export function Projects({ arr, variant = 'selected', showProjects }: ProjectsPr
           aria-label="All projects"
         >
           <h2 className="m-0 font-display text-[21px] font-normal italic leading-tight">
-            Selected work
+            All projects
           </h2>
           <div className="flex flex-col gap-7">
             {arr.map((project) => (
@@ -52,12 +49,12 @@ export function Projects({ arr, variant = 'selected', showProjects }: ProjectsPr
         >
           Selected projects
         </h2>
-        <Button
-          className="m-0 mt-1 inline-flex flex-none cursor-pointer items-center border-0 bg-transparent p-0 text-xs text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]"
-          onClick={showProjects}
+        <LinkWithArrow
+          href="/projects"
+          className="m-0 mt-1 flex-none text-xs text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f] [&_svg]:ml-0.5 [&_svg]:size-[0.9em] [&_svg]:stroke-[1.7]"
         >
-          All projects <ArrowUpRight className="ml-0.5 size-[0.9em] stroke-[1.7]" aria-hidden />
-        </Button>
+          All projects
+        </LinkWithArrow>
       </div>
       <div className="flex flex-col gap-4">
         {arr.map((project) => (

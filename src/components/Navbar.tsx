@@ -1,23 +1,36 @@
 'use client';
 
-import { Tabs } from '@base-ui/react/tabs';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { cn } from '@/lib/utils';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const navItemClassName =
-    'm-0 cursor-pointer rounded-none border-0 bg-transparent p-0 text-sm leading-[1.3] text-[#55544f] hover:text-[#11110f] hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] data-[active]:font-semibold data-[active]:text-[#11110f] data-[active]:underline data-[active]:underline-offset-4';
+    'm-0 rounded-none p-0 text-sm leading-[1.3] text-[#55544f] hover:text-[#11110f] hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]';
+  const activeClassName = 'font-semibold text-[#11110f] underline underline-offset-4';
 
   return (
     <header className="sticky top-0 z-20 mx-auto flex max-w-[1100px] justify-end bg-white/95 px-[22px] py-[18px] backdrop-blur-xl md:px-12 md:py-5">
       <nav aria-label="Portfolio pages">
-        <Tabs.List className="flex items-baseline gap-[22px] md:gap-7">
-          <Tabs.Tab value="index" className={navItemClassName}>
+        <div className="flex items-baseline gap-[22px] md:gap-7">
+          <Link
+            href="/"
+            className={cn(navItemClassName, pathname === '/' && activeClassName)}
+            aria-current={pathname === '/' ? 'page' : undefined}
+          >
             <span aria-hidden>/</span>
             <span className="sr-only">Home</span>
-          </Tabs.Tab>
-          <Tabs.Tab value="projects" className={navItemClassName}>
+          </Link>
+          <Link
+            href="/projects"
+            className={cn(navItemClassName, pathname === '/projects' && activeClassName)}
+            aria-current={pathname === '/projects' ? 'page' : undefined}
+          >
             Projects
-          </Tabs.Tab>
-        </Tabs.List>
+          </Link>
+        </div>
       </nav>
     </header>
   );
