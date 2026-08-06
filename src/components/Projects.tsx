@@ -17,7 +17,7 @@ export function Projects({ arr, variant = 'selected', showProjects }: ProjectsPr
           <h1 className="m-0 font-display text-5xl font-normal italic leading-[1.05] tracking-[-0.01em] md:text-[54px]">
             Projects
           </h1>
-          <p className="mt-[18px] max-w-[560px] text-pretty text-base leading-[1.6] text-[#55544f]">
+          <p className="mt-[18px] text-pretty text-base leading-[1.6] text-[#55544f]">
             Things I built to learn something, solve a problem, or make a useful idea tangible.
           </p>
         </section>
