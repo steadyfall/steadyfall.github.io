@@ -24,6 +24,7 @@ export function ProjectTile({
   variant = 'full',
 }: ProjectTileProps) {
   const destination = liveUrl ?? repoUrl;
+  const selectedSummary = `${tldr.charAt(0).toLowerCase()}${tldr.slice(1)}`;
   const titleNode = destination ? (
     <LinkWithArrow
       href={destination}
@@ -40,7 +41,7 @@ export function ProjectTile({
   if (variant === 'selected') {
     return (
       <div className="text-[15px] leading-6 text-[#55544f]">
-        {titleNode} <span className="ml-1.5">{tldr}</span>
+        {titleNode} is {selectedSummary}
       </div>
     );
   }

@@ -45,9 +45,9 @@ export function ExperienceTile({
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Panel className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] duration-200 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0 motion-reduce:transition-none">
-        <div className="w-full pb-5 text-sm leading-[1.6] text-[#55544f] [&_p+p]:mt-1 [&_p]:m-0">
+        <div className="w-full pb-5 text-sm leading-[1.6] text-[#55544f] [&_p+p]:mt-2.5 [&_p]:m-0">
           {responsibilities.map((responsibility, index) => (
-            <ReactMarkdown key={index}>{`· ${responsibility}`}</ReactMarkdown>
+            <ReactMarkdown key={index}>{responsibility}</ReactMarkdown>
           ))}
         </div>
       </Accordion.Panel>
