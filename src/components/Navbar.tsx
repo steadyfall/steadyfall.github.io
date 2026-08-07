@@ -14,7 +14,7 @@ export default function Navbar() {
   const activeClassName = 'font-semibold text-[#11110f] underline underline-offset-4';
 
   return (
-    <header className="sticky top-0 z-20 mx-auto flex max-w-[1100px] justify-end bg-white/95 px-[22px] py-[18px] backdrop-blur-xl md:px-12 md:py-5">
+    <header className="sticky top-0 z-20 mx-auto flex w-full max-w-[1100px] justify-end bg-white/95 px-[22px] py-[18px] backdrop-blur-xl md:px-12 md:py-5">
       <nav aria-label="Portfolio pages">
         <div className="flex items-baseline gap-[22px] md:gap-7">
           <Link
