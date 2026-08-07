@@ -12,7 +12,7 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
       <Navbar />
       <main
         id="main-content"
-        className="mx-auto flex w-full max-w-[1100px] flex-1 flex-col px-[22px] pb-[34px] pt-2.5 md:px-12 md:pb-12 md:pt-3"
+        className="mx-auto flex w-full max-w-[922px] flex-1 flex-col px-[22px] pb-[34px] pt-2.5 md:px-12 md:pb-12 md:pt-3"
       >
         {children}
       </main>
