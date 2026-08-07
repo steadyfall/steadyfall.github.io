@@ -4,7 +4,7 @@ import { formatBlogMonth, type BlogPost } from '@/lib/blogs';
 
 export default function BlogTile({ blog }: { blog: BlogPost }) {
   return (
-    <article className="flex items-baseline justify-between gap-4 py-3.5">
+    <article className="flex items-baseline justify-between gap-4 pb-3.5 pt-1 md:pb-7 md:pt-0 last:md:pb-0">
       <h3 className="m-0 min-w-0 text-[15px] font-medium leading-[1.45]">
         <Link
           href={`/blogs/${blog.slug}`}

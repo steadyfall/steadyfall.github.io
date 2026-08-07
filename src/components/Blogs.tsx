@@ -26,7 +26,7 @@ export default function Blogs({ blogs }: { blogs: BlogPost[] }) {
             className={
               index === 0
                 ? 'grid gap-3 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0'
-                : 'mt-10 grid gap-3 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0'
+                : 'mt-8 grid gap-3 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0'
             }
           >
             <h2
