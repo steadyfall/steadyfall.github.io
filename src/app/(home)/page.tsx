@@ -1,21 +1,11 @@
-import About from '@/components/About';
-import { Experiences } from '@/components/Experiences';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import { Projects } from '@/components/Projects';
-import { Skills } from '@/components/Skills';
-import { experiences, personalDetails, projects, skills } from '@/data/resume';
+import InteractiveHeadshot from '@/components/InteractiveHeadshot';
 
-export default function Portfolio() {
+export default function HomePage() {
   return (
-    <>
-      <Header {...personalDetails}>
-        <About />
-      </Header>
-      <Experiences arr={experiences} />
-      <Projects arr={projects.filter((project) => project.selected_work)} />
-      <Skills arr={skills} />
+    <div className="flex flex-1 flex-col justify-between pt-2 md:pt-4">
+      <InteractiveHeadshot />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -7,8 +7,10 @@ import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isProjectsRoute = pathname === '/projects' || pathname.startsWith('/projects/');
-  const isBlogRoute = pathname === '/blogs' || pathname.startsWith('/blogs/');
+  const normalizedPathname = pathname ? (pathname.endsWith('/') ? pathname : `${pathname}/`) : '/';
+  const isAboutRoute = normalizedPathname.startsWith('/about/');
+  const isProjectsRoute = normalizedPathname.startsWith('/projects/');
+  const isBlogRoute = normalizedPathname.startsWith('/blogs/');
   const navItemClassName =
     'm-0 rounded-none p-0 text-sm leading-[1.3] text-[#55544f] hover:text-[#11110f] hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]';
   const activeClassName = 'font-semibold text-[#11110f] underline underline-offset-4';
@@ -26,18 +28,25 @@ export default function Navbar() {
             <span className="sr-only">Home</span>
           </Link>
           <Link
+            href="/about/"
+            className={cn(navItemClassName, isAboutRoute && activeClassName)}
+            aria-current={isAboutRoute ? 'page' : undefined}
+          >
+            about
+          </Link>
+          <Link
             href="/projects/"
             className={cn(navItemClassName, isProjectsRoute && activeClassName)}
             aria-current={isProjectsRoute ? 'page' : undefined}
           >
-            Projects
+            projects
           </Link>
           <Link
             href="/blogs/"
             className={cn(navItemClassName, isBlogRoute && activeClassName)}
             aria-current={isBlogRoute ? 'page' : undefined}
           >
-            Blog
+            blog
           </Link>
         </div>
       </nav>
