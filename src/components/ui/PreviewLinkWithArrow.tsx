@@ -6,8 +6,8 @@ import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export type PreviewLinkWithArrowProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  previewTitle: string;
-  previewDescription?: string;
+  previewTitle: React.ReactNode;
+  previewDescription?: React.ReactNode;
   previewMeta?: string;
 };
 
