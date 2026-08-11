@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        md: ['17px', { lineHeight: '1.6' }],
+      },
       fontFamily: {
         sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Instrument Serif', 'Georgia', 'serif'],
