@@ -36,7 +36,7 @@ export function PreviewLinkWithArrow({
       </PreviewCard.Trigger>
       <PreviewCard.Portal>
         <PreviewCard.Positioner sideOffset={8} className="z-50 max-w-[var(--available-width)]">
-          <PreviewCard.Popup className="w-[min(320px,var(--available-width))] origin-[var(--transform-origin)] border border-[#d8d6cf] bg-white p-3.5 text-[#11110f] shadow-[0_12px_32px_rgba(17,17,15,0.14)] transition-[transform,opacity] duration-150 ease-out data-[ending-style]:scale-[0.98] data-[starting-style]:scale-[0.98] data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 motion-reduce:transition-none">
+          <PreviewCard.Popup className="w-fit max-w-[min(320px,var(--available-width))] origin-[var(--transform-origin)] border border-[#d8d6cf] bg-white p-3.5 text-[#11110f] shadow-[0_12px_32px_rgba(17,17,15,0.14)] transition-[transform,opacity] duration-150 ease-out data-[ending-style]:scale-[0.98] data-[starting-style]:scale-[0.98] data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 motion-reduce:transition-none">
             <p className="m-0 text-sm font-semibold leading-5">{previewTitle}</p>
             {previewDescription ? (
               <p className="m-0 mt-1 text-sm leading-5 text-[#55544f]">{previewDescription}</p>
