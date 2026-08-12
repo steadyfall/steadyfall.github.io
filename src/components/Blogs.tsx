@@ -13,7 +13,7 @@ export default function Blogs({ blogs }: { blogs: BlogPost[] }) {
         <h1 className="m-0 font-display text-5xl font-normal italic leading-[1.05] tracking-[-0.01em] md:text-[54px]">
           Blog
         </h1>
-        <p className="mt-[18px] max-w-[560px] text-pretty text-base leading-[1.6] text-[#55544f]">
+        <p className="mt-[18px] max-w-[560px] text-pretty text-md leading-[1.6] text-[#55544f]">
           Notes on things I broke, fixed, or read. Infrequent by design.
         </p>
       </section>
@@ -31,7 +31,7 @@ export default function Blogs({ blogs }: { blogs: BlogPost[] }) {
           >
             <h2
               id={`blogs-${year}`}
-              className="m-0 font-display text-[21px] font-normal italic leading-tight"
+              className="m-0 font-display text-[22.5px] font-normal italic leading-tight"
             >
               {year}
             </h2>
