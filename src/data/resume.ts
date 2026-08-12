@@ -17,6 +17,21 @@ export const personalDetails = {
   resumeFile: 'resume.pdf',
 };
 
+export const education = [
+  {
+    institution: 'University of Waterloo',
+    location: 'Waterloo, Ontario',
+    degree: 'Bachelor of Mathematics',
+    major: 'Computational Mathematics',
+    start: '2022',
+    end: 'Present',
+    description:
+      '[Computational Mathematics](https://uwaterloo.ca/computational-mathematics/) \
+      is an interdisciplinary major that combines Mathematics, Statistics, Optimization \
+      and Computer Science, offered by the Faculty of Mathematics.',
+  },
+];
+
 export const experiences = [
   {
     companyLogo: '/images/miovision.png',
@@ -86,6 +101,18 @@ export const experiences = [
 
 export const projects = [
   {
+    title: 'fspeek',
+    selected_work: true,
+    tldr: 'A terminal file-browser for remote HTTP servers that previews media metadata without downloading whole files.',
+    description:
+      'A terminal UI for browsing remote HTTP file servers, including authenticated servers, with filtering, \
+      sorting, caching, and media metadata extraction via HTTP range requests.',
+    repo: true,
+    repoUrl: 'https://github.com/steadyfall/fspeek',
+    live: false,
+    techStack: ['Go', 'SQLite', 'Bubbletea'],
+  },
+  {
     title: 'Deris',
     selected_work: true,
     tldr: 'A networked key-value store delivering 50k+ operations per second with sub-millisecond latency.',
@@ -97,19 +124,6 @@ export const projects = [
     repoUrl: 'https://github.com/steadyfall/deris',
     live: false,
     techStack: ['Go'],
-  },
-  {
-    title: 'Trivivo',
-    selected_work: true,
-    tldr: 'A quiz platform with progressive difficulty, real-time analytics, admin tools, and a secure question API.',
-    description:
-      'Crafted a feature-rich, dynamic quiz game platform with progressive \
-      difficulty levels, real-time analytics, and comprehensive admin tools, \
-      complemented by a secure API for question management and user engagement tracking.',
-    repo: true,
-    repoUrl: 'https://github.com/steadyfall/wwbm-webapp',
-    live: false,
-    techStack: ['Django', 'MySQL', 'HTML5', 'TailwindCSS', 'jQuery', 'Docker', 'AWS EC2'],
   },
   {
     title: 'SpectraSVD',
@@ -126,17 +140,30 @@ export const projects = [
     techStack: ['NumPy', 'OpenCV', 'Pillow', 'Streamlit'],
   },
   {
-    title: 'Personal Website',
+    title: 'simple-technical-resume',
     selected_work: false,
-    tldr: 'A responsive, animated portfolio built as a reusable and customizable Next.js template.',
+    tldr: 'A one-page, ATS-friendly Typst template for creating clean technical resumes.',
     description:
-      'Built a modern, responsive portfolio website with fluid animations, \
-      architected as a customizable template.',
+      'Built a customizable Typst resume package that makes it easier than LaTeX to maintain polished, dense, single-page \
+         ATS-compatible technical resumes.',
     repo: true,
-    repoUrl: 'https://github.com/steadyfall/steadyfall.github.io.git',
+    repoUrl: 'https://github.com/steadyfall/simple-technical-resume-template',
     live: true,
-    liveUrl: 'https://steadyfall.github.io',
-    techStack: ['TypeScript', 'React', 'TailwindCSS', 'Next.js', 'Framer Motion', 'Node.js'],
+    liveUrl: 'https://typst.app/universe/package/simple-technical-resume',
+    techStack: ['Typst'],
+  },
+  {
+    title: 'Trivivo',
+    selected_work: false,
+    tldr: 'A quiz platform with progressive difficulty, real-time analytics, admin tools, and a secure question API.',
+    description:
+      'Crafted a feature-rich, dynamic quiz game platform with progressive \
+      difficulty levels, real-time analytics, and comprehensive admin tools, \
+      complemented by a secure API for question management and user engagement tracking.',
+    repo: true,
+    repoUrl: 'https://github.com/steadyfall/wwbm-webapp',
+    live: false,
+    techStack: ['Django', 'MySQL', 'HTML5', 'TailwindCSS', 'jQuery', 'Docker', 'AWS EC2'],
   },
   {
     title: 'Chess',
