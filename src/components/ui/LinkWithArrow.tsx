@@ -13,7 +13,7 @@ export default function LinkWithArrow({ className, href, children, ...props }: L
   return (
     <Link
       className={cn(
-        'group inline-flex items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current',
+        'group inline-flex items-center rounded no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current',
         className,
       )}
       href={href}
