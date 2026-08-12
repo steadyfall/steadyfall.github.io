@@ -39,19 +39,19 @@ export function Projects({ arr, variant = 'selected' }: ProjectsProps) {
   return (
     <section
       id="projects"
-      className="mt-[52px] grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0"
+      className="mt-[52px] flex flex-col gap-[18px] md:mt-16 md:gap-6"
       aria-labelledby="selected-projects-title"
     >
-      <div className="flex items-baseline justify-between gap-5 md:flex-col md:items-start md:justify-start md:gap-0">
+      <div className="flex items-baseline justify-between gap-5">
         <h2
           id="selected-projects-title"
-          className="m-0 font-display text-[21px] font-normal italic leading-tight"
+          className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
         >
           Selected projects
         </h2>
         <LinkWithArrow
           href="/projects"
-          className="m-0 mt-1 flex-none text-xs text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f] [&_svg]:ml-0.5 [&_svg]:size-[0.9em] [&_svg]:stroke-[1.7]"
+          className="m-0 flex-none text-md text-[#66645f] hover:text-[#11110f] [&_svg]:ml-0.5 [&_svg]:size-[0.9em] [&_svg]:stroke-[1.7]"
         >
           All projects
         </LinkWithArrow>

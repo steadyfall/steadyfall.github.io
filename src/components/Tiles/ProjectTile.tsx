@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 export type ProjectTileProps = {
@@ -24,7 +26,6 @@ export function ProjectTile({
   variant = 'full',
 }: ProjectTileProps) {
   const destination = liveUrl ?? repoUrl;
-  const selectedSummary = `${tldr.charAt(0).toLowerCase()}${tldr.slice(1)}`;
   const titleNode = destination ? (
     <LinkWithArrow
       href={destination}
@@ -40,8 +41,25 @@ export function ProjectTile({
 
   if (variant === 'selected') {
     return (
-      <div className="text-[15px] leading-6 text-[#55544f]">
-        {titleNode} is {selectedSummary}
+      <div className="flex flex-col">
+        <div className="flex flex-wrap items-center text-lg font-normal leading-[1.45] text-black">
+          {destination ? (
+            <Link
+              href={destination}
+              target="_blank"
+              rel="noreferrer"
+              className="text-black underline decoration-[#888680] underline-offset-[3px] transition-colors hover:decoration-black"
+            >
+              {title}
+            </Link>
+          ) : (
+            <span>{title}</span>
+          )}
+        </div>
+        <div className="mt-1 flex flex-wrap items-center text-sm text-[#66645f] md:text-base">
+          <span>{techStack.join(' · ')}</span>
+        </div>
+        <p className="mt-2.5 text-md leading-[1.6] text-[#55544f]">{tldr}</p>
       </div>
     );
   }
