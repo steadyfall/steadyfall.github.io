@@ -49,7 +49,7 @@ export function ExperienceTile({
         )}
       </div>
       {responsibilities.length > 0 && (
-        <div className="mt-2.5 text-md leading-[1.6] text-[#55544f]">
+        <div className="mt-2.5 max-w-[70ch] text-md leading-[1.6] text-[#55544f]">
           {responsibilities.map((responsibility, index) => (
             <ReactMarkdown
               key={index}
