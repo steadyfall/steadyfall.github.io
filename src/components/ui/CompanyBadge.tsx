@@ -15,7 +15,7 @@ export default function CompanyBadge({ logo, name, subtitle, className }: Compan
     <span className={cn('font-normal text-[#11110f]', className)}>
       <Image
         src={logo}
-        alt={`${name} Logo`}
+        alt=""
         width={20}
         height={20}
         unoptimized
