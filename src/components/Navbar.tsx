@@ -12,7 +12,7 @@ export default function Navbar() {
   const isProjectsRoute = normalizedPathname.startsWith('/projects/');
   const isBlogRoute = normalizedPathname.startsWith('/blogs/');
   const navItemClassName =
-    'm-0 rounded-none p-0 text-base leading-[1.3] text-[#55544f] hover:text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] md:text-md';
+    'm-0 inline-flex min-h-6 min-w-6 items-center justify-center rounded-none p-0 text-base leading-[1.3] text-[#55544f] hover:text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f] md:text-md';
   const activeClassName = 'font-semibold text-[#11110f]';
 
   return (
