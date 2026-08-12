@@ -17,22 +17,20 @@ export function Skills({ arr }: SkillsProps) {
   return (
     <section
       id="skills"
-      className="mt-[52px] grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0"
+      className="mt-[52px] flex flex-col gap-[18px] md:mt-16 md:gap-6"
       aria-labelledby="skills-title"
     >
       <h2
         id="skills-title"
-        className="m-0 font-display text-[21px] font-normal italic leading-tight"
+        className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
       >
         Skills
       </h2>
-      <div className="flex flex-col gap-2.5 text-sm">
+      <div className="flex flex-col gap-2.5 text-md leading-[1.6] text-[#55544f]">
         {skillGroups.map(([label, values]) => (
-          <div key={label} className="flex items-start gap-4">
-            <span className="w-[88px] flex-none font-mono text-xs text-[#77756e] md:w-[110px]">
-              {label}
-            </span>
-            <p className="m-0">{values.join(', ')}</p>
+          <div key={label} className="grid grid-cols-[128px_minmax(0,1fr)]">
+            <span className="text-[#11110f]">{label}</span>
+            <span>{values.join(', ')}</span>
           </div>
         ))}
       </div>
