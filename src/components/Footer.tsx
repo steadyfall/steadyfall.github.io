@@ -78,9 +78,11 @@ function Doodle() {
   );
 }
 
-export default function Footer() {
+export default function Footer({ stickToBottom = true }: { stickToBottom?: boolean }) {
   return (
-    <footer className="mt-auto flex items-end justify-between gap-6 pt-16 md:pt-20">
+    <footer
+      className={`${stickToBottom ? 'mt-auto' : ''} flex items-end justify-between gap-6 pt-12 md:pt-16`}
+    >
       <div className="pb-1.5 font-mono text-[13px] text-[#77746d]">
         made w love by{' '}
         <span className="animate-rainbow bg-[linear-gradient(90deg,#d94f4f,#d98a3d,#b3ab3c,#4fae6d,#4a83d4,#8a63cc,#d94f4f)] bg-[length:250%_100%] bg-clip-text font-bold text-transparent motion-reduce:animate-none">
