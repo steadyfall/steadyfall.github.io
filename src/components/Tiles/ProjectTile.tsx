@@ -31,12 +31,12 @@ export function ProjectTile({
       href={destination}
       target="_blank"
       rel="noreferrer"
-      className="font-semibold text-[#11110f] no-underline hover:text-[#55544f]"
+      className="font-normal text-[#11110f] underline decoration-[#888680] underline-offset-[3px] hover:text-[#55544f] hover:decoration-[#11110f]"
     >
-      {title.toLowerCase()}
+      {title}
     </LinkWithArrow>
   ) : (
-    title.toLowerCase()
+    title
   );
 
   if (variant === 'selected') {
@@ -56,8 +56,17 @@ export function ProjectTile({
             <span>{title}</span>
           )}
         </div>
-        <div className="mt-1 flex flex-wrap items-center text-sm text-[#66645f] md:text-base">
-          <span>{techStack.join(' · ')}</span>
+        <div className="mt-1 flex flex-wrap text-sm text-[#66645f] md:text-base">
+          {techStack.map((tech, index) => (
+            <span key={tech}>
+              {index > 0 ? (
+                <span aria-hidden className="mx-2 text-[#888680]">
+                  ·
+                </span>
+              ) : null}
+              {tech}
+            </span>
+          ))}
         </div>
         <p className="mt-2.5 text-md leading-[1.6] text-[#55544f]">{tldr}</p>
       </div>
@@ -65,22 +74,33 @@ export function ProjectTile({
   }
 
   return (
-    <article className="grid grid-cols-1 items-baseline gap-3 min-[431px]:grid-cols-[minmax(0,1fr)_auto] min-[431px]:gap-6">
-      <div>
-        <h3 className="m-0 inline text-[15px] font-semibold">{titleNode}</h3>{' '}
-        <p className="m-0 ml-1.5 inline text-[15px] leading-[1.55] text-[#55544f]">{description}</p>
-        <div className="mt-2 font-mono text-xs text-[#77746d]">{techStack.join(' / ')}</div>
+    <article className="flex max-w-[70ch] flex-col">
+      <div className="flex items-baseline justify-between gap-6">
+        <h3 className="m-0 text-lg font-normal leading-[1.45] text-black">{titleNode}</h3>
+        {repo && repoUrl ? (
+          <LinkWithArrow
+            href={repoUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex-none whitespace-nowrap text-sm text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f] md:text-base [&_svg]:ml-0.5 [&_svg]:size-[0.85em] [&_svg]:stroke-[1.7]"
+          >
+            code
+          </LinkWithArrow>
+        ) : null}
       </div>
-      {repo && repoUrl ? (
-        <LinkWithArrow
-          href={repoUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="w-max whitespace-nowrap text-[13px] text-[#66645f] underline underline-offset-[3px] hover:text-[#11110f]"
-        >
-          code
-        </LinkWithArrow>
-      ) : null}
+      <p className="mt-2.5 text-md leading-[1.6] text-[#55544f]">{description}</p>
+      <div className="mt-1 flex flex-wrap text-sm text-[#66645f] md:text-base">
+        {techStack.map((tech, index) => (
+          <span key={tech}>
+            {index > 0 ? (
+              <span aria-hidden className="mx-2 text-[#888680]">
+                ·
+              </span>
+            ) : null}
+            {tech}
+          </span>
+        ))}
+      </div>
     </article>
   );
 }

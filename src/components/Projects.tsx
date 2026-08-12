@@ -14,19 +14,12 @@ export function Projects({ arr, variant = 'selected' }: ProjectsProps) {
           <h1 className="m-0 font-display text-5xl font-normal italic leading-[1.05] tracking-[-0.01em] md:text-[54px]">
             Projects
           </h1>
-          <p className="mt-[18px] text-pretty text-base leading-[1.6] text-[#55544f]">
+          <p className="mt-[18px] max-w-[70ch] text-pretty text-md leading-[1.6] text-[#55544f]">
             Things I built to learn something, solve a problem, or make a useful idea tangible.
           </p>
         </section>
-        <section
-          id="projects"
-          className="mt-[52px] grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-[200px_minmax(0,1fr)] md:gap-0"
-          aria-label="All projects"
-        >
-          <h2 className="m-0 font-display text-[21px] font-normal italic leading-tight">
-            All projects
-          </h2>
-          <div className="flex flex-col gap-7">
+        <section id="projects" className="mt-[52px] md:mt-16" aria-label="All projects">
+          <div className="flex flex-col gap-6">
             {arr.map((project) => (
               <ProjectTile key={project.title} {...project} variant="full" />
             ))}

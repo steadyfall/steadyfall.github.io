@@ -132,7 +132,7 @@ export const projects = [
     selected_work: true,
     tldr: 'An interactive SVD image compressor that reduces file sizes by over 25% while preserving visual quality.',
     description:
-      'Designed and deployed an advanced image compression algorithm achieving \
+      'Designed & deployed an advanced image compression algorithm achieving \
       25%+ size reduction, complemented by a real-time interactive web \
       application for demonstrating compression quality and efficiency.',
     repo: true,
@@ -172,7 +172,7 @@ export const projects = [
     selected_work: false,
     tldr: 'A C++ chess engine with AI opponents, multiplayer variants, and rigorously tested object-oriented design.',
     description:
-      'Developed a C++ chess engine with innovative multi-player variants and AI capabilities, \
+      'Developed a C++ chess engine with innovative multi-player variants & AI capabilities, \
       employing advanced software design patterns and rigorous testing methodologies in a \
       Linux environment.',
     repo: false,
