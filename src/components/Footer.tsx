@@ -9,6 +9,9 @@ function Doodle() {
     const doodle = doodleRef.current;
     if (!doodle) return;
 
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
     const pupils = Array.from(doodle.querySelectorAll<SVGCircleElement>('[data-pupil]'));
     const brows = Array.from(doodle.querySelectorAll<SVGPathElement>('[data-brow]'));
     let returnTimer: ReturnType<typeof setTimeout> | undefined;
