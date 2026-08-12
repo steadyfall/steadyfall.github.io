@@ -12,7 +12,7 @@ interface BlogArticleProps {
 
 export default function BlogArticle({ post, older, newer, children }: BlogArticleProps) {
   return (
-    <article className="mx-auto flex w-full max-w-[620px] flex-1 flex-col pt-1 md:max-w-none">
+    <article className="mx-auto flex min-h-full w-full max-w-[620px] flex-1 flex-col pt-1 md:max-w-none">
       <Link
         href="/blogs"
         className="rounded-sm font-mono text-xs text-[#77746d] no-underline hover:text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]"
@@ -34,34 +34,37 @@ export default function BlogArticle({ post, older, newer, children }: BlogArticl
       <div className="mt-9 font-reader text-[18px] leading-[1.75] text-[#24231f]">{children}</div>
 
       {older || newer ? (
-        <nav
-          aria-label="Adjacent blog posts"
-          className="mt-14 flex justify-between gap-6 border-t border-[#11110f]/10 pt-5 font-sans text-sm"
-        >
-          {older ? (
-            <Link
-              href={`/blogs/${older.slug}`}
-              className="max-w-[45%] text-[#55544f] no-underline hover:text-[#11110f]"
-            >
-              <span className="mb-1.5 block font-mono text-[11px] text-[#77746d]">← Older</span>
-              {older.title}
-            </Link>
-          ) : (
-            <span />
-          )}
-          {newer ? (
-            <Link
-              href={`/blogs/${newer.slug}`}
-              className="max-w-[45%] text-right text-[#55544f] no-underline hover:text-[#11110f]"
-            >
-              <span className="mb-1.5 block font-mono text-[11px] text-[#77746d]">Newer →</span>
-              {newer.title}
-            </Link>
-          ) : null}
-        </nav>
+        <>
+          <div className="mt-14 flex-1" aria-hidden />
+          <nav
+            aria-label="Adjacent blog posts"
+            className="flex justify-between gap-6 border-t border-[#11110f]/10 pt-5 font-sans text-sm"
+          >
+            {older ? (
+              <Link
+                href={`/blogs/${older.slug}`}
+                className="max-w-[45%] text-[#55544f] no-underline hover:text-[#11110f]"
+              >
+                <span className="mb-1.5 block font-mono text-[11px] text-[#77746d]">← Older</span>
+                {older.title}
+              </Link>
+            ) : (
+              <span />
+            )}
+            {newer ? (
+              <Link
+                href={`/blogs/${newer.slug}`}
+                className="max-w-[45%] text-right text-[#55544f] no-underline hover:text-[#11110f]"
+              >
+                <span className="mb-1.5 block font-mono text-[11px] text-[#77746d]">Newer →</span>
+                {newer.title}
+              </Link>
+            ) : null}
+          </nav>
+        </>
       ) : null}
 
-      <Footer />
+      <Footer stickToBottom={!older && !newer} />
     </article>
   );
 }
