@@ -12,7 +12,7 @@ export interface CompanyBadgeProps {
 
 export default function CompanyBadge({ logo, name, subtitle, className }: CompanyBadgeProps) {
   return (
-    <span className={cn('font-semibold text-[#11110f]', className)}>
+    <span className={cn('font-normal text-[#11110f]', className)}>
       <Image
         src={logo}
         alt={`${name} Logo`}
