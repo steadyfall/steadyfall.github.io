@@ -11,8 +11,6 @@ export const personalDetails = {
   name: 'Himank Dave',
   pronouns: 'he/him/his',
   currentEducation: 'Computational Mathematics [at] UWaterloo',
-  // currentJob: ['Software Developer in Test Intern', 'Geotab'],
-  // basedFrom: 'Toronto',
   githubLink: 'https://github.com/steadyfall',
   linkedinLink: 'https://www.linkedin.com/in/himank-dave/',
   email: 'hddave@uwaterloo.ca',
@@ -24,12 +22,13 @@ export const experiences = [
     companyLogo: '/images/miovision.png',
     companyName: 'Miovision',
     companyLink: 'https://miovision.com/',
+    companyLocation: 'Kitchener, Ontario',
     position: 'Software Developer Intern',
     period: 'May 2026 - Present',
+    tldr: "provides cities with modern tools to fix today's traffic problems, \
+    using multimodal traffic data and actionable insights to help municipalities \
+    move people more safely, efficiently, and sustainably.",
     responsibilities: [
-      "Miovision provides cities with modern tools to fix today's traffic problems, \
-      using multimodal traffic data and actionable insights to help municipalities \
-      move people more safely, efficiently, and sustainably.",
       'I am working as a Software Developer on [Adaptive](https://miovision.com/adaptive/).',
     ],
   },
@@ -37,26 +36,30 @@ export const experiences = [
     companyLogo: '/images/geotab.jpeg',
     companyName: 'Geotab',
     companyLink: 'https://geotab.com/',
+    companyLocation: 'Oakville, Ontario',
     position: 'Embedded Software Developer Intern',
     period: 'January 2025 - August 2025',
+    tldr: 'enables safe, sustainable, and efficient fleet and asset management \
+    through data-driven connected solutions.',
     responsibilities: [
-      'Geotab enables safe, sustainable, and efficient fleet and asset management \
-      through data-driven connected solutions.',
       'I worked as an Embedded Developer on the Pipeline Automation team, under Embedded Software Quality.',
-      'Apart from day-to-day tasks supporting 10k+ pipelines/month across 250+ GitLab repositories, \
-      I built a high-performance artifact-retrieval gRPC microservice for an in-house Software-in-the-Loop (SIL) testing framework and containerized \
-      a Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
+      'Apart from day-to-day tasks supporting 10k+ pipelines/month across 250+ GitLab repositories, I:',
+      '- built high-performance artifact-retrieval gRPC microservice for in-house Software-in-the-Loop testing framework.',
+      '- containerized Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
+      '- reverse-engineered undocumented production Docker images to reconstruct their commit-based build history, replacing \
+      them with reproducible Ubuntu 22 Dockerfiles and reducing image size by 30%.',
     ],
   },
   {
     companyLogo: '/images/cactuscreatives.png',
     companyName: 'Cactus Creatives',
     companyLink: 'https://cactuscreatives.com/',
+    companyLocation: 'Remote (Ahmedabad, India)',
     position: 'Software Developer Intern',
     period: 'May 2024 - August 2024',
+    tldr: 'partners with clients to design and deliver innovative, \
+    reliable, and cost-effective digital and IoT solutions.',
     responsibilities: [
-      'Cactus Creatives partners with clients to design and deliver innovative, \
-      reliable, and cost-effective digital and IoT solutions.',
       'I worked on the Core Services team.',
       'I developed a self-hosted uptime monitoring tool with real-time web & \
       database status tracking, and implemented CI/CD pipelines using \
@@ -67,11 +70,12 @@ export const experiences = [
     companyLogo: '/images/cactuscreatives.png',
     companyName: 'Cactus Creatives',
     companyLink: 'https://cactuscreatives.com/',
+    companyLocation: 'Ahmedabad, India',
     position: 'Python Developer Intern',
     period: 'May 2023 - August 2023',
+    tldr: 'partners with clients to design and deliver innovative, \
+    reliable, and cost-effective digital and IoT solutions.',
     responsibilities: [
-      'Cactus Creatives partners with clients to design and deliver innovative, \
-      reliable, and cost-effective digital and IoT solutions.',
       'I worked on the Internal Tools team.',
       'I built and maintained a full-stack content management system with \
       real-time metrics, while spearheading major MySQL-to-PostgreSQL migrations \
