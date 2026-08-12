@@ -59,10 +59,12 @@ export const experiences = [
     responsibilities: [
       'I worked as an Embedded Developer on the Pipeline Automation team, under Embedded Software Quality.',
       'Apart from day-to-day tasks supporting 10k+ pipelines/month across 250+ GitLab repositories, I:',
-      '- built high-performance artifact-retrieval gRPC microservice for in-house Software-in-the-Loop testing framework.',
-      '- containerized Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
-      '- reverse-engineered undocumented production Docker images to reconstruct their commit-based build history, replacing \
-      them with reproducible Ubuntu 22 Dockerfiles and reducing image size by 30%.',
+      [
+        '- built high-performance artifact-retrieval gRPC microservice for in-house Software-in-the-Loop testing framework.',
+        '- containerized Windows-only embedded development environment to automate firmware builds for 500k+ devices.',
+        '- reverse-engineered undocumented production Docker images to reconstruct their commit-based build history, replacing \
+        them with reproducible Ubuntu 22 Dockerfiles and reducing image size by 30%.',
+      ],
     ],
   },
   {

@@ -11,7 +11,7 @@ export type ExperienceTileProps = {
   companyLocation?: string;
   position: string;
   period: string;
-  responsibilities?: string[];
+  responsibilities?: (string | string[])[];
 };
 
 export function ExperienceTile({
@@ -85,7 +85,7 @@ export function ExperienceTile({
                 ),
               }}
             >
-              {responsibility}
+              {Array.isArray(responsibility) ? responsibility.join('\n') : responsibility}
             </ReactMarkdown>
           ))}
         </div>
