@@ -5,7 +5,7 @@ export default function PortfolioShell({ children }: { children: React.ReactNode
     <div className="flex min-h-screen w-full flex-col bg-white font-sans text-[#11110f]">
       <a
         href="#main-content"
-        className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:block focus:bg-white focus:px-4 focus:py-2 focus:text-[#11110f] focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-[#11110f]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:block focus:bg-white focus:px-4 focus:py-2 focus:text-[#11110f] focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-[#11110f]"
       >
         Skip to main content
       </a>
