@@ -12,7 +12,7 @@ interface BlogArticleProps {
 
 export default function BlogArticle({ post, older, newer, children }: BlogArticleProps) {
   return (
-    <article className="mx-auto flex min-h-full w-full max-w-[620px] flex-1 flex-col pt-1 md:max-w-none">
+    <article className="mx-auto flex min-h-full w-full max-w-[620px] flex-1 flex-col pt-1">
       <Link
         href="/blogs"
         className="rounded-sm font-mono text-xs text-[#77746d] no-underline hover:text-[#11110f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]"
