@@ -12,14 +12,19 @@ export interface CompanyBadgeProps {
 
 export default function CompanyBadge({ logo, name, subtitle, className }: CompanyBadgeProps) {
   return (
-    <span className={cn('font-normal text-[#11110f]', className)}>
+    <span
+      className={cn(
+        'inline-flex items-center whitespace-nowrap align-middle font-normal text-[#11110f]',
+        className,
+      )}
+    >
       <Image
         src={logo}
         alt=""
         width={20}
         height={20}
         unoptimized
-        className="rounded-xs mr-1.5 inline-block size-4 -translate-y-[1px] object-contain align-middle md:size-5"
+        className="rounded-xs mr-1 size-[1em] object-contain"
       />
       {name}
       {subtitle ? <span className="font-normal text-[#66645f]"> ({subtitle})</span> : null}
