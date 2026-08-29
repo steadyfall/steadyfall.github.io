@@ -1,10 +1,3 @@
-import { Icon } from '@iconify/react';
-
-import { Badge } from '@/components/ui/Badge';
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
-import { techIcons } from '@/lib/techIcons';
-
 interface SkillsProps {
   arr: {
     languages: string[];
@@ -15,46 +8,32 @@ interface SkillsProps {
 }
 
 export function Skills({ arr }: SkillsProps) {
-  const result = Object.entries(arr).map(([key, value], idx) => {
-    return (
-      <div className="mb-4" key={idx}>
-        <div className="mb-2 text-xl font-bold">
-          {
-            <BlurFade delay={BLUR_FADE_DELAY * 10}>
-              {key === 'frameworksAndLibraries'
-                ? 'databases' in arr
-                  ? 'Frameworks & Libraries'
-                  : 'Frameworks, Libraries & Databases'
-                : key.charAt(0).toUpperCase() + key.slice(1)}
-              :
-            </BlurFade>
-          }
-        </div>
-        <div className="flex flex-wrap gap-1">
-          {value.map((skillText, index) => (
-            <BlurFade key={index} delay={BLUR_FADE_DELAY * 10 + index * 0.05}>
-              <Badge>
-                {techIcons?.[skillText] && (
-                  <span className="mr-2">
-                    {<Icon icon={techIcons[skillText]} inline={true} width={18} height={18} />}
-                  </span>
-                )}
-                <span>{skillText}</span>
-              </Badge>
-            </BlurFade>
-          ))}
-        </div>
-      </div>
-    );
-  });
+  const skillGroups = [
+    ['Languages', arr.languages],
+    ['Frameworks', [...arr.frameworksAndLibraries, ...(arr.databases ?? [])]],
+    ['Tools', arr.tools],
+  ] as const;
+
   return (
-    <section id="skills" className="mb-12 lg:mb-20">
-      <BlurFade delay={BLUR_FADE_DELAY * 9}>
-        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
-          Skills
-        </h2>
-      </BlurFade>
-      {arr ? result : <p>No skills to display.</p>}
+    <section
+      id="skills"
+      className="mt-[52px] flex flex-col gap-[18px] md:mt-16 md:gap-6"
+      aria-labelledby="skills-title"
+    >
+      <h2
+        id="skills-title"
+        className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
+      >
+        Skills
+      </h2>
+      <div className="flex flex-col gap-2.5 text-md leading-[1.6] text-[#55544f]">
+        {skillGroups.map(([label, values]) => (
+          <div key={label} className="grid grid-cols-[128px_minmax(0,1fr)]">
+            <span className="text-[#11110f]">{label}</span>
+            <span>{values.join(', ')}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

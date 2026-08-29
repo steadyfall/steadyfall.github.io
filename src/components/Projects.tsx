@@ -1,31 +1,59 @@
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
-
 import { ProjectTile, ProjectTileProps } from './Tiles/ProjectTile';
+import LinkWithArrow from './ui/LinkWithArrow';
 
-interface ProjectProps {
+interface ProjectsProps {
   arr: ProjectTileProps[];
+  variant?: 'selected' | 'all';
 }
 
-export function Projects({ arr }: ProjectProps) {
+export function Projects({ arr, variant = 'selected' }: ProjectsProps) {
+  if (variant === 'all') {
+    return (
+      <>
+        <section className="mt-6">
+          <h1 className="m-0 font-display text-5xl font-normal italic leading-[1.05] tracking-[-0.01em] md:text-[54px]">
+            Projects
+          </h1>
+          <p className="mt-[18px] max-w-[70ch] text-pretty text-md leading-[1.6] text-[#55544f]">
+            Things I built to learn something, solve a problem, or make a useful idea tangible.
+          </p>
+        </section>
+        <section id="projects" className="mt-[52px] md:mt-16" aria-label="All projects">
+          <div className="flex flex-col gap-6">
+            {arr.map((project) => (
+              <ProjectTile key={project.title} {...project} variant="full" />
+            ))}
+          </div>
+        </section>
+      </>
+    );
+  }
+
   return (
-    <section id="projects" className="mb-12">
-      <BlurFade delay={BLUR_FADE_DELAY * 11}>
-        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
-          Projects
+    <section
+      id="projects"
+      className="mt-[52px] flex flex-col gap-[18px] md:mt-16 md:gap-6"
+      aria-labelledby="selected-projects-title"
+    >
+      <div className="flex items-baseline justify-between gap-5">
+        <h2
+          id="selected-projects-title"
+          className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
+        >
+          Selected projects
         </h2>
-      </BlurFade>
-      {arr && arr.length > 0 ? (
-        <div className="space-y-5">
-          {arr.map((project, index) => (
-            <BlurFade key={index} delay={BLUR_FADE_DELAY * 12 + index * 0.2}>
-              <ProjectTile {...project} delayTime={BLUR_FADE_DELAY * 12 + index * 0.2} />
-            </BlurFade>
-          ))}
-        </div>
-      ) : (
-        <p>No projects to display.</p>
-      )}
+        <LinkWithArrow
+          href="/projects"
+          className="m-0 flex-none text-md text-[#66645f] hover:text-[#11110f] [&_svg]:ml-0.5 [&_svg]:size-[0.9em] [&_svg]:stroke-[1.7]"
+        >
+          All projects
+        </LinkWithArrow>
+      </div>
+      <div className="flex flex-col gap-4">
+        {arr.map((project) => (
+          <ProjectTile key={project.title} {...project} variant="selected" />
+        ))}
+      </div>
     </section>
   );
 }

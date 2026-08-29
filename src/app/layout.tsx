@@ -1,21 +1,9 @@
-import { Instrument_Sans, Space_Mono } from 'next/font/google';
-
 import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
 import { detailsForMetadata } from '@/data/resume';
-import { cn } from '@/lib/utils';
-
-import { Providers } from './providers';
 
 import type { Metadata } from 'next';
 
 import './globals.css';
-
-const instrumentsans = Instrument_Sans({ subsets: ['latin'] });
-const spaceMono = Space_Mono({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--font-spaceMono',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(detailsForMetadata.baseUrl),
@@ -56,22 +44,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${instrumentsans.className} ${spaceMono.variable}`}
-      suppressHydrationWarning
-    >
-      <body
-        className={cn(
-          'bg-portland-orange text-chinese-black-950 dark:bg-dark-blue dark:text-selago-100',
-          'transition-colors duration-300',
-        )}
-        suppressHydrationWarning
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-white font-sans text-[#11110f]" suppressHydrationWarning>
         <SmoothScrollProvider offset={90}>
-          <div className="flex min-h-screen flex-col">
-            <Providers>{children}</Providers>
-          </div>
+          <div className="flex min-h-screen flex-col">{children}</div>
         </SmoothScrollProvider>
       </body>
     </html>

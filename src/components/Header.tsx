@@ -1,170 +1,84 @@
-'use client';
+import Image from 'next/image';
 
-import { ImageDithering } from '@paper-design/shaders-react';
-import copy from 'copy-to-clipboard';
-import { Copy, CopyCheck } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
 import LinkWithArrow from '@/components/ui/LinkWithArrow';
 
 export type HeaderProps = {
   name: string;
-  pronouns: string;
-  currentEducation: string;
-  currentJob?: string[];
-  basedFrom?: string;
   githubLink: string;
   linkedinLink: string;
   email: string;
   resumeFile: string;
+  children?: React.ReactNode;
 };
 
-const Header = ({
+export default function Header({
   name,
-  pronouns,
-  currentEducation,
   githubLink,
   linkedinLink,
   email,
   resumeFile,
-}: HeaderProps) => {
-  const [copied, setCopiedId] = useState<string>();
-  const { resolvedTheme } = useTheme();
-
-  // for copy button
-  useEffect(() => {
-    if (!copied) return;
-    const timer = setTimeout(() => {
-      setCopiedId(undefined);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [copied]);
-
-  const isDarkMode = resolvedTheme === 'dark';
-
-  const DitheredHeadshot = (
-    <div className="size-36 md:size-48 lg:size-56">
-      <ImageDithering
-        style={{ height: '100%', width: '100%' }}
-        image="/images/headshot.jpeg"
-        colorBack={isDarkMode ? '#1a0098' : '#ff3600'} // Dark mode: blue, Light mode: orange
-        colorFront="#ffffff"
-        colorHighlight="#ffffff"
-        type="8x8"
-        size={1}
-        colorSteps={5}
-        fit="contain"
-        className="object-cover"
-      />
-    </div>
-  );
+  children,
+}: HeaderProps) {
+  const linkClassName =
+    'text-sm text-[#11110f] underline underline-offset-[3px] transition-colors hover:text-[#55544f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#11110f]';
 
   return (
-    <div className="container mx-auto mb-10 lg:mb-16">
-      <div className="flex flex-col items-center justify-between md:flex-row">
-        <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="mb-4 flex-shrink-0 md:mb-0 md:mr-8 md:hidden">{DitheredHeadshot}</div>
-        </BlurFade>
-        <div className="flex-grow text-center md:text-left">
-          <BlurFade delay={BLUR_FADE_DELAY}>
-            <div className="flex items-center justify-center md:justify-start">
-              <h1 className="mr-4 text-4xl font-bold md:text-5xl lg:text-6xl">{name}</h1>
-            </div>
-          </BlurFade>
-          <div className="mt-4 flex justify-center space-x-4 md:justify-start">
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <LinkWithArrow
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="text-white hover:underline hover:underline-offset-2 dark:text-pink-500"
-              >
-                github
-              </LinkWithArrow>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <LinkWithArrow
-                href={linkedinLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-white hover:underline hover:underline-offset-2 dark:text-thunderbird-500"
-              >
-                linkedin
-              </LinkWithArrow>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <LinkWithArrow
-                href={'mailto:' + email}
-                aria-label="Email"
-                className="text-white hover:underline hover:underline-offset-2 dark:text-starship-500"
-              >
-                email
-              </LinkWithArrow>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <LinkWithArrow
-                href={'/' + resumeFile}
-                target="_blank"
-                aria-label="Resume"
-                className="text-white hover:underline hover:underline-offset-2 dark:text-neon-green-400"
-              >
-                resume
-              </LinkWithArrow>
-            </BlurFade>
-          </div>
-          <div className="mt-4 text-sm md:text-base lg:text-lg">
-            {pronouns && (
-              <BlurFade delay={BLUR_FADE_DELAY}>
-                <p className="text-xs italic md:text-sm lg:text-base">{pronouns}</p>
-              </BlurFade>
-            )}
-            {currentEducation && (
-              <BlurFade delay={BLUR_FADE_DELAY}>
-                <p>{currentEducation}</p>
-              </BlurFade>
-            )}
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <div className="inline-flex">
-                <p className="font-typewriter">
-                  {email.split('').map((char) => {
-                    return char === '@' ? '[at]' : char;
-                  })}
-                </p>
-                <button
-                  className="ml-1 cursor-pointer rounded p-1.5 text-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-white dark:hover:text-chinese-black-300"
-                  aria-label={
-                    copied === 'copied-email' ? 'Email address copied' : 'Copy email address'
-                  }
-                  onClick={async () => {
-                    if ('clipboard' in navigator) {
-                      await navigator.clipboard.writeText(email);
-                    } else {
-                      copy(email);
-                    }
-                    setCopiedId('copied-email');
-                  }}
-                >
-                  {copied === 'copied-email' ? (
-                    <CopyCheck className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
-                  ) : (
-                    <Copy className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true" />
-                  )}
-                </button>
-              </div>
-            </BlurFade>
-          </div>
+    <section
+      className="mt-6 grid grid-cols-1 items-start gap-6 min-[431px]:grid-cols-[minmax(0,1fr)_104px] md:mt-8 md:flex md:gap-12"
+      aria-labelledby="intro-title"
+    >
+      <div className="contents min-w-0 flex-1 md:block">
+        <h1
+          id="intro-title"
+          className="order-2 col-start-1 row-start-1 m-0 font-display text-[clamp(45px,13vw,58px)] font-normal italic leading-[1.02] tracking-[-0.01em] md:order-none md:text-[64px]"
+        >
+          {name}
+        </h1>
+        {children}
+        <div
+          className="order-4 col-span-full mt-6 flex flex-wrap gap-x-[18px] gap-y-2.5 min-[431px]:row-start-3 md:order-none md:mt-[30px] md:gap-x-6 md:gap-y-3"
+          aria-label="Contact links"
+        >
+          <LinkWithArrow
+            href={githubLink}
+            target="_blank"
+            rel="noreferrer"
+            className={linkClassName}
+          >
+            GitHub
+          </LinkWithArrow>
+          <LinkWithArrow
+            href={linkedinLink}
+            target="_blank"
+            rel="noreferrer"
+            className={linkClassName}
+          >
+            LinkedIn
+          </LinkWithArrow>
+          <LinkWithArrow href={`mailto:${email}`} className={linkClassName}>
+            Email
+          </LinkWithArrow>
+          <LinkWithArrow
+            href={`/${resumeFile}`}
+            target="_blank"
+            rel="noreferrer"
+            className={linkClassName}
+          >
+            Resume
+          </LinkWithArrow>
         </div>
-        <BlurFade delay={BLUR_FADE_DELAY} inView={true}>
-          <div className="hidden flex-shrink-0 md:block">{DitheredHeadshot}</div>
-        </BlurFade>
       </div>
-    </div>
+      <div className="order-1 h-[116px] w-[94px] overflow-hidden bg-[#e9e7e1] min-[431px]:order-none min-[431px]:col-start-2 min-[431px]:row-start-1 min-[431px]:h-[132px] min-[431px]:w-[104px] md:h-[210px] md:w-[170px]">
+        <Image
+          src="/images/headshot.jpeg"
+          alt="Portrait of Himank Dave"
+          width={340}
+          height={420}
+          priority
+          unoptimized
+          className="size-full object-cover"
+        />
+      </div>
+    </section>
   );
-};
-
-export default Header;
+}

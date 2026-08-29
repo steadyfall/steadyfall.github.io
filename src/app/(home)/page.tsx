@@ -1,20 +1,11 @@
-import About from '@/components/About';
-import { Education } from '@/components/Education';
-import { Experiences } from '@/components/Experiences';
-import Header from '@/components/Header';
-import { Projects } from '@/components/Projects';
-import { Skills } from '@/components/Skills';
-import { personalDetails, experiences, projects, skills } from '@/data/resume';
+import Footer from '@/components/Footer';
+import Landing from '@/components/Landing';
 
-export default function Portfolio() {
+export default function HomePage() {
   return (
-    <main className="z-1 py-6">
-      <Header {...personalDetails} />
-      <About />
-      <Experiences arr={experiences} />
-      <Education />
-      <Skills arr={skills} />
-      <Projects arr={projects} />
-    </main>
+    <div className="flex flex-1 flex-col justify-between">
+      <Landing />
+      <Footer />
+    </div>
   );
 }

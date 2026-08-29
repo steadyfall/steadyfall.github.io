@@ -1,0 +1,122 @@
+---
+title: 'Test'
+description: 'A kitchen-sink MDX post that verifies every supported content pattern in the blog renderer.'
+date: '2000-01-01'
+updated: '2000-01-01'
+tags:
+  - MDX
+  - Testing
+  - Writing
+---
+
+This is the kitchen-sink post for the blog renderer. It intentionally exercises standard Markdown, GitHub-flavoured Markdown, native MDX elements, and custom React components in one place.
+
+## Text and links
+
+Regular prose can include **bold text**, _italic text_, **_both at once_**, ~~deleted text~~, `inline code`, H<sub>2</sub>O, x<sup>2</sup>, <Highlight>highlighted text</Highlight>, and keyboard input such as <KeyboardKey>⌘</KeyboardKey> + <KeyboardKey>K</KeyboardKey>.
+
+Links can point to an [internal route](/projects), an [on-page heading](#heading-scale), or an [external site](https://mdxjs.com/). Bare URLs are also linked by GFM: https://github.com.
+
+> Good writing is a test of structure as much as style. A renderer should make the hierarchy obvious without making the page feel decorated.
+
+## Heading scale
+
+# Heading one
+
+The post title owns the page's primary heading. Authored H1s are intentionally rendered as H2s inside an article while retaining their distinct visual style.
+
+## Heading two
+
+### Heading three
+
+#### Heading four
+
+##### Heading five
+
+###### Heading six
+
+## Lists
+
+An unordered list:
+
+- One clear idea
+- A second item with **emphasis**
+  - A nested item
+  - Another nested item with `code`
+- A final item
+
+An ordered list:
+
+1. Write the smallest useful version.
+2. Verify it with real content.
+3. Remove anything that does not help.
+
+A task list:
+
+- [x] Parse frontmatter
+- [x] Render GFM tables and task lists
+- [ ] Publish a real post
+
+## Code
+
+Inline code looks like `const answer = 42`. Fenced code preserves language metadata and horizontal scrolling:
+
+```ts
+type BlogPost = {
+  slug: string;
+  title: string;
+  publishedAt: string;
+};
+
+export function byNewest(a: BlogPost, b: BlogPost) {
+  return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
+}
+```
+
+Plain code blocks work too:
+
+```
+GET /blogs/test
+200 OK
+```
+
+## Table
+
+| Feature           | Source | Status |
+| :---------------- | :----: | -----: |
+| Frontmatter       |  YAML  |  Ready |
+| Tables            |  GFM   |  Ready |
+| Custom components |  MDX   |  Ready |
+
+## Custom MDX components
+
+<Callout title="Renderer note" tone="note">
+  This callout is a React component invoked directly from the `.mdx` file. It can contain
+  **Markdown**, links, and `inline code`.
+</Callout>
+
+<Callout title="Useful constraint" tone="tip">
+  The visual treatment stays quiet so the prose remains the most important element on the page.
+</Callout>
+
+<Callout title="Edge case" tone="warning">
+  Long tokens must scroll rather than widening the page:
+  `this-is-a-deliberately-long-unbroken-value-that-tests-overflow-without-breaking-the-layout`.
+</Callout>
+
+<Figure
+  src="/images/cactuscreatives.png"
+  alt="A preview of the Cactus Creatives project"
+  caption="Figures support an authored image, descriptive alternative text, and an optional caption."
+/>
+
+<Disclosure summary="Native interactive content">
+  MDX can render native HTML elements too. This disclosure contains **formatted content** and stays
+  keyboard accessible without client-side JavaScript.
+</Disclosure>
+
+---
+
+## Final paragraph
+
+If every section above is legible, aligned, keyboard accessible, and contained at narrow widths, the supported MDX surface is rendering correctly.

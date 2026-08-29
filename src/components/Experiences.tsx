@@ -1,7 +1,4 @@
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
-
-import { ExperienceTileProps, ExperienceTile } from './Tiles/ExperienceTile';
+import { ExperienceTile, ExperienceTileProps } from './Tiles/ExperienceTile';
 
 interface ExperiencesProps {
   arr: ExperienceTileProps[];
@@ -9,23 +6,25 @@ interface ExperiencesProps {
 
 export function Experiences({ arr }: ExperiencesProps) {
   return (
-    <section id="experience" className="mb-12 lg:mb-20">
-      <BlurFade delay={BLUR_FADE_DELAY * 5}>
-        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
-          Experience
-        </h2>
-      </BlurFade>
-      {arr && arr.length > 0 ? (
-        <div className="space-y-6">
-          {arr.map((experience, index) => (
-            <BlurFade key={index} delay={BLUR_FADE_DELAY * 6 + index * 0.2}>
-              <ExperienceTile {...experience} />
-            </BlurFade>
-          ))}
-        </div>
-      ) : (
-        <p>No experiences to display.</p>
-      )}
+    <section
+      id="experience"
+      className="mt-6 flex flex-col gap-[18px] md:mt-10 md:gap-6"
+      aria-labelledby="experience-title"
+    >
+      <h2
+        id="experience-title"
+        className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
+      >
+        Experience
+      </h2>
+      <div className="flex w-full flex-col gap-6">
+        {arr.map((experience) => (
+          <ExperienceTile
+            key={`${experience.companyName}-${experience.position}`}
+            {...experience}
+          />
+        ))}
+      </div>
     </section>
   );
 }

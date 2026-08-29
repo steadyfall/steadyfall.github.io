@@ -1,43 +1,30 @@
-import Link from 'next/link';
+import { EducationTile, type EducationTileProps } from './Tiles/EducationTile';
 
-import { EducationTile } from '@/components/Tiles/EducationTile';
-import BlurFade from '@/components/ui/BlurFade';
-import { BLUR_FADE_DELAY } from '@/components/ui/blurFadeConfig';
+interface EducationProps {
+  arr: EducationTileProps[];
+}
 
-export function Education() {
-  const educationDetails = (
-    <p className="mt-1 py-0 text-chinese-black-900 dark:text-selago-200">
-      <Link
-        href="https://uwaterloo.ca/computational-mathematics/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mr-0.5 rounded hover:text-black hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:hover:text-white"
-      >
-        Computational Mathematics
-      </Link>{' '}
-      is an interdisciplinary major that combines Mathematics, Statistics, Optimization and Computer
-      Science, offered by the Faculty of Mathematics.
-    </p>
-  );
-
+export function Education({ arr }: EducationProps) {
   return (
-    <section id="education" className="mb-12 lg:mb-20">
-      <BlurFade delay={BLUR_FADE_DELAY * 7}>
-        <h2 className="mb-4 font-section text-2xl text-chinese-black-950 dark:text-selago-100 md:text-3xl lg:text-4xl">
-          Education
-        </h2>
-      </BlurFade>
-      <BlurFade delay={BLUR_FADE_DELAY * 8}>
-        <EducationTile
-          institutionLogo={'/images/uwaterlooLogo.png'}
-          institutionName={'University of Waterloo'}
-          institutionLink={'https://uwaterloo.ca/'}
-          degree={'Bachelor of Mathematics'}
-          major={'Computational Mathematics Major'}
-          duration={'September 2022 - May 2027'}
-          details={educationDetails}
-        />
-      </BlurFade>
+    <section
+      id="education"
+      className="mt-[52px] flex flex-col gap-[18px] md:mt-16 md:gap-6"
+      aria-labelledby="education-title"
+    >
+      <h2
+        id="education-title"
+        className="m-0 font-sans text-[22.5px] font-semibold leading-tight text-[#11110f]"
+      >
+        Education
+      </h2>
+      <div className="flex w-full flex-col gap-6">
+        {arr.map((education) => (
+          <EducationTile
+            key={`${education.institution}-${education.degree}-${education.major}`}
+            {...education}
+          />
+        ))}
+      </div>
     </section>
   );
 }
