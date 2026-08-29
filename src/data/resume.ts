@@ -20,6 +20,8 @@ export const personalDetails = {
 export const education = [
   {
     institution: 'University of Waterloo',
+    shortName: 'UWaterloo',
+    logo: '/images/uwaterlooLogo.png',
     location: 'Waterloo, Ontario',
     degree: 'Bachelor of Mathematics',
     major: 'Computational Mathematics',
@@ -115,7 +117,7 @@ export const projects = [
     techStack: ['Go', 'SQLite', 'Bubbletea'],
   },
   {
-    title: 'Deris',
+    title: 'deris',
     selected_work: true,
     tldr: 'A networked key-value store delivering 50k+ operations per second with sub-millisecond latency.',
     description:
@@ -128,18 +130,17 @@ export const projects = [
     techStack: ['Go'],
   },
   {
-    title: 'SpectraSVD',
+    title: 'Sure (FOSS)',
     selected_work: true,
-    tldr: 'An interactive SVD image compressor that reduces file sizes by over 25% while preserving visual quality.',
+    tldr: 'Open-source contributor to a finance app, improving release infrastructure and developer tooling.',
     description:
-      'Designed & deployed an advanced image compression algorithm achieving \
-      25%+ size reduction, complemented by a real-time interactive web \
-      application for demonstrating compression quality and efficiency.',
+      'Improved Sure’s release infrastructure, cutting Docker image builds from 35 mins to 6 mins through \
+      multi-architecture matrix builds and registry caching. Upgraded devcontainers with Git-aware prompts, Ruby LSP, \
+      autocomplete, Codespaces, and worker-service fixes.',
     repo: true,
-    repoUrl: 'https://github.com/steadyfall/svd-compression',
-    live: true,
-    liveUrl: 'https://spectrasvd.streamlit.app/',
-    techStack: ['NumPy', 'OpenCV', 'Pillow', 'Streamlit'],
+    repoUrl: 'https://github.com/we-promise/sure',
+    live: false,
+    techStack: ['Ruby', 'Docker', 'GitHub Actions'],
   },
   {
     title: 'simple-technical-resume',
@@ -153,6 +154,20 @@ export const projects = [
     live: true,
     liveUrl: 'https://typst.app/universe/package/simple-technical-resume',
     techStack: ['Typst'],
+  },
+  {
+    title: 'SpectraSVD',
+    selected_work: false,
+    tldr: 'An interactive SVD image compressor that reduces file sizes by over 25% while preserving visual quality.',
+    description:
+      'Designed & deployed an advanced image compression algorithm achieving \
+      25%+ size reduction, complemented by a real-time interactive web \
+      application for demonstrating compression quality and efficiency.',
+    repo: true,
+    repoUrl: 'https://github.com/steadyfall/svd-compression',
+    live: true,
+    liveUrl: 'https://spectrasvd.streamlit.app/',
+    techStack: ['NumPy', 'OpenCV', 'Pillow', 'Streamlit'],
   },
   {
     title: 'Trivivo',
