@@ -46,7 +46,7 @@ export function Landing() {
             and build software for problems that become tiring the second time around.
           </p>
           <p>
-            Currently, I am working on adaptive traffic control at
+            Currently, I am working on {currentExperience.workingOn} at
             <CompanyBadge
               logo={currentExperience.companyLogo}
               name={currentExperience.companyName}
