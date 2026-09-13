@@ -36,6 +36,19 @@ export const education = [
 
 export const experiences = [
   {
+    companyLogo: '/images/leapTools.png', // change this
+    companyName: 'Leap Tools',
+    companyLink: 'https://leaptools.com/',
+    companyLocation: 'Toronto, Ontario',
+    position: 'Software Developer Intern',
+    period: 'September 2026 - Present',
+    workingOn: 'ERP for home-product businesses',
+    tldr: 'builds software for home-product businesses, helping retailers and \
+      manufacturers visualize products, sell more effectively, and manage \
+      operations from discovery through fulfillment.',
+    responsibilities: ['I am working as a Software Developer on [QFloors](https://qfloors.com/).'],
+  },
+  {
     companyLogo: '/images/miovision.png',
     companyName: 'Miovision',
     companyLink: 'https://miovision.com/',
