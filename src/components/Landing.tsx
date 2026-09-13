@@ -23,8 +23,8 @@ export function Landing() {
       >
         Hello, I am Himank Dave.
       </h1>
-      <div className="mt-[18px] max-w-[800px] md:max-w-none">
-        <div className="mb-6 size-[132px] overflow-hidden bg-[#e9e7e1] md:float-left md:mb-2 md:mr-6 md:size-[190px]">
+      <div className="mt-[18px] max-w-[800px] md:grid md:max-w-none md:grid-cols-[190px_minmax(0,1fr)] md:gap-x-6">
+        <div className="mb-6 size-[132px] overflow-hidden bg-[#e9e7e1] md:mb-0 md:size-[190px]">
           <Image
             src="/images/headshot.jpeg"
             alt="Portrait of Himank Dave"
@@ -35,7 +35,7 @@ export function Landing() {
             className="size-full translate-x-[-2.5%] scale-[1.15] object-cover object-[70%_28%]"
           />
         </div>
-        <div className="space-y-4 text-md leading-[1.6] text-[#11110f] md:contents">
+        <div className="space-y-4 text-md leading-[1.6] text-[#11110f]">
           <p>
             I am a senior at
             <CompanyBadge
@@ -56,7 +56,11 @@ export function Landing() {
             {pastExperience.map((experience, index) => (
               <span key={experience.companyName}>
                 {index > 0 ? (index === pastExperience.length - 1 ? ' and ' : ', ') : null}
-                <CompanyBadge logo={experience.companyLogo} name={experience.companyName} />
+                <CompanyBadge
+                  logo={experience.companyLogo}
+                  name={experience.companyName}
+                  className="align-baseline"
+                />
               </span>
             ))}
             .
